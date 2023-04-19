@@ -1,0 +1,23 @@
+.axis {
+  stroke: #333333;
+  stroke-width: 3;
+}
+.grid {
+  stroke: #dddddd;
+  stroke-width: 1;
+  opacity: .25;
+}
+.label {
+  cursor: default;
+  text-anchor: middle;
+  font-size: 14px;
+  fill: #444444
+}
+.bar {
+  fill: #a9a9a9;
+  opacity: 0.6;
+}
+.bar:hover {
+    fill: #ec008c;
+    opacity: 1;
+}

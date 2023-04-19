@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Dynamic SVG - Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Dynamic SVG - Demo</h1>
+
+  <table>
+    <tr>
+      <td>
+        <label for="cars">Choose a year:</label>
+        <select name="year" id="year_select" onchange="changeData()">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+      </td>
+      <td>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+          <rect id = "bar1" class="bar" x="50" y="60" width="50" height="120"/>
+          <text class="label" x="75" y="195" text-anchor="middle">Dogs</text>
+
+          <rect id = "bar2" class="bar" x="110" y="60" width="50" height="120"/>
+          <text class="label" x="135" y="195" text-anchor="middle">Cats</text>
+
+          <line class="grid" x1="10" y1="130.5" x2="200" y2="130.5"/>
+          <line class="grid" x1="10" y1="80.5" x2="200" y2="80.5"/>
+          <line class="grid" x1="10" y1="30.5" x2="200" y2="30.5"/>
+
+          <line class="axis" x1="10" y1="181" x2="200" y2="181" stroke-linecap="round"/>
+          <line class="axis" x1="10" y1="0" x2="10" y2="181" stroke-linecap="round"/>
+        </svg>
+      </td>
+</tr>
+</table>
+  <div>
+  Things to notice:
+    <ul>
+      <li>Javascript can interact in a similar way with both SVG and HTML</li>
+      <li>Important individual SVG elements are given an id</li>
+      <li>The onchange event listener can be added to any element</li>
+    </ul>
+  </div>
+<script>
+  function changeData(){
+    let year = document.getElementById("year_select").value;
+    console.log(year);
+
+    data={
+      "2020": [120, 120],
+      "2021": [110, 130],
+      "2022": [100, 140],
+      "2023": [90, 150]
+    }
+    let newData = data[year]; //the dropdown value is used as the key
+    document.getElementById("bar1").setAttribute("height", newData[0])
+    document.getElementById("bar1").setAttribute("y", 180-newData[0])
+    document.getElementById("bar2").setAttribute("height", newData[1])
+    document.getElementById("bar2").setAttribute("y", 180-newData[1])
+
+  } //end of changeData function
+
+</script>
+</body>
+</html>
