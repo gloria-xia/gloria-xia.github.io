@@ -486,14 +486,14 @@ input:checked + label {
 
 } */
 
-ul li:hover > ul,
+/* ul li:hover > ul,
 ul li:focus-within > ul,
 ul li ul:hover,
 .dropdown ul li ul:focus {
    visibility: visible;
    opacity: 1;
    display: block;
-}
+} */
 
 .dropdown ul li ul li {
   clear: both;
