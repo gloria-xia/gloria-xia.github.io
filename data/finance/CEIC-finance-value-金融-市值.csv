@@ -1,0 +1,54 @@
+year,CN：市值：国内上市公司,CN：股票交易：总价值
+区域,中国,中国
+次国家,,
+频率,"年, 年终12月","年, 年终12月"
+单位,百万美元,百万美元
+数据来源,World Bank,World Bank
+状态,继续,继续
+数列ID,258183902,258224002
+SR码,SR5378114,SR5377090
+Trade Code,,
+助记符,,
+函数说明,,
+首次观测日期,2003,1993
+最后观测日期,2020,2020
+最后更新时间,01/07/2021,01/07/2021
+数列备注,"Market capitalization (also known as market value) is the share price times the number of shares outstanding (including their several classes) for listed domestic companies. Investment funds, unit trusts, and companies whose only business goal is to hold shares of other listed companies are excluded. Data are end of year values converted to U.S. dollars using corresponding year-end foreign exchange rates.; ; World Federation of Exchanges database.; Sum; Stock market data were previously sourced from Standard & Poor's until they discontinued their ""Global Stock Markets Factbook"" and database in April 2013. Time series have been replaced in December 2015 with data from the World Federation of Exchanges and may differ from the previous S&P definitions and methodology.","The value of shares traded is the total number of shares traded, both domestic and foreign, multiplied by their respective matching prices. Figures are single counted (only one side of the transaction is considered). Companies admitted to listing and admitted to trading are included in the data. Data are end of year values converted to U.S. dollars using corresponding year-end foreign exchange rates.; ; World Federation of Exchanges database.; Sum; Stock market data were previously sourced from Standard & Poor's until they discontinued their ""Global Stock Markets Factbook"" and database in April 2013. Time series have been replaced in December 2015 with data from the World Federation of Exchanges and may differ from the previous S&P definitions and methodology."
+您可以,,
+平均,4705838.868321622,7427859.400514575
+方差,11220363299413.217,101888090463500.94
+标准差,3349681.074283523,10093963.070246538
+偏度,0.533797560151895,1.8461027189232397
+峰度,-0.2359874027400779,3.371027749641965
+变异系数,0.7118138057876631,1.358932974626211
+最小,401852.25,39965.3
+最大,12214465.6,39326016.59
+中位数,3988491.895,3905057.64
+参照期间,18,27
+1993,,39965.3
+1994,,68172.6
+1995,,77528.8
+1996,,307739.1
+1997,,371054.9
+1998,,284389.9
+2000,,752583.1
+2001,,462779.5
+2002,,338208.2
+2003,512978.77,388001.84
+2004,447720.26,511495.93
+2005,401852.25,392366.7
+2006,1145454.87,1158991.13
+2007,4478866.53,6305448.05
+2008,1778784.04,3905057.64
+2009,3573152.46,7830776.64
+2010,4027840.3,8257742.34
+2011,3412108.29,6673984.99
+2012,3697376.04,5027199.16
+2013,3949143.49,7695981.02
+2014,6004947.67,11959329.14
+2015,8188019.32,39326016.59
+2016,7320738.37978918,18295058.8303066
+2017,8711267.22,17223330.0263698
+2018,6324879.76,13070642.2372171
+2019,8515504.38,18247704.17
+2020,12214465.6,31580655.98

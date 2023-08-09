@@ -1,0 +1,53 @@
+year,CN：国际旅游：入境人数,CN：国际旅游：出境人数
+区域,中国,中国
+次国家,,
+频率,"年, 年终12月","年, 年终12月"
+单位,人,人
+数据来源,World Bank,World Bank
+状态,继续,继续
+数列ID,274265302,274285502
+SR码,SR5335446,SR5332690
+Trade Code,,
+助记符,,
+函数说明,,
+首次观测日期,1995,1995
+最后观测日期,2020,2020
+最后更新时间,16/02/2022,16/02/2022
+数列备注,"International inbound tourists (overnight visitors) are the number of tourists who travel to a country other than that in which they have their usual residence, but outside their usual environment, for a period not exceeding 12 months and whose main purpose in visiting is other than an activity remunerated from within the country visited. When data on number of tourists are not available, the number of visitors, which includes tourists, same-day visitors, cruise passengers, and crew members, is shown instead. Sources and collection methods for arrivals differ across countries. In some cases data are from border statistics (police, immigration, and the like) and supplemented by border surveys. In other cases data are from tourism accommodation establishments. For some countries number of arrivals is limited to arrivals by air and for others to arrivals staying in hotels. Some countries include arrivals of nationals residing abroad while others do not. Caution should thus be used in comparing arrivals across countries. The data on inbound tourists refer to the number of arrivals, not to the number of people traveling. Thus a person who makes several trips to a country during a given period is counted each time as a new arrival.; ; World Tourism Organization, Yearbook of Tourism Statistics, Compendium of Tourism Statistics and data files.; Gap-filled total;","International outbound tourists are the number of departures that people make from their country of usual residence to any other country for any purpose other than a remunerated activity in the country visited. The data on outbound tourists refer to the number of departures, not to the number of people traveling. Thus a person who makes several trips from a country during a given period is counted each time as a new departure.; ; World Tourism Organization, Yearbook of Tourism Statistics, Compendium of Tourism Statistics and data files.; Gap-filled total;"
+您可以,,
+平均,109062269.23076923,56813730.76923077
+方差,1368821309804615.8,2659034905964615
+标准差,36997585.188828416,51565830.79874322
+偏度,-0.6275339187044511,0.7826442471717878
+峰度,-0.6715204415679898,-0.8851828505087433
+变异系数,0.3392335905879946,0.9076297243741347
+最小,30402000,4520000
+最大,162538000,154632000
+中位数,125709000,37739000
+参照期间,26,26
+1995,46387000,4520000
+1996,51128000,5061000
+1997,57588000,5324000
+1998,63478000,8426000
+1999,72796000,9232000
+2000,83444000,10473000
+2001,89013000,12133000
+2002,97908000,16602000
+2003,91662000,20222000
+2004,109038000,28853000
+2005,120292000,31026000
+2006,124942000,34524000
+2007,131873000,40954000
+2008,130027000,45844000
+2009,126476000,47656000
+2010,133762000,57386000
+2011,135423000,70250000
+2012,132405000,83182000
+2013,129078000,98185000
+2014,128499000,116593000
+2015,133820000,127860000
+2016,141774000,135130000
+2017,153260000,143035000
+2018,158606000,149720000
+2019,162538000,154632000
+2020,30402000,20334000

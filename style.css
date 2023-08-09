@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
+
+/* html {
+  min-height: 100%;
+} */
+
+/* #header {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0em;
+   gap: 2em;
+} */
+
+html, body {
+  font: 15px/1 'Montserrat';
+  color: #555;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  /* font-family: Roboto,Helvetica Neue,sans-serif; */
+  /* background-color: #f4f0f2; */
+  /* background-color: white; */
+}
+
+main {
+  min-width: 320px;
+  width: 70%;
+  /* margin: 0 auto; */
+  height: 100%;
+  /* background: #fff; */
+  /* padding: 2vw; */
+  /* margin-bottom: 5vh; */
+}
+
+section {
+  display: none;
+  /* padding: 2em;
+  margin-bottom: 5vh; */
+  /* height: 50%; */
+  /* border-top: 1px solid #eee; */
+  /* border-radius: 0 1em 1em 1em; */
+}
+
+/* section h2 {
+  margin-bottom: 1em;
+} */
+
+/* #content1 {
+  text-align: center;
+} */
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  /* background-color: #f58025; */
+  color: black;
+  width: 80%;
+  text-decoration: none
+}
+
+#floating_buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    float: right;
+    margin-top: 1%;
+    /* right: 10%; */
+}
+
+#help_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 10%;
+    align-items: center;
+  /* align-content: center; */
+}
+
+
+#title {
+  /* font-family: Roboto,Helvetica Neue,sans-serif;
+  padding-bottom: 30px;
+  font-weight: 800; */
+  /* font-size: 10vw; */
+  text-align: center;
+  margin: 1.1vw 0;
+}
+
+#title-row {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: space-around;
+    width: 70%;
+    margin-bottom: 1vh; */
+}
+/* 
+#content2 p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+  font-size: 1.2em;
+} */
+
+footer {
+  /* background-color: #eee; */
+  /* background-color: white; */
+  color: #f58025;
+  padding: 20px;
+  /* position: absolute; */
+  font-size: xx-large;
+  height: 70px;
+  width: 100%;
+  flex-shrink: 0;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  padding: 2em 0 2em;
+}
+
+/* D3.js styling */
+#svg-container {
+  resize: both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  height: 100%;
+  /* margin-top: 0.5%; */
+  /* padding: 2%; */
+  vertical-align: top;
+  /* border: 1px dashed black; */
+  overflow: auto;
+}
+
+.svg-content {
+  /* display: inline-block; */
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.x-axis { 
+   /* font: 17px sans-serif;  */
+   font: inherit;
+}
+
+.y-axis { 
+  font: inherit;
+  /* font: 17px sans-serif;  */
+}
+
+.legend {
+  font: inherit;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+#info {
+  float: right;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: end; */
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  text-align: left;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  font-size: x-large;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form label, select {
+  padding: 0.5em;
+  font-size: 0.85vw;
+}
+
+
+#filters_form div {
+    display: flex;
+    align-items: center;
+    /* flex-direction: row; */
+}
+
+.filter_select {
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+#year_range_selector {
+    /* display: flex; */
+    justify-content: space-between;
+    /* flex-direction: row; */
+}
+/* #source_selector { */
+   /* justify-content: center; */
+   /* align-items: center; */
+   /* align-content: center; */
+   /* margin-bottom: 2%; */
+/* } */
+
+/* #subgroup_selector { */
+  /* display: flex;
+  flex-direction: row; */
+   /* justify-content: left; */
+   /* align-items: left; */
+   /* align-content: left; */
+   /* margin-bottom: 2%; */
+/* } */
+
+
+/* #graphtype_selector { */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: center; */
+   /* align-content: left; */
+   /* margin-bottom: 2%; */
+/* } */
+
+
+#buttons a  {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  text-decoration: none
+}
+#buttons a span  {
+  font-size: 0.75em;
+  padding-top: 0.5em;
+}
+
+
+.downloader {
+  text-align: center;
+  font-size: larger;
+}
+
+#data_source{
+  width: 100%;
+}
+
+#source_selector {
+  flex-grow:3;
+}
+
+/* #group_source {
+  width: 100%;
+} */
+
+#subgroup_selector {
+  flex-grow: 2;
+}
+
+/* #graph_type{
+  width: 100%;
+} */
+
+#graphtype_selector {
+  /* width: 30%; */
+  flex-grow: 2;
+}
+
+#settings_container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2em;
+}
+
+#filters {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  align-items: left;
+  align-content: center;
+  width: 80%;
+}
+
+#choose_data {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  align-items: left;
+  align-content: left;
+  margin-top: 1vw;
+}
+
+.tabs {
+  display: none;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+  background-color: #fff;
+}
+
+/* label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  background-color: #EDE9EB;
+  border: 1px solid transparent;
+} */
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before {
+  content: '\f201';
+}
+
+label[for*='2']:before {
+  content: '\f0c0';
+}
+
+label[for*='3']:before {
+  content: '\f1ea';
+}
+
+label[for*='4']:before {
+  content: '\f059';
+}
+
+label:hover {
+  color: #ff8f00;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  background-color: #fff;
+  /* border: 1px solid #ff8f00;
+  border-top: 2px solid #ff8f00;
+  border-bottom: 1px solid #fff; */
+  /* border-radius: 1em 1em 0px 0px; */
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1260px) {
+  .center_affiliate {
+    width: 35%;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+  .center_affiliate {
+    width: 90%;
+    height: 40em;
+  }
+
+}
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+.dropdown-menu li {
+  position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+  }
+
+/* .dropdown ul {
+  background: #ff8f00;
+
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+  list-style: inside;
+} */
+
+/* .dropdown li {
+  color: #ffffff;
+  background: #ff8f00;
+  
+  display: inline-block; */
+  /* float: center; */
+  /* padding: 1.5rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+
+}
+  
+.dropdown li a {
+  color: #000000;
+  text-decoration: none
+}
+
+.dropdown li:hover,
+.dropdown li:focus-within {
+  background: rgb(255, 179, 128);
+  cursor: pointer;
+} */
+/* .dropdown li:focus-within a{
+  color:#fff
+} */
+/* .dropdown li:focus-within a {
+  outline: none;
+}
+
+.dropdown ul li ul {
+  background: orange;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 3rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+
+} */
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+.dropdown ul li ul:focus {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+}
+
+.dropdown ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+

@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The China Project </title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel= "stylesheet" href="homeStyle.css">
+    <link rel= "stylesheet" href="style.css">
+   <link rel= "stylesheet" href="home.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="accordianScript.js" defer></script>
+    <!-- <script type="text/javascript" src="data_config.js" defer></script> -->
+    <script type="text/javascript" src="configs/data_config.js" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
+    <script type="text/javascript" src="drawGraphs.js" defer></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  </head>
+
+  <body onload="generateGraph('stockExchangeCompositeIndex')">
+
+<div id="header">
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
+       <div class="container-fluid">
+           <a class="navbar-brand" href="#"></a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav">
+                   <li class="nav-item">
+                       <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="about.html">About</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" href="data.html">Data</a>
+                   </li>
+                   <nav class="navbar navbar-inverse navbar-light">
+                       <!-- <div class="container-fluid" id="div1">
+       
+                       </div> -->
+                   </nav>
+                   
+                  </ul>
+           </div>
+       </div>
+       <div class="topnav-right"></div>
+                   <img class="logo" float: right
+                   src="assets/PU-standard.svg" alt="Loading image">
+                   <img class="logo"
+                   src="assets/ccc_logo.png" alt="Loading image">
+               
+   </nav></div>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light rounded py-0" >
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown10">
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('educationLevel');resetDataGroups();">Education Level</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('papers');resetDataGroups();">Papers</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('citations');resetDataGroups();">Citations</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('degree');resetDataGroups();">Degrees</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('schools');resetDataGroups();">Schools</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('students');resetDataGroups();">Graduates</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('numberOfTeachers');resetDataGroups();">Number of Teachers</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('studentsAbroad');resetDataGroups();">Students Abroad</a>
+            </div>
+          </li>
+        </ul>
+        
+        <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economy</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('gdp');resetDataGroups();">GDP</a>
+             <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();"('gdpNowcast')">GDP Nowcast</a> -->
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('employment');resetDataGroups();">Employment</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('investments');resetDataGroups();">Investments</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('importExport');resetDataGroups();">Trade</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('tradeVolume');resetDataGroups();">Trade Volume</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('balanceOfPayments');resetDataGroups();">Balance of Payments</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('revDebt');resetDataGroups();">Revenue and Debt</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('totalWage');resetDataGroups();">Total Wage</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('nationalBalanceSheet');resetDataGroups();">National Balance Sheet Assets</a>
+           </div>
+         </li>
+       </ul>
+       <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Finance</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown10">
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeDeals');resetDataGroups();">Stock Exchange Deals</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeCompositeIndex');resetDataGroups();">Stock Exchange Composite Index</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shanghaiStockExchange');resetDataGroups();">Shanghai Stock Exchange Turnover Value</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privateEquity');resetDataGroups();">Private Equity Investment Cases</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privEquityValue');resetDataGroups();">Private Equity Value</a>
+          </div>
+        </li>
+      </ul>
+       <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Socio-Demographic</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+            <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();"('population')">Population</a> -->
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();">Population</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('inequality');resetDataGroups();">Inequality</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('marriage');resetDataGroups();">Marriage</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('birthDeathRate');resetDataGroups();">Birth and Death Rates</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('engelsCoefficient');resetDataGroups();">Engel's Coefficient</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('dependencyRatio');resetDataGroups();">Dependency Ratios</a>
+           </div>
+         </li>
+       </ul>
+       <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown10">
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthPersonnel');resetDataGroups();">Healthcare Personnel</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthExpenditure');resetDataGroups();">Healthcare Expenditure</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('lifeExpectancy');resetDataGroups();">Life Expectancy</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('hospitals');resetDataGroups();">Hospitals and Beds</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidCases');resetDataGroups();">COVID-19 Cases</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidAsymptomaticCases');resetDataGroups();">COVID-19 Asymptomatic Cases</a>
+            <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();"('covidDeaths')">COVID-19 Deaths (2023)</a> -->
+          </div>
+        </li>
+      </ul>
+       <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transportation</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('roads');resetDataGroups();">Public Roads</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobile');resetDataGroups();">Automobiles</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('railway');resetDataGroups();">Highspeed Railways</a>
+           </div>
+         </li>
+       </ul>
+       <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Innovation & Technology</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('patent');resetDataGroups();">Patents</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('softwareIndustry');resetDataGroups();">Software Industry</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('internet');resetDataGroups();">Internet Use</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('ecommerceTurnover');resetDataGroups();">E-commerce Turnover</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('techR&D');resetDataGroups();">Research and Development</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('computerIndustry');resetDataGroups();">Computer Industry</a>
+           </div>
+         </li>
+       </ul>
+       <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Governance</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('govDebt');resetDataGroups();">Government Debt</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('govExpense');resetDataGroups();">Government Expenses</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('socialSecurityFund');resetDataGroups();">Social Security Fund</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('electricityAccess');resetDataGroups();">Access to Electricity</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('militaryExpenditure');resetDataGroups();">Military Expenditure</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('insuredPeople');resetDataGroups();">Insured People</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('crime');resetDataGroups();">Crimes</a>
+           </div>
+         </li>
+       </ul>
+       <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+           <div class="dropdown-menu" aria-labelledby="dropdown10">
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('waterResource');resetDataGroups();">Water Resources</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('fossilFuelSupply');resetDataGroups();">Fossil Fuel Supply</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialProduction');resetDataGroups();">Industrial Production</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialInventory');resetDataGroups();">Industrial Inventory</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialSalesValue');resetDataGroups();">Industrial Sales Value</a>
+           </div>
+         </li>
+       </ul>
+       
+      </div>
+    </nav>
+
+
+
+      <!-- <div id="header">
+         <img style = "height: 50px; width: 200px" src="assets/ccc_logo.png">
+         <img style = "height: 50px; width: 200px;" src="assets/PU-standard.svg">
+      </div> -->
+      <!-- <p id="title">China Impact Project</p> -->
+      <br>
+      <div id="main-container">
+          <div id="source-container">
+             <!-- Title -->
+             <!-- <div id="title-container"> -->
+                <!-- <h1 style="margin: 0;">Understanding</h1>
+                <h3>China with numbers </h3> -->
+                <!-- <div id="title-row"> -->
+                    <!-- <h4>with</h4>
+                    <h3>numbers</h3> -->
+                <!-- </div> -->
+                <!-- <p>Understanding China with Numbers</p> -->
+                <!-- <span>Understanding</span>
+                <span>China with Numbers</span> -->
+             <!-- </div> -->
+             <!-- Search Bar -->
+             <!-- <img style = "height: 5em; width: 23em" src="assets/ccc_logo.png">  -->
+             
+             
+             <!-- Filters -->
+             <div id="filters">
+                
+                  <form id="filters_form">
+                    <!-- <div id="graphtype_selector">
+                        <label for="graph_type" style="background-color: white;">Graphic:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        </label>
+                        <select name="graph_type" class="filter_select" id="graph_type" onchange="updateGraphType()">
+                        <option value="line">Line Chart</option>
+                        <option value="stack">Stack Chart</option> -->
+                        <!-- <option value="histogram">Histogram Chart</option> -->
+                        <!-- </select>
+                    </div> -->
+
+                    
+                    <!-- <div id="Group_selector">
+                        <label for="Group" style="background-color: white;">Group:&nbsp&nbsp&nbsp
+                        </label>
+                          <select name="Group" class="filter_select" id="Group" onchange="updateDataFromGroup()">
+                             <option value="">All Data</option>
+                          </select>
+                    </div> -->
+                    <br>
+                    <div id="year_range_selector">
+                        <label for="start_year" style="background-color: white;" >Year:</label>
+                        <select name="start_year" id="start_year" onchange="updateYearRange()">
+                            <!-- <option value="">1890</option>
+                            <option value="">1850</option> -->
+                        </select>
+                        <span>to</span>
+                        <select name="end_year" id="end_year" onchange="updateYearRange()">
+                            <!-- <option value="">1990</option> -->
+                            <!-- <option value="">2010</option> -->
+                         </select>
+                    </div>
+                    <!-- <div class="wrapper">
+                        <input type="range" min="0" max="200">
+                    </div> -->
+                    <br>
+                    <label for="Group" style="background-color: white;">Data Groups:&nbsp&nbsp&nbsp
+                    </label>
+                    <div class="form-check" >
+                      
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="setColumnOptions()">
+                      <label class="form-check-label" for="flexCheckDefault">All data</label>
+                    </div>
+
+
+                  </form>
+
+                  <br>
+                   
+                  <button type="button" class="btn btn-outline-dark" onclick="updateDataGroups()">Update data groups</button>
+
+
+                  <br>
+
+                  
+
+                  <br>
+                  
+                  <!-- <div id="search-container">
+                    <form action=""></form>
+                        <input class="input-field" type="text" placeholder="search statistics...">
+                        <i class="fa-solid fa-magnifying-glass icon"></i>
+                    </form>
+                 </div> -->
+
+                 <div id="choose_data">
+                  <div id="buttons">
+                    <a id="source_downloader" class="downloader">
+                        <i onclick="downloadDataSource()" class="fa-solid fa-file-arrow-down fa-lg"></i>
+                        <span>Download Data</span>
+                    </a>
+                    <a class="downloader">
+                        <i onclick="downloadSvg()" id="graph_downloader" class="fa-solid fa-chart-line fa-lg"></i>
+                        <span>Download Figure</span>
+                    </a>
+                 </div>
+
+                 
+                
+                      <!-- <form id="graphtype_selector" onsubmit="false" target="_top">
+                         <label for="graph_type" style="background-color: white;">Graphic:</label>
+                         <select name="graph_type" id="graph_type" onchange="updateGraphType()">
+                            <option value="line">Line Chart</option>
+                            <option value="stack">Stack Chart</option>
+                            <option value="histogram">Histogram Chart</option> -->
+                            <!-- </select> -->
+                            <!-- <a>
+                               <i onclick="toggleAnimation()" id="animation_bt" class="downloader fa-solid fa-video-slash fa-xl"></i>
+                            </a> -->
+                      <!-- </form>
+                   <form id="Group_selector" onsubmit="false" target="_top">
+                      <label for="Group" style="background-color: white;">Group:</label>
+                      <select name="Group" id="Group" onchange="updateDataFromGroup()">
+                         <option value="">All Data</option>
+                         </select>
+                         <a>
+                            <i class="fa-solid fa-chart-line fa-xl"></i>
+                         </a> -->
+                   <!-- </form>
+
+                   <form id="year_range_selector" onsubmit="false" target="_top">
+                    <label for="start_year" style="background-color: white;">Year:</label>
+                    <select name="start_year" id="start_year" onchange="setYearRange()()">
+                        <option value="">1890</option>
+                        <option value="">1850</option>
+                    </select>
+                    <span>to</span>
+                    <select name="end_year" id="end_year" onchange="setYearRange()()">
+                        <option value="">1990</option>
+                        <option value="">2010</option>
+                     </select>
+                        <a>
+                          <i class="fa-solid fa-chart-line fa-xl"></i>
+                       </a> -->
+                 </form>
+                </div>
+             </div>
+            
+             
+            </div>
+          <!-- </div> -->
+          <div id="data-container">
+             <!-- Animation Toggle/Help Modal -->
+<!--             <div id="floating_buttons">-->
+<!--                &lt;!&ndash; Filter Accordian &ndash;&gt;-->
+<!--                <div class="filter-accordion-container">-->
+<!--                    &lt;!&ndash; <h2>Research Categories</h2> &ndash;&gt;-->
+<!--                    <button class="accordion">SELECT SUB-GROUP</button>-->
+<!--                    <div class="filter-accordion-content">-->
+<!--                    <div class="sized-box"></div>-->
+<!--                        <div class="dropdown-content">-->
+<!--                            <div class="dropdown-content-line">-->
+<!--                                <a href="javascript:papersGraph()">Academic Papers</a>-->
+<!--                                <span id="avg-papers">/yr</span>-->
+<!--                            </div>-->
+<!--                            <div class="dropdown-content-line">-->
+<!--                                <a href="javascript:citationsGraph();">Aggregate Citations</a>-->
+<!--                                <span id="avg-income">/yr</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <span>from</span>-->
+<!--                    <button class="accordion">START YEAR </button>-->
+<!--                    <div class="accordion-content">-->
+<!--                    <div class="sized-box"></div>-->
+<!--                    <div class="dropdown-content">-->
+<!--                        <div class="dropdown-content-line">-->
+<!--                            <a href="javascript:hi();">Income</a>-->
+<!--                            <span id="avg-income">USD</span>-->
+<!--                        </div>-->
+<!--                        <div class="dropdown-content-line">-->
+<!--                            <a href="">Consumption</a>-->
+<!--                            <span id="avg-income">USD</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+
+<!--                    <button class="accordion">END YEAR</button>-->
+<!--                    <div class="accordion-content">-->
+<!--                    <div class="sized-box"></div>-->
+<!--                    <div class="dropdown-content">-->
+<!--                        <div class="dropdown-content-line">-->
+<!--                            <a href="javascript:roadGraph();">Public Roads</a>-->
+<!--                            <span id="avg-papers">/yr</span>-->
+<!--                        </div>-->
+<!--                        <div class="dropdown-content-line">-->
+<!--                            <a href="javascript:roadGraph();">Highways/Expressways</a>-->
+<!--                            <span id="avg-income">/yr</span>-->
+<!--                        </div>-->
+<!--        -->
+<!--                    </div>-->
+<!--                    </div>-->
+
+<!--                    <span>with type</span>-->
+
+<!--                    <button class="accordion">GRAPH TYPE</button>-->
+<!--                    <div class="accordion-content">-->
+<!--                    <div class="sized-box"></div>-->
+<!--                    <div class="dropdown-content">-->
+<!--                            <div class="dropdown-content-line">-->
+<!--                                &lt;!&ndash; reformat updateGraphType function &ndash;&gt;-->
+<!--                                <a id = "line-chart" class="filter-hover" onclick="stackChart()">Line Chart</a>-->
+<!--                            </div>-->
+<!--                            <div class="dropdown-content-line">-->
+<!--                                <a id="stack-chart" class="filter-hover" onclick="lineChart()">Stack Chart</a>-->
+<!--                            </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id ="help_buttons">-->
+<!--                    &lt;!&ndash; Animation Button &ndash;&gt;-->
+<!--                    <a class="downloader">-->
+<!--                    <i onclick="toggleAnimation();" id="animation_btn" class="fa-solid fa-video-slash fa-2x"></i>-->
+<!--                    &lt;!&ndash; <span id="animate_text">No Animation</span> &ndash;&gt;-->
+<!--                    </a>-->
+<!--                    &lt;!&ndash; The Modal &ndash;&gt;-->
+<!--                    <div id="info">-->
+<!--                        <i onclick="infoModal()" class="fa-solid fa-circle-question fa-2x"></i>-->
+<!--                        <div id="myModal" class="modal">-->
+<!--                            &lt;!&ndash; Modal content &ndash;&gt;-->
+<!--                            <div class="modal-content">-->
+<!--                                <span class="close">&times;</span>-->
+<!--                                <h2>Data Visualizer User Guide</h2>-->
+<!--                                <i><h4>Choosing Data</h4></i>-->
+<!--                                <p>Use the first selector labeled <i>"Data Source"</i> to choose from our available data. Currently we have data on science, internet use, road construction and patents.-->
+<!--                                </p>-->
+<!--                                <i><h4>Isolating Groups</h4></i>-->
+<!--                                <p>For data sources with many lines, you can select a subcategory using the second selector labeled <i>"Subcategory"</i> to view line groups with fewer lines. This extends into domestic and cross-country analysis.</p>-->
+<!--                               <i><h4>Buttons</h4></i>-->
+<!--                                <p>-->
+<!--                                    <i class="fa-solid fa-video fa-xl"></i>-->
+<!--                                    Click the video button to disable the graphs animation.-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    <i class="fa-solid fa-video-slash fa-xl"></i>-->
+<!--                                    Click the slashed video button to animate the graph and watch the lines grow! Keep in mind that some graphs such as stack charts are not built for traditional line animation and may appear skewed.-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    <i class="fa-solid fa-file-arrow-down fa-xl"></i>-->
+<!--                                    This button allows you to download the data source files in CSV format.-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    <i class="downloader fa-solid fa-chart-line fa-xl"></i>-->
+<!--                                    This button allows you to download the generated graphs in SVG format.-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--             </div>-->
+            <!-- SVG Graphic -->
+            <div id ="svg-container"></div>
+          </div>
+
+      <!-- <main>
+      </main> -->
+   <!-- <footer>
+      <p>
+         ©Copyright
+         <script>document.write(new Date().getFullYear());</script>
+         | All rights reserved
+      </p>
+   </footer> -->
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

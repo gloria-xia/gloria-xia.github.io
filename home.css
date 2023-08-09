@@ -1,0 +1,156 @@
+
+.homeMain {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(assets/homeBG.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#header {
+    width: 100%;
+}
+
+
+#title{
+    font-size: 90px;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.container {
+    padding-top: 10%;
+    font-size: 20px;
+    text-decoration-color: white;
+}
+
+.nav {
+    display: flex;
+    padding-right: 10%;
+}
+
+.nav-item {
+    font-size: 20px;
+    padding: 20px;
+    fill: rgb(0, 0, 0);
+}
+
+nav img {
+    width: 16%;
+    float: left;
+    padding-right: 4%;
+}
+
+#button {
+    padding-top: 6%;
+}
+
+
+#name {
+    color: white
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+.outer{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+.content{
+  display: flex;
+  width: 75%;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.image-box {
+  height: 90%;
+  width: 250px;
+  border-radius: 12px;
+  padding: 3px;
+  background: #000000;
+  
+}
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 12px;
+}
+
+
+.content .details{
+  width: 58%;
+  margin: 10px 0 20px 20px;
+  color: #000000;
+}
+.content .details .name{
+  font-size: 23px;
+  font-weight: 600;
+}
+.content .details .job{
+  font-size: 18px;
+  font-weight: 500;
+  color: #f58025;
+}
+.content .details p{
+ font-size: 15px;
+ margin-top: 6px;
+}
+.content button{
+    text-decoration: none;
+    display: block;
+  margin-top: 16px;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #000000;
+  cursor: pointer;
+  background: #f58025;
+  transition: all 0.3s ease;
+
+}
+.content button:hover{
+  transform: scale(0.97);
+}
+
+.media-icons{
+  position: absolute;
+  bottom: 16px;
+  right: 15px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+.media-icons i{
+  display: inline-flex;
+  margin: 0 4px;
+  font-size: 16px;
+  color: #f58025;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.media-icons i:hover{
+  opacity: 1;
+}
