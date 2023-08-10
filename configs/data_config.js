@@ -6,6 +6,25 @@ animateGraph = false; // determines whether lines will animate
 
 ccc_dataSources = [
     {
+        "name": "interestRate",
+        "title": "Interest Rate",
+        "y-axis": "Annual Interest Rate (%)",
+        "generative_func": "generateGraph('interestRate')",
+        "selected": true,
+        "filepath":"data/finance/CEIC-finance-rate-金融-CN实际利率.csv",
+        "min_year": 1980,
+        "max_year": 2021,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN：实际利率": true
+        },
+        "line_names": [
+            "Annual interest rate"
+        ]
+    },
+    {
         "name": "incomePerCapita",
         "title": "Income and Expenditure Per Capita: YTD",
         "y-axis": "RMB",
