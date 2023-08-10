@@ -1590,7 +1590,7 @@ ccc_dataSources = [
         "y-axis": "RMB (billions)",
         "generative_func": "generateGraph('investments')",
         "selected": true,
-        "filepath":"data/economy/investments.csv",
+        "filepath":"data/economy/Investments.csv",
         "min_year": 1992,
         "max_year": 2021,
         "groups": {
