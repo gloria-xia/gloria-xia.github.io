@@ -83,20 +83,36 @@
            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economy</a>
            <ul class="dropdown-menu" aria-labelledby="dropdown10">
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('gdp');resetDataGroups();">GDP</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('grossNationalIncome');resetDataGroups();">Gross National Income</a>
              <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();"('gdpNowcast')">GDP Nowcast</a> -->
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('employment');resetDataGroups();">Employment</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('employment');resetDataGroups();">Urban and Rural Employment</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('unemployment');resetDataGroups();">Unemployment</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('investments');resetDataGroups();">Investments</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('taxRevenue');resetDataGroups();">Tax Revenue</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('importExport');resetDataGroups();">Trade</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('tradeVolume');resetDataGroups();">Trade Volume</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('balanceOfPayments');resetDataGroups();">Balance of Payments</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('revDebt');resetDataGroups();">Revenue and Debt</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('totalWage');resetDataGroups();">Total Wage</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('nationalBalanceSheet');resetDataGroups();">National Balance Sheet Assets</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('pmi');resetDataGroups();">Purchasing Managers' Index</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobileOutput');resetDataGroups();">Automobile Output</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('communicationManufacturing');resetDataGroups();">Communication Manufacturing</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('householdFlowOfFunds');resetDataGroups();">Household Flow of Funds</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('steelProduction');resetDataGroups();">Steel Production</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('electricityProduction');resetDataGroups();">Electricity Production</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('realEstateArea');resetDataGroups();">Real Estate Area</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('propertyPrices');resetDataGroups();">Property Prices</a>
              <li>
-              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Agriculture &raquo;</a>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Agriculture & Land &raquo;</a>
               <ul class="dropdown-menu dropdown-submenu">
-                <a class="dropdown-item" href="#">Submenu item 1</a>
-                <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('agricultureLand');resetDataGroups();">Sown Area</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('arableLand');resetDataGroups();">Arable Land Area</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('agricultureOutput');resetDataGroups();">Agriculture Gross Output Value</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('developedLandArea');resetDataGroups();">Developed Land Area</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('purchasedLandArea');resetDataGroups();">Purchased Land Area</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('riceProduction');resetDataGroups();">Rice Production</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('wheatProduction');resetDataGroups();">Wheat Production</a>
               </ul>
             </li>
             </ul>
@@ -110,9 +126,12 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeDeals');resetDataGroups();">Stock Exchange Deals</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeCompositeIndex');resetDataGroups();">Stock Exchange Composite Index</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shanghaiStockExchange');resetDataGroups();">Shanghai Stock Exchange Turnover Value</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shenzhenStockExchange');resetDataGroups();">Shenzhen Stock Exchange Turnover Value</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privateEquity');resetDataGroups();">Private Equity Investment Cases</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privEquityValue');resetDataGroups();">Private Equity Value</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('financeValue');resetDataGroups();">Finance Value</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('foreignDirectInvestment');resetDataGroups();">Foreign Direct Investment</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('fixedAssetsInvestment');resetDataGroups();">Fixed Assets Investment</a>
           </div>
         </li>
       </ul>
@@ -127,6 +146,7 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('birthDeathRate');resetDataGroups();">Birth and Death Rates</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('engelsCoefficient');resetDataGroups();">Engel's Coefficient</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('dependencyRatio');resetDataGroups();">Dependency Ratios</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('incomePerCapita');resetDataGroups();">Income and Expenditure Per Capita</a>
            </div>
          </li>
        </ul>
@@ -151,6 +171,7 @@
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('roads');resetDataGroups();">Public Roads</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobile');resetDataGroups();">Automobiles</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('railway');resetDataGroups();">Highspeed Railways</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('portsTraffic');resetDataGroups();">Ports Traffic</a>
            </div>
          </li>
        </ul>
@@ -186,11 +207,15 @@
            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
            <div class="dropdown-menu" aria-labelledby="dropdown10">
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('humanDevelopmentIndex');resetDataGroups();">Human Development Index</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('carbonEmissions');resetDataGroups();">Carbon Emissions</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('airQuality');resetDataGroups();">Air Quality</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('tourism');resetDataGroups();">Tourism</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('waterResource');resetDataGroups();">Water Resources</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('fossilFuelSupply');resetDataGroups();">Fossil Fuel Supply</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialProduction');resetDataGroups();">Industrial Production</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialInventory');resetDataGroups();">Industrial Inventory</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialSalesValue');resetDataGroups();">Industrial Sales Value</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('energyConsumption');resetDataGroups();">Energy Consumption</a>
            </div>
          </li>
        </ul>

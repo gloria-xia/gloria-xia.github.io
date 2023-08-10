@@ -6,6 +6,84 @@ animateGraph = false; // determines whether lines will animate
 
 ccc_dataSources = [
     {
+        "name": "incomePerCapita",
+        "title": "Income and Expenditure Per Capita: YTD",
+        "y-axis": "RMB",
+        "dates": "month",
+        "generative_func": "generateGraph('incomePerCapita')",
+        "selected": true,
+        "filepath":"data/social/CEIC-population-income-人口-城市农村人均收支.csv",
+        "min_year": 1995,
+        "max_year": 2014,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "人均收入：年初至今：城镇居民：36座城市平均": true,
+            "人均可支配收入：年初至今：城镇居民：36座城市平均": true,
+            "人均支出：年初至今：城镇居民：36座城市平均": true,
+            "人均生活开支：年初至今：城镇居民：36座城市平均": true,
+            "人均现金收入：年初至今：农村居民家庭（RH）": true,
+            "人均现金支出：年初至今：农村居民家庭（RH）": true
+        },
+        "line_names": [
+            "Income per capita: urban resident: 36 cities average",
+            "Disposable income per capita: urban, 36 cities average",
+            "Expenditure per capita: urban: 36 cities average",
+            "Living expenditure per capita: Urban: 36 cities average",
+            "Cash income per capita: rural households",
+            "Cash expenditures per capita: rural households"
+        ]
+    },
+    {
+        "name": "arableLand",
+        "title": "Arable Land",
+        "y-axis": "Hectares",
+        "generative_func": "generateGraph('arableLand')",
+        "selected": true,
+        "filepath":"data/economy/CEIC-econ-land-经济-CN耕地面积.csv",
+        "min_year": 1961,
+        "max_year": 2020,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN：耕地面积": true
+        },
+        "line_names": [
+            "Arable land area"
+        ]
+    },
+    {
+        "name": "energyConsumption",
+        "title": "Energy Consumption",
+        "y-axis": "",
+        "generative_func": "generateGraph('energyConsumption')",
+        "selected": true,
+        "filepath":"data/CEIC-envorinment-consumption-环境-能源消费.csv",
+        "min_year": 1990,
+        "max_year": 2019,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN：Total Primary Energy Supply": true,
+            "CN：能源消耗：占能源总消费百分比：农业": true,
+            "CN：能源消耗：占能源总消费百分比：工业": true,
+            "CN：能源消耗：占能源总消费百分比：服务业": true,
+            "CN：能源消耗：占能源总消费百分比：交通运输": true,
+            "CN：能源消耗：占能源总消费百分比：其他行业": true
+        },
+        "line_names": [
+            "Total primary energy supply (millions of tons)",
+            "% of total energy consumption: agriculture (%)",
+            "% of total energy consumption: industry (%)",
+            "% of total energy consumption: services (%)",
+            "% of total energy consumption: transportation (%)",
+            "% of total energy consumption: other (%)"
+        ]
+    },
+    {
         "name": "shenzhenStockExchange",
         "title": "Shenzhen Stock Exchange Turnover Value",
         "y-axis": "RMB (millions)",
@@ -502,7 +580,7 @@ ccc_dataSources = [
     },
     {
         "name": "agricultureLand",
-        "title": "农作物播种面积",
+        "title": "Sown Area of Crops",
         "y-axis": "Hectares (thousands)",
         "generative_func": "generateGraph('agricultureLand')",
         "selected": true,
