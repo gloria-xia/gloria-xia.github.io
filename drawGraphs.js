@@ -6,6 +6,7 @@ var PRC_secondary = "#B0000D";
 var PRC_tertiary = "#f09067";
 
 colorOptions = [USA_primary, PRC_primary, USA_secondary, PRC_secondary, USA_tertiary, PRC_tertiary, "#c259c0"];
+colorOptions2 = ["#43cc68", "#c7c11c"]
 
 var strokeWidth = 2;
 var animationDuration = 5;
@@ -16,7 +17,7 @@ var source = getSelectedDataSource();
 // default is citations
 var start_year = 1800
 var end_year = 2023
-let container_width = 800;
+let container_width = 900;
 let container_height = 500;
 var svg = d3.select("div#svg-container")
    .append("svg")
@@ -25,7 +26,7 @@ var svg = d3.select("div#svg-container")
    .classed("svg-content", true);
 
 d3.select("svg"),
-   margin = {top: 15, right: 15, bottom: 25, left: 50},
+   margin = {top: 15, right:45, bottom: 25, left: 40},
    width =  container_width - margin.left - margin.right,
    height = container_height - margin.top - margin.bottom;
    //  width = +svg.attr("width") - margin.left - margin.right,
@@ -34,6 +35,8 @@ d3.select("svg"),
 // set graph scale
 var x = d3.scaleTime().range([margin.left, width - margin.right])
 var y = d3.scaleLinear().rangeRound([height-margin.bottom, margin.top]);
+var y0 = d3.scaleLinear().rangeRound([height-margin.bottom, margin.top]);
+var y1 = d3.scaleLinear().rangeRound([height-margin.bottom, margin.top]);
 
 // animates the drawing of line
 function animateSolidLine(path) {
@@ -94,7 +97,7 @@ function animateSolidLine(path) {
 
 // receives parallel arrays lines and colors to create path on SVG graph
 function drawLines(data, lines, colors, lineNames, animateLines = true, legYPos = 30) {
-    // source = getSelectedDataSource();
+    source = getSelectedDataSource();
    let count = 0;
    // Handmade legend
    let legXPos = 100;
@@ -102,21 +105,13 @@ function drawLines(data, lines, colors, lineNames, animateLines = true, legYPos 
    let textOffsetX = 10;
    var paths = Array(lines.length);
 
-   let newData = [];
-
 //    let allYears = new Set(data.map(d => d.year));
-   
    
 //    console.log(data)
 
    for (let i = 0; i < lines.length; i++) {
       count++;
-    //   column = Object.keys(source.columns[i])
-    // let columnName = Object.keys(data[0]).find(key => key !== "year" && key !== "NA" && lines[i](data[0][key]) !== null);
-    // lineData = data.filter(d => d.year !== null);
 
-    // lineData = data.filter(d => Object.keys(d.columns)[i] !== null)
-    
       // solid line
     //   if (count == 1 || lines.length <= 2)   {
          paths.push(graph.append("path")
@@ -254,31 +249,78 @@ function setTwoCountryLegend() {
 function findMaxColumn(source, data) {
 
     var trueSourceColumns = []
+    var trueColumnsDoubleY = {"left": [], "right": []}
 
-    for (let column in source.columns) {
-        // console.log(source.columns[column])
-        if (source.columns[column]) {
-            trueSourceColumns.push(column)
-        }
-    }
-    // console.log(trueSourceColumns)
-
-    let columnMins = new Object()
-    let columnMaxs = new Object()
-
-    for (let column of trueSourceColumns) {
-        columnMins[column] = d3.min(data, d => d[column])
-        columnMaxs[column] = d3.max(data, d => d[column])
-        // console.log(columnMaxs)
-    }
-
-
-    minMaxColumn = [(Object.keys(columnMins).reduce(function(a, b){ return columnMins[a] < columnMins[b] ? a : b })), 
-                    (Object.keys(columnMaxs).reduce(function(a, b){ return columnMaxs[a] > columnMaxs[b] ? a : b })),
-                    d3.max(Object.values(columnMaxs))]
-    // console.log(minMaxColumn)
+    //array of selected columns
     
-    return minMaxColumn
+
+    if (source.doubleYAxis) {
+        for (let side in source.columns) {
+            for (let column in source.columns[side]) {
+                if (source.columns[side][column]) {
+                    trueColumnsDoubleY[side].push(column)
+                }
+            }
+        }
+        console.log(trueColumnsDoubleY)
+        let columnMinsLeft = new Object()
+        let columnMaxsLeft = new Object()
+        let columnMinsRight = new Object()
+        let columnMaxsRight = new Object()
+
+        //find min and max value of each column for left axis
+        for (let side in trueColumnsDoubleY) {
+            for (let column in source.columns[side]) {
+                if (side === "left") {
+                    columnMinsLeft[column] = d3.min(data, d => d[column])
+                    columnMaxsLeft[column] = d3.max(data, d => d[column])
+                }
+                else {
+                    columnMinsRight[column] = d3.min(data, d => d[column])
+                    columnMaxsRight[column] = d3.max(data, d => d[column])
+                }
+            }
+        }
+        // for (let column of trueSourceColumnsLeft) {
+        //     columnMinsLeft[column] = d3.min(data, d => d[column])
+        //     columnMaxsLeft[column] = d3.max(data, d => d[column])
+        // }
+        // for (let column of trueSourceColumnsRight) {
+        //     columnMinsRight[column] = d3.min(data, d => d[column])
+        //     columnMaxsRight[column] = d3.max(data, d => d[column])
+        // }
+        minMaxColumnLeft = [(Object.keys(columnMinsLeft).reduce(function(a, b){ return columnMinsLeft[a] < columnMinsLeft[b] ? a : b })), 
+                    (Object.keys(columnMaxsLeft).reduce(function(a, b){ return columnMaxsLeft[a] > columnMaxsLeft[b] ? a : b })),
+                    d3.max(Object.values(columnMaxsLeft))]
+        minMaxColumnRight = [(Object.keys(columnMinsRight).reduce(function(a, b){ return columnMinsRight[a] < columnMinsRight[b] ? a : b })), 
+                    (Object.keys(columnMaxsRight).reduce(function(a, b){ return columnMaxsRight[a] > columnMaxsRight[b] ? a : b })),
+                    d3.max(Object.values(columnMaxsRight))]
+        console.log(minMaxColumnRight)
+        return minMaxColumnLeft, minMaxColumnRight
+    }
+    else {
+        for (let column in source.columns) {
+            if (source.columns[column]) {
+                trueSourceColumns.push(column)
+            }
+        }
+        let columnMins = new Object()
+        let columnMaxs = new Object()
+
+        //find min and max value of each column
+        for (let column of trueSourceColumns) {
+            columnMins[column] = d3.min(data, d => d[column])
+            columnMaxs[column] = d3.max(data, d => d[column])
+            // console.log(columnMaxs)
+        }
+
+        //[column with lowest min, column with highest max, highest value of dataset]
+        minMaxColumn = [(Object.keys(columnMins).reduce(function(a, b){ return columnMins[a] < columnMins[b] ? a : b })), 
+                        (Object.keys(columnMaxs).reduce(function(a, b){ return columnMaxs[a] > columnMaxs[b] ? a : b })),
+                        d3.max(Object.values(columnMaxs))]
+        console.log(minMaxColumn)
+        
+        return minMaxColumn}
 }
 
 
@@ -310,7 +352,37 @@ const buildLineGraph = function (data) {
         .attr("y", 7)
         .text(source.title)
 
-    for (let i = 0; i < Object.keys(source.columns).length; i++) {
+    if (source.hasOwnProperty("doubleYAxis")) {
+        for (let side in source.columns){
+            for (let column in source.columns[side]) {
+                if (source.columns[side][column]) {
+                    if (side === "left") {
+                        lines.push(d3.line()
+                            .defined(d => d[column] !== null )
+                            .x(function(d) { return x(d.year); })
+                            .y(function(d) { return y0(d[column]); }))
+                        let index = Object.keys(source.columns[side]).indexOf(column)
+                        lineNames.push(source['line_names']['left'][index])
+                        colors.push(colorOptions[index])
+                    }
+                    else {
+                        lines.push(d3.line()
+                            .defined(d => d[column] !== null )
+                            .x(function(d) { return x(d.year); })
+                            .y(function(d) { return y1(d[column]); }))
+                        let index = Object.keys(source.columns[side]).indexOf(column)
+                        lineNames.push(source['line_names']['right'][index])
+                        colors.push(colorOptions2[index])
+                    }
+                    
+                    // lineNames.push(source.line_names[side][i])
+                }
+            }
+        }
+
+    }
+    else {
+        for (let i = 0; i < Object.keys(source.columns).length; i++) {
         if (Object.values(source.columns)[i]) {
             let column = Object.keys(source.columns)[i];
             lines.push(d3.line()
@@ -318,15 +390,20 @@ const buildLineGraph = function (data) {
                 .defined(d => d[column] !== null )
                 .x(function(d) { return x(d.year); })
                 .y(function(d) { return y(d[Object.keys(source.columns)[i]]); }))
-                // .defined(function(d) {return y(d[Object.keys(source.columns)[i]]);})
         colors.push(colorOptions[i])
         lineNames.push(source.line_names[i])}
-    }
+    }}
+
     minMaxColumn = findMaxColumn(source, data)
-    
     x.domain(d3.extent(data, function(d) { return d.year; }));
-    y.domain([d3.min(data, function(d) { return d[minMaxColumn[0]]; }), d3.max(data, function(d) { return d[minMaxColumn[1]]; })]);
-   
+
+    if (source.hasOwnProperty("doubleYAxis")) {
+        y0.domain([d3.min(data, d => d[minMaxColumnLeft[0]]), d3.max(data, d => d[minMaxColumnLeft[1]])]);
+        y1.domain([d3.min(data, d => d[minMaxColumnRight[0]]), d3.max(data, d => d[minMaxColumnRight[1]])]);
+    }
+    else {
+        y.domain([d3.min(data, d => d[minMaxColumn[0]]), d3.max(data, d => d[minMaxColumn[1]])]);
+   }
     // Axis declaration
     let xAxis = setXAxisToYears();
 
@@ -337,7 +414,32 @@ const buildLineGraph = function (data) {
     else if (minMaxColumn[2] < 100000000) {divisor = 10000}
     else {divisor = 100000}
 
-    let yAxis = graph.append("g")
+    if (source.hasOwnProperty("doubleYAxis")) {
+        let yAxis1 = graph.append("g")
+            .attr("class", "y-axis")
+            .attr("transform", `translate(${margin.left},0)`)
+            .call(d3.axisLeft(y0).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
+            .append("text")
+            .attr("fill", "#000")
+            .attr("transform", "rotate(-90)")
+            .attr("y", "-4em")
+            .attr("x", "-8em")
+            .attr("text-anchor", "center")
+            .text(source["y-axis1"])
+        let yAxis2 = graph.append("g")
+            .attr("class", "y-axis")
+            .attr("transform", `translate(${container_width - margin.left -45 - margin.right},0)`)
+            .call(d3.axisRight(y1).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
+            .append("text")
+            .attr("fill", "#000")
+            .attr("transform", "rotate(-90)")
+            .attr("y", "3.5em")
+            .attr("x", "-15em")
+            .attr("text-anchor", "center")
+            .text(source["y-axis2"])
+    }
+    else {
+        let yAxis = graph.append("g")
         .attr("class", "y-axis")
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
@@ -348,6 +450,7 @@ const buildLineGraph = function (data) {
         .attr("x", "-8em")
         .attr("text-anchor", "center")
         .text(source["y-axis"])
+    }
 
     // Draw graph
     drawLines(data, lines, colors, lineNames, animateGraph);
@@ -359,12 +462,22 @@ const buildLineGraph = function (data) {
         let textClasses = [];
         let trueSourceColumns = []
 
-        for (let column in source.columns) {
+        if (source.doubleYAxis) {
+            for (let side in source.columns) {
+                for (let column in source.columns[side]) {
+                    if (source.columns[side][column]) {
+                        trueSourceColumns.push(column)
+                    }
+                }
+            }
+        }
+        else {
+            for (let column in source.columns) {
             // console.log(source.columns[column])
             if (source.columns[column]) {
                 trueSourceColumns.push(column)
             }
-        }
+        }}
 
         for (let i = 0; i < lines.length; i++) {
             let circle = ("circle" + i);
@@ -450,11 +563,12 @@ const buildLineGraph = function (data) {
                 .attr("transform",
                     "translate(" + x(d.year) + "," + height + ")");
 
+            // if (source.doubleYAxis) {
+
+            // }
+
             for (let i = 0; i < trueSourceColumns.length; i++) {
-                
                 let column = trueSourceColumns[i]
-                // console.log(column)
-                // if (source.columns[column]) {
                     tempStrCircle = "." + circleClasses[i];
                     tempStrText = "." + textClasses[i];
                     if (d[column] === null) {
@@ -473,11 +587,8 @@ const buildLineGraph = function (data) {
                             .attr("transform",
                                 "translate(" + x(d.year) + "," + y(d[column]) + ")");
                         }
-                
-                // }
             }
-
-                
+ 
             focus.selectAll(".year_display")
                 .attr("transform",
                     "translate(" + x(d.year) + "," + (height + 0.5*margin.bottom) + ")")
@@ -534,7 +645,21 @@ var parseTime = d3.timeParse("%Y");
 
     // console.log(d.year)
 
-    for (let column of Object.keys(source.columns)) {
+    if (source.doubleYAxis) {
+        for (let side in source.columns) {
+            for (let column in (source.columns)[side]) {
+                // console.log(d[column]) 
+                if (d[column] !== "" && d.year !== null) {
+                    d[column] = +d[column].replace(/,/g, "");
+                }
+                else {
+                    d[column] = null;
+                }
+            }
+        }
+    }
+    else {
+        for (let column of Object.keys(source.columns)) {
         // console.log(d[column]) 
         if (d[column] !== "" && d.year !== null) {
             d[column] = +d[column].replace(/,/g, "");
@@ -542,7 +667,7 @@ var parseTime = d3.timeParse("%Y");
         else {
             d[column] = null;
         }
-    }
+    }}
     return d;
  };
 
@@ -566,8 +691,6 @@ function generateGraph(type) {
     d3.selectAll("svg>*").remove();
     // console.log("console is broken")
 
-    // start_year = source["min_year"]
-    // end_year = source['max_year']
     setDataSource(type);
     // resetYears()
 

@@ -7,6 +7,7 @@ function getSelectedDataSource() {
             return source;
         }
     }
+    
 }
 
 var source = getSelectedDataSource();
@@ -15,21 +16,22 @@ var source = getSelectedDataSource();
 function setDataSource(filename) {
     output = ""
     current = getSelectedDataSource()
-    ccc_dataSources.forEach(source => {
-        if (source.name == filename) {
-            source.selected = true;
-            // console.log(source)
-            output = source
+    source = getSelectedDataSource()
+    ccc_dataSources.forEach(set => {
+        if (set.name == filename) {
+            set.selected = true;
+            // console.log(set)
+            output = set
         }
         else 
-            source.selected = false
+            set.selected = false
     })
     // setColumnOptions()
     setYearOptions()
 
     footer = document.getElementById("dataSource")
     
-    footer.innerHTML = 'Data is from <a href="'+ Object.values(current.source)+ '">' + Object.keys(current.source)+'</a>.'
+    footer.innerHTML = 'Data is from <a href="'+ Object.values(source['source'])+ '">' + Object.keys(source['source'])+'</a>.'
     
     if (current != output) 
         // setGroupSelectorGroups();
@@ -87,17 +89,29 @@ function setColumnOptions() {
     source = getSelectedDataSource()
     // console.log(source)
     var container  = document.getElementById("filters_form")
-
     let currentOptions = document.getElementsByClassName("form-check")
     
     while (currentOptions[0]) {
         currentOptions[0].parentNode.removeChild(currentOptions[0])
     }
     
-    for (let i = 0; i < Object.keys(source.columns).length; i++) {
-        lineName = source['line_names'][i]
-        tempStr = "flexCheckDefault" + String.fromCharCode(i)
-        container.innerHTML += '<div class="form-check" id="form-check" ><input class="form-check-input" type="checkbox" value="" id=' + tempStr + ' checked><label class="form-check-label" for=' + tempStr + '>' + lineName + '</label></div>'
+    if (source.doubleYAxis){
+        let index = 0
+        for (let side in source.columns) {
+            for (let i = 0; i < Object.keys(source.columns[side]).length; i++) {
+                lineName = source['line_names'][side][i]
+                tempStr = "flexCheckDefault" + String.fromCharCode(index)
+                container.innerHTML += '<div class="form-check" id="form-check" ><input class="form-check-input" type="checkbox" value="" id=' + tempStr + ' checked><label class="form-check-label" for=' + tempStr + '>' + lineName + '</label></div>'
+                index += 1
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < Object.keys(source.columns).length; i++) {
+            lineName = source['line_names'][i]
+            tempStr = "flexCheckDefault" + String.fromCharCode(i)
+            container.innerHTML += '<div class="form-check" id="form-check" ><input class="form-check-input" type="checkbox" value="" id=' + tempStr + ' checked><label class="form-check-label" for=' + tempStr + '>' + lineName + '</label></div>'
+        }
     }
     
 }
@@ -107,18 +121,34 @@ function updateDataGroups() {
 
     let currentOptions = document.getElementsByClassName("form-check")
 
-    for (let i = 0; i < currentOptions.length; i++) {
-       
-        let column = Object.keys(source.columns)[i];
-        let checkbox = currentOptions[i].querySelector('.form-check-input')
-
-        if (checkbox.checked == false) {
-            source.columns[column] = false
+    if (source.doubleYAxis) {
+        let index = 0
+        for (let side in source.columns) {
+            for (let column in source.columns[side]) {
+                // let column = Object.keys(source.columns)[side][i];
+                let checkbox = currentOptions[index].querySelector('.form-check-input')
+                if (checkbox.checked == false) {
+                    source.columns[side][column] = false
+                }
+                else {
+                    source.columns[side][column] = true
+                }
+                index += 1
+            }
         }
-        else {
-            source.columns[column] = true
-        }
+        console.log(source.columns)
     }
+    else {
+        for (let i = 0; i < currentOptions.length; i++) {
+            let column = Object.keys(source.columns)[i];
+            let checkbox = currentOptions[i].querySelector('.form-check-input')
+            if (checkbox.checked == false) {
+                source.columns[column] = false
+            }
+            else {
+                source.columns[column] = true
+            }
+    }}
 
     // console.log(source.columns)
 
@@ -129,12 +159,19 @@ function updateDataGroups() {
 function resetDataGroups() {
     source = getSelectedDataSource()
 
-    for (let column in source.columns) {
-        source.columns[column] = true
+    if (source.doubleYAxis) {
+        for (let side in source.columns) {
+            for (let column in source.columns[side]) {
+                source.columns[column] = true
+            }
+        }
+    }
+    else {
+        for (let column in source.columns) {
+            source.columns[column] = true
+        }
     }
 
-    // min_year = source["min_year"]
-    // max_year = source["max_year"]
     start_year = source["min_year"]
     end_year = source["max_year"]
 

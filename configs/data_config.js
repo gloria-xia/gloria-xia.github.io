@@ -85,7 +85,8 @@ ccc_dataSources = [
     {
         "name": "energyConsumption",
         "title": "Energy Consumption",
-        "y-axis": "",
+        "y-axis1": "Percent",
+        "y-axis2": "Tons (millions)",
         "generative_func": "generateGraph('energyConsumption')",
         "selected": true,
         "doubleYAxis": true,
@@ -95,25 +96,53 @@ ccc_dataSources = [
         "groups": {
             "All Data": true
         },
+        // "leftAxisColumns": {
+        //     "CN：能源消耗：占能源总消费百分比：农业": true,
+        //     "CN：能源消耗：占能源总消费百分比：工业": true,
+        //     "CN：能源消耗：占能源总消费百分比：服务业": true,
+        //     "CN：能源消耗：占能源总消费百分比：交通运输": true,
+        //     "CN：能源消耗：占能源总消费百分比：其他行业": true
+        // },
+        // "rightAxisColumns": {
+        //     "CN：Total Primary Energy Supply": true
+        // },
+        // "leftLineNames": [
+        //     "% of total energy consumption: agriculture",
+        //     "% of total energy consumption: industry",
+        //     "% of total energy consumption: services",
+        //     "% of total energy consumption: transportation",
+        //     "% of total energy consumption: other"
+        // ],
+        // "rightLineNames": [
+        //     "Total primary energy supply"
+        // ],
         "columns": {
-            "CN：Total Primary Energy Supply": true,
-            "CN：能源消耗：占能源总消费百分比：农业": true,
-            "CN：能源消耗：占能源总消费百分比：工业": true,
-            "CN：能源消耗：占能源总消费百分比：服务业": true,
-            "CN：能源消耗：占能源总消费百分比：交通运输": true,
-            "CN：能源消耗：占能源总消费百分比：其他行业": true
+            "right": {
+                "CN：Total Primary Energy Supply": true
+            },
+            "left": {
+                "CN：能源消耗：占能源总消费百分比：农业": true,
+                "CN：能源消耗：占能源总消费百分比：工业": true,
+                "CN：能源消耗：占能源总消费百分比：服务业": true,
+                "CN：能源消耗：占能源总消费百分比：交通运输": true,
+                "CN：能源消耗：占能源总消费百分比：其他行业": true
+            }
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
-        "line_names": [
-            "Total primary energy supply (millions of tons)",
-            "% of total energy consumption: agriculture (%)",
-            "% of total energy consumption: industry (%)",
-            "% of total energy consumption: services (%)",
-            "% of total energy consumption: transportation (%)",
-            "% of total energy consumption: other (%)"
-        ]
+        "line_names": {
+            "right": [
+                "Total primary energy supply"
+            ],
+            "left": [
+                "% of total energy consumption: agriculture",
+                "% of total energy consumption: industry",
+                "% of total energy consumption: services",
+                "% of total energy consumption: transportation",
+                "% of total energy consumption: other"
+            ]
+        }
     },
     {
         "name": "shenzhenStockExchange",
@@ -1141,7 +1170,9 @@ ccc_dataSources = [
     {
         "name": "fossilFuelSupply",
         "title": "Ensured Reserves of Minerals: Petroleum, Natural Cas, and Coal",
-        "y-axis": "um",
+        "y-axis1": "Tons (millions)",
+        "y-axis2": "Cubic meters (billions)",
+        "doubleYAxis": true,
         "generative_func": "generateGraph('fossilFuelSupply')",
         "selected": true,
         "filepath":"data/fossilFuelSupply.csv",
@@ -1150,19 +1181,41 @@ ccc_dataSources = [
         "groups": {
             "All Data": true
         },
-        "columns": {
+        "leftAxisColumns": {
             "CN: Ensured Reserves of Mineral: Petroleum": true,
-            "CN: Ensured Reserves of Mineral: Natural Gas": true,
             "CN: Ensured Reserves of Mineral: Coal": true
+        },
+        "rightAxisColumns": {
+            "CN: Ensured Reserves of Mineral: Natural Gas": true
+        },
+        "leftLineNames": [
+            "Petroleum",
+            "Coal"
+        ],
+        "rightLineNames": [
+            "Natural gas"
+        ],
+        "columns": {
+            "right": {
+                "CN: Ensured Reserves of Mineral: Petroleum": true,
+                "CN: Ensured Reserves of Mineral: Coal": true},
+            "left": {
+                "CN: Ensured Reserves of Mineral: Natural Gas": true
+            }
+
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
-        "line_names": [
-            "Petroleum",
-            "Natural gas",
-            "Coal"
-        ]
+        "line_names": {
+            "right": [
+                "Petroleum",
+                "Coal"
+            ],
+            "left": [
+                "Natural gas"
+            ]
+        }
     },
     {
         "name": "privEquityValue",
@@ -2328,6 +2381,9 @@ ccc_dataSources = [
            "China: Length of Expressways (by 10,000 kilometers)": true,
            "US: Length of Interstate and Other Freeways and Expressways (by 10,000 kilometers)": true
        },
+       "source": {
+        "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+    },
        "line_names": [
            "US road length",
            "China highway length",
