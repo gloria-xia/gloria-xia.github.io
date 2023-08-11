@@ -1,9 +1,9 @@
-var USA_primary = "#0099C5";
-var USA_secondary = "#CCEAF3";
-var USA_tertiary = "#88D5F3";
+var USA_primary = "#0282a6";
+var USA_secondary = "#02b6ed";
+var USA_tertiary = "#94aceb";
 var PRC_primary = "#ff0000";
 var PRC_secondary = "#B0000D";
-var PRC_tertiary = "#CF666D";
+var PRC_tertiary = "#f09067";
 
 colorOptions = [USA_primary, PRC_primary, USA_secondary, PRC_secondary, USA_tertiary, PRC_tertiary, "#c259c0"];
 
@@ -272,11 +272,6 @@ function findMaxColumn(source, data) {
         // console.log(columnMaxs)
     }
 
-    // for (i = 0; i < Object.keys(source.columns).length; i++) {
-    //     columnMins[Object.keys(source.columns)[i]] = d3.min(data, function(d) { return d[Object.keys(source.columns)[i]]; })
-    //     console.log(columnMaxs)
-    //     columnMaxs[Object.keys(source.columns)[i]] = d3.max(data, function(d) { return d[Object.keys(source.columns)[i]]; })
-    // }
 
     minMaxColumn = [(Object.keys(columnMins).reduce(function(a, b){ return columnMins[a] < columnMins[b] ? a : b })), 
                     (Object.keys(columnMaxs).reduce(function(a, b){ return columnMaxs[a] > columnMaxs[b] ? a : b })),
@@ -286,240 +281,6 @@ function findMaxColumn(source, data) {
     return minMaxColumn
 }
 
-
-// const buildLineGraph = function (data) {
-//     // console.log(data)
-//     // sourceGroups = getSelectedDataSource().groups;
-//     // setDataSource(source.name)
-    
-//     graph = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    
-//     data = data.filter(d => d.year !== null);
-
-//     let lines = [];
-//     let colors = [];
-//     let lineNames = [];
-
-//     let title = graph.append("g")
-//         .attr("class", "title")
-//         .append("text")
-//         .attr("transform", `translate(${margin.top},0)`)
-//         .attr("fill", "#000")
-//         .attr("text-anchor", "middle")
-//         .style("font-size", "20px")
-//         .attr("x", 350)
-//         .attr("y", 7)
-//         .text(source.title)
-
-//     for (let i = 0; i < Object.keys(source.columns).length; i++) {
-//         if (Object.values(source.columns)[i]) {
-//             let column = Object.keys(source.columns)[i];
-//             lines.push(d3.line()
-//                 // .defined(function(d) {return d.close !== 0;})
-//                 .defined(d => d[column] !== null )
-//                 .x(function(d) { return x(d.year); })
-//                 .y(function(d) { return y(d[Object.keys(source.columns)[i]]); }))
-//                 // .defined(function(d) {return y(d[Object.keys(source.columns)[i]]);})
-//             colors.push(colorOptions[i])
-//             lineNames.push(source.line_names[i])}
-//     }
-//     minMaxColumn = findMaxColumn(source, data)
-    
-//     x.domain(d3.extent(data, function(d) { return d.year; }));
-//     y.domain([d3.min(data, function(d) { return d[minMaxColumn[0]]; }), d3.max(data, function(d) { return d[minMaxColumn[1]]; })]);
-   
-//     // Axis declaration
-//     let xAxis = setXAxisToYears();
-
-//     let divisor = 0
-//     if (minMaxColumn[2] <= 100) {divisor = 1}
-//     else if (minMaxColumn[2] < 1000) {divisor = 100}
-//     else if (minMaxColumn[2] < 100000) {divisor = 1000}
-//     else if (minMaxColumn[2] < 100000000) {divisor = 10000}
-//     else {divisor = 100000}
-
-//     let yAxis = graph.append("g")
-//         .attr("class", "y-axis")
-//         .attr("transform", `translate(${margin.left},0)`)
-//         .call(d3.axisLeft(y).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
-//         .append("text")
-//         .attr("fill", "#000")
-//         .attr("transform", "rotate(-90)")
-//         .attr("y", "-4em")
-//         .attr("x", "-8em")
-//         .attr("text-anchor", "center")
-//         .text(source["y-axis"])
-
-//     // Draw graph
-//     drawLines(data, lines, colors, lineNames, animateGraph);
-//     svg.call(hover)
-
-//     function hover() {
-
-//         var circleClasses = [];
-//         var textClasses = [];
-
-//         for (let i = 0; i < Object.keys(source.columns).length; i++) {
-//             let circle = ("circle" + i);
-//             let line = ("line" + i)
-//             circleClasses.push(circle)
-//             textClasses.push(line)
-//         }
-
-//         // for (let column in source.columns) {
-//         //     if (source.columns[column] === true) {
-//         //         let circle = ("circle" + Object.keys(source.columns).indexOf(column))
-//         //         let line = ("line" + Object.keys(source.columns).indexOf(column))
-//         //         circleClasses.push(circle)
-//         //         textClasses.push(line)
-//         //     }
-            
-//         // }
-
-//         console.log(circleClasses)
-
-//         if (source.dates === "month") {
-//             var bisect = d3.bisector(d => d.year).left,
-//                 format = d3.format("+.0%"),
-//                 dateFormat = d3.timeFormat("%b" + " " + "%Y")
-//         }
-//         else if (source.dates === "day") {
-//             var bisect = d3.bisector(d => d.year).left,
-//                 format = d3.format("+.0%"),
-//                 dateFormat = d3.timeFormat("%b" + " " + "%e" + " " + "%Y")
-//         }
-//         else {
-//             var bisect = d3.bisector(d => d.year).left,
-//             format = d3.format("+.0%"),
-//             dateFormat = d3.timeFormat("%Y")
-//         }
-
-//         var focus = svg.append("g")
-//             .attr("class", "focus")
-//             .style("display", "none")
-//             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-//         focus.append("line")
-//             .attr("stroke", "#666")
-//             .attr("stroke-width", 1)
-//             .attr("y1", -height + margin.top)
-//             .attr("y2", -margin.bottom);
-
-//         console.log(Object.keys(source.columns).length)
-//         for (let i = 0; i < lines.length; i++) {
-//             // console.log(lines.length)
-//             focus.append("circle")
-//                 .attr("class", circleClasses[i])
-//                 .attr("r", 4)
-//                 .attr("dy", 5)
-//                 .attr("stroke", "steelblue")
-//                 .attr("fill", "#fff");
-//             focus.append("text")
-//                 .attr("class", textClasses[i])
-//                 // .attr("x", 260)
-//                 .attr("x", lineNames[i].length*3.5+210)
-//                 .attr("y", 45 + i*30)
-//         }
-
-//         focus.append("text")
-//             .attr("class", "year_display")
-//             .attr("text-anchor", "middle")
-//             .attr("dy", ".35em");
-
-//         var overlay = svg.append("rect")
-//             .attr("fill", "none")
-//             .attr("class", "overlay")
-//             .attr("x", margin.left)
-//             .attr("y", margin.top)
-//             .attr("width", width - margin.right )
-//             .attr("height", height - margin.bottom )
-//             .on("mouseover", () => focus.style("display", null))
-//             .on("mouseout", () => focus.style("display", "none"))
-//             .on("mousemove", mousemove);
-
-//         function mousemove() {
-
-//             var x0 = x.invert(d3.mouse(this)[0]-50);
-
-//             var i = bisect(data, x0, 1),
-//                 d0 = data[i - 1],
-//                 d1 = data[i],
-//                 d = x0 - d0.year > d1.year - x0 ? d1 : d0;
-
-//             focus.select("line")
-//                 .attr("transform",
-//                     "translate(" + x(d.year) + "," + height + ")");
-
-//             // for (let column in source.columns) {
-//             //     if (source.columns[column]) {   
-//             //         tempStrCircle = "." + circleClasses[Object.keys(source.columns).indexOf(column)];
-//             //         tempStrText = "." + textClasses[Object.keys(source.columns).indexOf(column)];
-
-//             //         console.log(tempStrCircle)
-
-//             //         if (d[column] === null) {
-//             //             focus.selectAll(tempStrText)
-//             //                 .text("No data")
-//             //             focus.selectAll(tempStrCircle)
-//             //                 .style("opacity", 0)
-//             //         }
-//             //         else {
-//             //             focus.selectAll(tempStrText)
-//             //                 .text(d[column].toLocaleString());
-//             //             focus.selectAll(tempStrCircle)
-//             //                 .attr("r", "4")
-//             //                 .attr("stroke", "black")
-//             //                 .style('opacity', 100)
-//             //                 .attr("transform",
-//             //                     "translate(" + x(d.year) + "," + y(d[column]) + ")");
-//             //         }
-//             //     }
-//             // }
-
-//             for (let i = 0; i < circleClasses.length; i++) {
-//                 let column = Object.keys(source.columns)[i]
-//                 // tempStrCircle = "." + circleClasses[i];
-//                 // tempStrText = "." + textClasses[i];
-                
-//                 if (source.columns[column]) {
-//                     tempStrCircle = "." + circleClasses[Object.keys(source.columns).indexOf(column)];
-//                     tempStrText = "." + textClasses[Object.keys(source.columns).indexOf(column)];
-//                     // console.log(d[column])
-//                     if (d[Object.keys(source.columns)[i]] === null) {
-//                         focus.selectAll(tempStrText)
-//                             .text("No data")
-//                         focus.selectAll(tempStrCircle)
-//                             .style("opacity", 0)
-//                     }
-//                     else {
-//                         console.log(tempStrText)
-//                         focus.selectAll(tempStrText)
-//                             .text(d[column].toLocaleString());
-//                         focus.selectAll(tempStrCircle)
-//                             .attr("r", "4")
-//                             .attr("stroke", "black")
-//                             .style('opacity', 100)
-//                             .attr("transform",
-//                                 "translate(" + x(d.year) + "," + y(d[column]) + ")");
-//                     } 
-//                 }
-//                 else {
-//                     tempStrCircle = "." + circleClasses[Object.keys(source.columns).indexOf(column)];
-//                     tempStrText = "." + textClasses[Object.keys(source.columns).indexOf(column)];
-//                     focus.selectAll(tempStrText).text("")
-//                     focus.selectAll(tempStrCircle).style("opacity", 0)
-//                 }
-            
-//             };
-
-//             focus.selectAll(".year_display")
-//                 .attr("transform",
-//                     "translate(" + x(d.year) + "," + (height + 0.5*margin.bottom) + ")")
-//                 .text(dateFormat(d.year));
-//         }
-//     }
-
-// };
 
 
 const buildLineGraph = function (data) {
@@ -651,7 +412,8 @@ const buildLineGraph = function (data) {
                 .attr("r", 4)
                 .attr("dy", 5)
                 .attr("stroke", "steelblue")
-                .attr("fill", "#fff");
+                .attr("fill", "#fff")
+                .style("opacity", 0);
             focus.append("text")
                 .attr("class", textClasses[i])
                 // .attr("x", 260)
@@ -802,6 +564,7 @@ var parseTime = d3.timeParse("%Y");
 function generateGraph(type) {
     // clear graph
     d3.selectAll("svg>*").remove();
+    // console.log("console is broken")
 
     // start_year = source["min_year"]
     // end_year = source['max_year']
@@ -814,18 +577,18 @@ function generateGraph(type) {
 
 }
 
-function regenerateGraph(type) {
+// function regenerateGraph(type) {
 
-    d3.selectAll("svg>*").remove();
-    newSetDataSource(type)
-    // start_year = source["min_year"]
-    // end_year = source['max_year']
-    // setYearOptions()
+//     d3.selectAll("svg>*").remove();
+//     newSetDataSource(type)
+//     // start_year = source["min_year"]
+//     // end_year = source['max_year']
+//     // setYearOptions()
 
-    gatherData(source.filepath, fileConversion).then((result) => {
-        buildLineGraph(result)
-    });
-}
+//     gatherData(source.filepath, fileConversion).then((result) => {
+//         buildLineGraph(result)
+//     });
+// }
 
 
 function setYearRange() {

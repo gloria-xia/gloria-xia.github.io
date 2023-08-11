@@ -113,7 +113,7 @@ footer {
   color: #f58025;
   padding: 20px;
   /* position: absolute; */
-  font-size: xx-large;
+  font-size: small;
   height: 70px;
   width: 100%;
   flex-shrink: 0;
@@ -330,6 +330,11 @@ form label, select {
   margin-top: 1vw;
 }
 
+.downloader:hover {
+  color: #ff8f00;
+  cursor: pointer;
+}
+
 .tabs {
   display: none;
 }
@@ -375,10 +380,10 @@ label[for*='4']:before {
   content: '\f059';
 }
 
-label:hover {
+/* label:hover {
   color: #ff8f00;
   cursor: pointer;
-}
+} */
 
 input:checked + label {
   color: #555;

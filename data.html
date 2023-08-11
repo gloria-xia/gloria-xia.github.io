@@ -20,7 +20,7 @@
 
   </head>
 
-  <body onload="generateGraph('stockExchangeCompositeIndex')">
+  <body onload="generateGraph('energyConsumption')">
 
 <div id="header">
    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -297,6 +297,7 @@
                     <br>
                     <label for="Group" style="background-color: white;">Data Groups:&nbsp&nbsp&nbsp
                     </label>
+                    <!-- :&nbsp&nbsp&nbsp -->
                     <div class="form-check" >
                       
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="setColumnOptions()">
@@ -314,8 +315,6 @@
                   <br>
 
                   
-
-                  <br>
                   
                   <!-- <div id="search-container">
                     <form action=""></form>
@@ -335,119 +334,33 @@
                         <span>Download Figure</span>
                     </a>
                  </div>
-
-                 
-                
-                      <!-- <form id="graphtype_selector" onsubmit="false" target="_top">
-                         <label for="graph_type" style="background-color: white;">Graphic:</label>
-                         <select name="graph_type" id="graph_type" onchange="updateGraphType()">
-                            <option value="line">Line Chart</option>
-                            <option value="stack">Stack Chart</option>
-                            <option value="histogram">Histogram Chart</option> -->
-                            <!-- </select> -->
-                            <!-- <a>
-                               <i onclick="toggleAnimation()" id="animation_bt" class="downloader fa-solid fa-video-slash fa-xl"></i>
-                            </a> -->
-                      <!-- </form>
-                   <form id="Group_selector" onsubmit="false" target="_top">
-                      <label for="Group" style="background-color: white;">Group:</label>
-                      <select name="Group" id="Group" onchange="updateDataFromGroup()">
-                         <option value="">All Data</option>
-                         </select>
-                         <a>
-                            <i class="fa-solid fa-chart-line fa-xl"></i>
-                         </a> -->
-                   <!-- </form>
-
-                   <form id="year_range_selector" onsubmit="false" target="_top">
-                    <label for="start_year" style="background-color: white;">Year:</label>
-                    <select name="start_year" id="start_year" onchange="setYearRange()()">
-                        <option value="">1890</option>
-                        <option value="">1850</option>
-                    </select>
-                    <span>to</span>
-                    <select name="end_year" id="end_year" onchange="setYearRange()()">
-                        <option value="">1990</option>
-                        <option value="">2010</option>
-                     </select>
-                        <a>
-                          <i class="fa-solid fa-chart-line fa-xl"></i>
-                       </a> -->
-                 </form>
                 </div>
+
+                 </form>
+
+                
+
+                <br>
+
+                <div id="footer">
+<!--                 
+                <p>Data is from <a href="https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/views">CEIC Data</a>.</p> -->
+                  <p id="dataSource"></p>
+                  <br> 
+
+                  <p>
+                    ©Copyright 2023
+                    <!-- <script>document.write(new Date().getFullYear());</script> -->
+                    | All rights reserved
+                </p>
+                </div>
+
              </div>
-            
              
             </div>
           <!-- </div> -->
           <div id="data-container">
-             <!-- Animation Toggle/Help Modal -->
-<!--             <div id="floating_buttons">-->
-<!--                &lt;!&ndash; Filter Accordian &ndash;&gt;-->
-<!--                <div class="filter-accordion-container">-->
-<!--                    &lt;!&ndash; <h2>Research Categories</h2> &ndash;&gt;-->
-<!--                    <button class="accordion">SELECT SUB-GROUP</button>-->
-<!--                    <div class="filter-accordion-content">-->
-<!--                    <div class="sized-box"></div>-->
-<!--                        <div class="dropdown-content">-->
-<!--                            <div class="dropdown-content-line">-->
-<!--                                <a href="javascript:papersGraph()">Academic Papers</a>-->
-<!--                                <span id="avg-papers">/yr</span>-->
-<!--                            </div>-->
-<!--                            <div class="dropdown-content-line">-->
-<!--                                <a href="javascript:citationsGraph();">Aggregate Citations</a>-->
-<!--                                <span id="avg-income">/yr</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <span>from</span>-->
-<!--                    <button class="accordion">START YEAR </button>-->
-<!--                    <div class="accordion-content">-->
-<!--                    <div class="sized-box"></div>-->
-<!--                    <div class="dropdown-content">-->
-<!--                        <div class="dropdown-content-line">-->
-<!--                            <a href="javascript:hi();">Income</a>-->
-<!--                            <span id="avg-income">USD</span>-->
-<!--                        </div>-->
-<!--                        <div class="dropdown-content-line">-->
-<!--                            <a href="">Consumption</a>-->
-<!--                            <span id="avg-income">USD</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    </div>-->
-
-<!--                    <button class="accordion">END YEAR</button>-->
-<!--                    <div class="accordion-content">-->
-<!--                    <div class="sized-box"></div>-->
-<!--                    <div class="dropdown-content">-->
-<!--                        <div class="dropdown-content-line">-->
-<!--                            <a href="javascript:roadGraph();">Public Roads</a>-->
-<!--                            <span id="avg-papers">/yr</span>-->
-<!--                        </div>-->
-<!--                        <div class="dropdown-content-line">-->
-<!--                            <a href="javascript:roadGraph();">Highways/Expressways</a>-->
-<!--                            <span id="avg-income">/yr</span>-->
-<!--                        </div>-->
-<!--        -->
-<!--                    </div>-->
-<!--                    </div>-->
-
-<!--                    <span>with type</span>-->
-
-<!--                    <button class="accordion">GRAPH TYPE</button>-->
-<!--                    <div class="accordion-content">-->
-<!--                    <div class="sized-box"></div>-->
-<!--                    <div class="dropdown-content">-->
-<!--                            <div class="dropdown-content-line">-->
-<!--                                &lt;!&ndash; reformat updateGraphType function &ndash;&gt;-->
-<!--                                <a id = "line-chart" class="filter-hover" onclick="stackChart()">Line Chart</a>-->
-<!--                            </div>-->
-<!--                            <div class="dropdown-content-line">-->
-<!--                                <a id="stack-chart" class="filter-hover" onclick="lineChart()">Stack Chart</a>-->
-<!--                            </div>-->
-<!--                    </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+           
 <!--                <div id ="help_buttons">-->
 <!--                    &lt;!&ndash; Animation Button &ndash;&gt;-->
 <!--                    <a class="downloader">-->

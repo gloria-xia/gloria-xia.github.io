@@ -19,7 +19,10 @@ ccc_dataSources = [
         },
         "columns": {
             "CN：实际利率": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Annual interest rate"
         ]
@@ -38,18 +41,21 @@ ccc_dataSources = [
             "All Data": true
         },
         "columns": {
-            "人均收入：年初至今：城镇居民：36座城市平均": true,
-            "人均可支配收入：年初至今：城镇居民：36座城市平均": true,
-            "人均支出：年初至今：城镇居民：36座城市平均": true,
-            "人均生活开支：年初至今：城镇居民：36座城市平均": true,
+            // "人均收入：年初至今：城镇居民：36座城市平均": true,
+            // "人均可支配收入：年初至今：城镇居民：36座城市平均": true,
+            // "人均支出：年初至今：城镇居民：36座城市平均": true,
+            // "人均生活开支：年初至今：城镇居民：36座城市平均": true,
             "人均现金收入：年初至今：农村居民家庭（RH）": true,
             "人均现金支出：年初至今：农村居民家庭（RH）": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
-            "Income per capita: urban resident: 36 cities average",
-            "Disposable income per capita: urban, 36 cities average",
-            "Expenditure per capita: urban: 36 cities average",
-            "Living expenditure per capita: Urban: 36 cities average",
+            // "Income per capita: urban resident: 36 cities average",
+            // "Disposable income per capita: urban, 36 cities average",
+            // "Expenditure per capita: urban: 36 cities average",
+            // "Living expenditure per capita: Urban: 36 cities average",
             "Cash income per capita: rural households",
             "Cash expenditures per capita: rural households"
         ]
@@ -68,7 +74,10 @@ ccc_dataSources = [
         },
         "columns": {
             "CN：耕地面积": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Arable land area"
         ]
@@ -79,6 +88,7 @@ ccc_dataSources = [
         "y-axis": "",
         "generative_func": "generateGraph('energyConsumption')",
         "selected": true,
+        "doubleYAxis": true,
         "filepath":"data/CEIC-envorinment-consumption-环境-能源消费.csv",
         "min_year": 1990,
         "max_year": 2019,
@@ -92,7 +102,10 @@ ccc_dataSources = [
             "CN：能源消耗：占能源总消费百分比：服务业": true,
             "CN：能源消耗：占能源总消费百分比：交通运输": true,
             "CN：能源消耗：占能源总消费百分比：其他行业": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total primary energy supply (millions of tons)",
             "% of total energy consumption: agriculture (%)",
@@ -117,7 +130,10 @@ ccc_dataSources = [
         },
         "columns": {
             "成交量：值：深圳证券交易所": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Turnover value"
         ]
@@ -137,7 +153,10 @@ ccc_dataSources = [
         "columns": {
             "CN：CO2 Productivity：Production Based CO2 Emissions": true,
             "CN：CO2 Productivity：Demand Based CO2 Emissions": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Production-based emissions",
             "Demand-based emissions"
@@ -158,7 +177,10 @@ ccc_dataSources = [
         "columns": {
             "CN：国际旅游：入境人数": true,
             "CN：国际旅游：出境人数": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Number of Arrivals",
             "Number of Departures"
@@ -182,7 +204,10 @@ ccc_dataSources = [
             "CN：Mortality from Exposure to Ambient PM2.5：per 1 000 000 Inhabitants": true,
             "CN：Mortality from Exposure to Lead：per 1 000 000 Inhabitants": true,
             "CN：Mortality from Exposure to Residential Radon：per 1 000 000 Inhabitants": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Mean population exposure to PM2.5",
             "Mortality from exposure to ambient ozone",
@@ -206,7 +231,10 @@ ccc_dataSources = [
         },
         "columns": {
             "货运吞吐量：主要海港和河港": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Cargo throughput"
         ]
@@ -228,7 +256,10 @@ ccc_dataSources = [
             "就业": true,
             "已登记失业率：城镇: annual": true,
             "已登记失业率：城镇": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Employed (number of people, millions)",
             "Annual registered unemployment rate: urban (%)",
@@ -249,7 +280,10 @@ ccc_dataSources = [
         },
         "columns": {
             "工业生产：电力": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Electricity production"
         ]
@@ -269,7 +303,10 @@ ccc_dataSources = [
         },
         "columns": {
             "政府收入：税收": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Government tax revenue"
         ]
@@ -294,7 +331,10 @@ ccc_dataSources = [
             "物业价格：经济适用房": true,
             "物业价格：住宅": true,
             "物业价格：住宅：别墅及公寓": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Average",
             "Other building prices",
@@ -320,7 +360,10 @@ ccc_dataSources = [
         },
         "columns": {
             "固定资产投资：年初至今": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Fixed assets investment: ytd"
         ]
@@ -341,7 +384,10 @@ ccc_dataSources = [
         "columns": {
             "外商直接投资：合同总价：年初至今：共计": true,
             "外商直接投资：已动用：年初至今：共计": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "FDI: total contract price: ytd",
             "FDI: total utilized: ytd"
@@ -362,7 +408,10 @@ ccc_dataSources = [
         },
         "columns": {
             "采购经理指数：复合输出": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "PMI: composite output"
         ]
@@ -384,7 +433,10 @@ ccc_dataSources = [
             "已出售商品建筑：年初至今：共计": true,
             "在建建筑面积：年初至今：商品建筑（CB）": true,
             "已出售建筑面积：商品建筑：年初至今": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total sold: ytd (RMB, millions)",
             "Area under construction: ytd (square meters, thousands)",
@@ -405,7 +457,10 @@ ccc_dataSources = [
         },
         "columns": {
             "工业生产：钢": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Steel production"
         ]
@@ -424,7 +479,10 @@ ccc_dataSources = [
         },
         "columns": {
             "农业产量：小麦": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Wheat production"
         ]
@@ -443,7 +501,10 @@ ccc_dataSources = [
         },
         "columns": {
             "农业产量：米": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Rice production"
         ]
@@ -463,7 +524,10 @@ ccc_dataSources = [
         },
         "columns": {
             "土地购买面积：年初至今": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Land purchased area"
         ]
@@ -483,7 +547,10 @@ ccc_dataSources = [
         },
         "columns": {
             "已开发土地面积：年初至今": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Developed land area: ytd"
         ]
@@ -502,7 +569,10 @@ ccc_dataSources = [
         },
         "columns": {
             "CN：国民总收入：美元": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Gross national income"
         ]
@@ -521,7 +591,10 @@ ccc_dataSources = [
         },
         "columns": {
             "资金流：家庭：来源": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Flow of funds: household"
         ]
@@ -547,7 +620,10 @@ ccc_dataSources = [
             "通信设备制造：销售收入：年初至今": true,
             "通信设备制造：总利润：年初至今": true,
             "通信设备制造：企业数量": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Number of employees",
             "Total assets",
@@ -573,7 +649,10 @@ ccc_dataSources = [
         },
         "columns": {
             "工业生产：汽车": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Automobiles"
         ]
@@ -592,7 +671,10 @@ ccc_dataSources = [
         },
         "columns": {
             "总产值：农业": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Gross output value"
         ]
@@ -611,7 +693,10 @@ ccc_dataSources = [
         },
         "columns": {
             "农作物播种面积": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Sown area of crops"
         ]
@@ -631,7 +716,10 @@ ccc_dataSources = [
         "columns": {
             "CN：市值：国内上市公司": true,
             "CN：股票交易：总价值": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Market Capitalization: Domestic Listed Companies",
             "Shares Traded: Total Value"
@@ -651,7 +739,10 @@ ccc_dataSources = [
         },
         "columns": {
             "Human Development Index: China": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Human Development Index: China"
         ]
@@ -676,7 +767,10 @@ ccc_dataSources = [
             "CN: Industrial Inventory: Ferrous Metal": true,
             "CN: Industrial Inventory: Non Ferrous Metal": true,
             "CN: Industrial Inventory: Non Metal Mineral": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "All",
             "Coal",
@@ -703,7 +797,10 @@ ccc_dataSources = [
             "CN: Industrial Sales Value": true,
             "CN: Industrial Sales Value: Light Industry": true,
             "CN: Industrial Sales Value: Heavy Industry": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Industiral sales value",
             "Industiral sales value: light industry",
@@ -727,7 +824,10 @@ ccc_dataSources = [
             "CN: Industrial Production: Crude Coal": true,
             "CN: Industrial Production: Crude Oil": true,
             "CN: Industrial Production: Iron Ore": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Crude coal",
             "Crude oil",
@@ -751,7 +851,10 @@ ccc_dataSources = [
             "(DC)CN: COVID-19: Asymptomatic Infection: Confirmed": true,
             "(DC)CN: COVID-19: Asymptomatic Infection: under Medical Observation": true,
             "(DC)CN: COVID-19: Asymptomatic Infection: Release Medical Observation": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Confirmed cases",
             "Under medical observation",
@@ -775,7 +878,10 @@ ccc_dataSources = [
             "CN: COVID-19: No of Death(From 12/8/2022): COVID-19 Related: To-Date": true,
             "CN: COVID-19: No of Death(From 12/8/2022): Respiratory Failure Caused by COVID-19: To-Date": true,
             "CN: COVID-19: No of Death(From 12/8/2022): Preexisting Illnesses Combined with COVID-19: To-Date": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "New increase",
             "Confirmed case",
@@ -800,7 +906,10 @@ ccc_dataSources = [
             "(DC)CN: COVID-19: Confirmed Case: New Increase": true,
             "(DC)CN: COVID-19: Confirmed Case": true,
             "(DC)CN: COVID-19: Confirmed Case: Severe Case": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             // "yes",
             "New increase",
@@ -823,7 +932,10 @@ ccc_dataSources = [
         "columns": {
             "CN: Licensed Physicians and Physicians Assistants": true,
             "CN: Licensed Physicians": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Licensed physicians and physician's assistants",
             "Lisensed physicians"
@@ -847,7 +959,10 @@ ccc_dataSources = [
             "CN: No of Full-time Teacher: Secondary Education: Junior": true,
             "CN: No of Full-time Teacher: Regular Primary School": true,
             "CN: No of Full-time Teacher: Pre-school Education": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Higher education: undergraduate and specialized",
             "Secondary education: regular secondary school",
@@ -872,7 +987,10 @@ ccc_dataSources = [
             "CN: National Balance Sheet: Asset: Total": true,
             "CN: National Balance Sheet: Asset: Financial Asset": true,
             "CN: National Balance Sheet: Asset: Non-financial Asset": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total assets",
             "Financial assets",
@@ -899,7 +1017,10 @@ ccc_dataSources = [
             "计算机行业：销售收入：年初至今": true,
             // "计算机行业：雇员人数": true,
             "计算机行业：总利润：年初至今": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total assets",
             "Manufactured goods: ytd",
@@ -925,7 +1046,10 @@ ccc_dataSources = [
         "columns": {
             "Shanghai Stock Exchange: Index: Composite": true,
             "Shenzhen Stock Exchange: Index: Composite": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Shanghai Stock Exchange",
             "Shenzhen Stock Exchange"
@@ -949,7 +1073,10 @@ ccc_dataSources = [
             "CN: E-commerce: Business Turnover: ytd: Business to Business": true,
             "CN: E-commerce: Business Turnover: ytd: Retail Sales": true,
             "CN: E-commerce: Business Turnover: ytd: Group Sales": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "All",
             "Business to business",
@@ -973,7 +1100,10 @@ ccc_dataSources = [
         "columns": {
             "CN: Software: Sales Revenue: ytd": true,
             "CN: Software: Total Profit: ytd": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Sales revenue: ytd",
             "Total profit: ytd"
@@ -997,7 +1127,10 @@ ccc_dataSources = [
             "CN: Oil Price Adjustment: NDRC: Supply Price: Diesel, Standard": true,
             "CN: Oil Price after Adjustment: NDRC: Supply Price: Gasoline, Standard": true,
             "CN: Oil Price after Adjustment: NDRC: Supply Price: Diesel, Standard": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Oil price adjustment: gasoline",
             "Oil price adjustment: diesel",
@@ -1021,7 +1154,10 @@ ccc_dataSources = [
             "CN: Ensured Reserves of Mineral: Petroleum": true,
             "CN: Ensured Reserves of Mineral: Natural Gas": true,
             "CN: Ensured Reserves of Mineral: Coal": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Petroleum",
             "Natural gas",
@@ -1044,7 +1180,10 @@ ccc_dataSources = [
         "columns": {
             "CN: PE: Value of Investment": true,
             "CN: VC: Value of Investment": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Private equity: value of investment",
             "Venture capital: value of investment"
@@ -1066,7 +1205,10 @@ ccc_dataSources = [
         "columns": {
             "CN: Private Equity: No of Inv Case": true,
             "CN: Venture Capital: No of Inv Case": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Private equity",
             "Venture capital"
@@ -1088,7 +1230,10 @@ ccc_dataSources = [
             "CN: Water Resource": true,
             "CN: Water Supply": true,
             "CN: Water Consumption": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Water resource",
             "Water supply",
@@ -1134,7 +1279,10 @@ ccc_dataSources = [
             "CN: Social Security Fund: Pension: Insured Person": true,
             "CN: Social Security Fund: Medical: Insured Person": true,
             "CN: Social Security Fund: Unemployment: Insured Person": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Pension",
             "Medical",
@@ -1157,7 +1305,10 @@ ccc_dataSources = [
             "CN: No of Student Studying Abroad": true,
             "CN: No of Returned Student from Abroad": true,
             "CN: Number of Foreign Student": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Students studying abroad",
             "Returned students from abroad",
@@ -1180,7 +1331,10 @@ ccc_dataSources = [
             "CN: Gross Dependency Ratio": true,
             "CN: Elderly Dependency Ratio": true,
             "CN: Children Dependency Ratio": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Gross dependency ratio",
             "Elderly dependency ratio",
@@ -1204,7 +1358,10 @@ ccc_dataSources = [
             "CN: Consumer Price Index": true,
             "CN: (DC)Retail Price Index": true,
             "CN: Producer Price Index(PPI)": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Consumer Price Index",
             "Retail Price Index",
@@ -1229,7 +1386,10 @@ ccc_dataSources = [
             "政府支出：国防": true,
             "政府支出：行政管理": true,
             "政府支出：其他支出": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Economy",
             "Social, cultural, educational development",
@@ -1253,7 +1413,10 @@ ccc_dataSources = [
         "columns": {
             "政府财政：债务发行": true,
             "政府财政：债务支付及利息": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Debt issues",
             "Debt payments and interest"
@@ -1279,7 +1442,10 @@ ccc_dataSources = [
             "成交量：值：上海证券交易所：财产，房地产": true,
             "成交量：值：上海证券交易所：公用事业": true,
             "成交量：值：上海证券交易所：杂项": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Turnover value",
             "Turnover value: industrials",
@@ -1307,7 +1473,10 @@ ccc_dataSources = [
             "CN: Population: Education  Level: Junior Middle": true,
             "CN: Population: Education  Level: Senior Middle": true,
             "CN: Population: Education  Level: College and Higher": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "No schooling",
             "Primary",
@@ -1332,7 +1501,10 @@ ccc_dataSources = [
             "人口数:结婚": true,
             "人口数:离婚": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Married",
             "Divorced"
@@ -1355,7 +1527,10 @@ ccc_dataSources = [
             "CN: Population: Death Rate": true,
             "CN: Population: Natural Growth Rate": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Birth rate",
             "Death rate",
@@ -1380,7 +1555,10 @@ ccc_dataSources = [
             "CN: Engel's Coefficient: ytd: Urban": true,
             "CN: Engel's Coefficient: ytd: Rural": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Engel's coefficient",
             "Engel's coefficient: urban",
@@ -1405,7 +1583,10 @@ ccc_dataSources = [
             "Total Wage: Urban Collective Owned": true,
             "Total Wage: Other Ownership": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total wage: all",
             "Total wage: state owned",
@@ -1430,7 +1611,10 @@ ccc_dataSources = [
             "Turnover: No of Deals: Shanghai Stock Exchange": true,
             "Turnover: No of Deals: Shenzhen Stock Exchange": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Shanghai Stock Exchange",
             "Shenzhen Stock Exchange"
@@ -1453,7 +1637,10 @@ ccc_dataSources = [
             "CN: Export": true,
             "CN: Import": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Export",
             "Import"
@@ -1478,7 +1665,10 @@ ccc_dataSources = [
             "(DC)Health Expenditure: % of GDP: Private": true,
             "(DC)Health Expenditure: % of GDP: Public": true
 
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Public: % of total health expenditure",
             "Public: % of government expenditure",
@@ -1503,7 +1693,10 @@ ccc_dataSources = [
             "Access to Electricity: % of Population": true,
             "Access to Electricity: Urban: % of Urban Population": true,
             "Access to Electricity: Rural: % of Rural Population": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total population",
             "Urban population",
@@ -1526,7 +1719,10 @@ ccc_dataSources = [
             "Life Expectancy at Birth: Total": true,
             "Life Expectancy at Birth: Male": true,
             "Life Expectancy at Birth: Female": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total",
             "Male",
@@ -1550,7 +1746,10 @@ ccc_dataSources = [
             "CN: R & D: Expenditure: High Technology Industry": true,
             "CN: R & D: Expenditure: HT: Electronic & Telecommunication Equip": true,
             "CN: R & D: Expenditure: HT: Medical & Pharmaceutical Product": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "General R & D expenditure",
             "High technology industry",
@@ -1576,7 +1775,10 @@ ccc_dataSources = [
             "CN: BoP: CA: Credit": true,
             "CN: BoP: CA: Debit": true,
             "CN: BoP: CA: Goods": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Current account",
             "Current account: credit",
@@ -1600,7 +1802,10 @@ ccc_dataSources = [
             "CN: Listed Company: Total Revenue": true,
             "CN: Listed Company: Total Profit": true,
             "CN: Listed Company: Shareholder Equity": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total revenue",
             "Total profit",
@@ -1623,7 +1828,10 @@ ccc_dataSources = [
             "CN: Population": true,
             "CN: Population: Urban": true,
             "CN: Population: Rural": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Population",
             "Population: urban",
@@ -1645,7 +1853,10 @@ ccc_dataSources = [
         "columns": {
             "CN: No of Bed: Hospital": true,
             "CN: No of Hospital": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Number of hospital beds",
             "Number of hospitals"
@@ -1668,7 +1879,10 @@ ccc_dataSources = [
             "CN: Consumer Confidence Index": true,
             "CN: Consumer Confidence Index: Satisfactory": true,
             "CN: Consumer Confidence Index: Expectation": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Consumer confidence index",
             "Satisfactory",
@@ -1689,7 +1903,10 @@ ccc_dataSources = [
         },
         "columns": {
             "Military Expenditure": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Military expenditure"
         ]
@@ -1711,7 +1928,10 @@ ccc_dataSources = [
             "Income Share Held by Highest 10%": true,
             "Income Share Held by Highest 20%": true,
             "Income Share Held by Lowest 10%": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Gini Coefficient",
             "Income held by highest 10%",
@@ -1735,7 +1955,10 @@ ccc_dataSources = [
             "CN: Social Security Fund: Expense": true,
             "CN: Social Security Fund: Revenue": true,
             "CN: Social Security Fund: Accumulated Balance": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "SSF: expense",
             "SSF: revenue",
@@ -1758,7 +1981,10 @@ ccc_dataSources = [
             "CN: Gross Domestic Product": true,
             "CN: GDP: Primary Industry": true,
             "CN: GDP: Secondary Industry(SI)": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "GDP",
             "GDP: primary industry",
@@ -1780,7 +2006,10 @@ ccc_dataSources = [
         "columns": {
             "CN: Foreign Debt: Total": true,
             "CN: Govt Revenue: Total": true,
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total foreign debt",
             "Total government revenue",
@@ -1803,7 +2032,10 @@ ccc_dataSources = [
             "CN: Export FOB": true,
             "CN: Import CIF": true,
             "CN: Trade Balance": true,
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Export FOB",
             "Import CIF",
@@ -1825,7 +2057,10 @@ ccc_dataSources = [
         "columns": {
             "CN: Employment: Urban": true,
             "CN: Employment: Rural": true,
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Urban employment",
             "Rural Employment",
@@ -1849,7 +2084,10 @@ ccc_dataSources = [
             "毕业生数量：中学": true,
             "毕业生数量：中等专业学校": true,
             "毕业生数量：小学": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Doctorate",
             "High school",
@@ -1874,10 +2112,13 @@ ccc_dataSources = [
             "学校数量：高等学校": true,
             "学校数量：中学": true,
             "学校数量：小学": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
-            "High schools",
-            "Middle schools",
+            "Colleges and Universities",
+            "Secondary schools",
             "Elementary schools"
         ]
     },
@@ -1904,7 +2145,10 @@ ccc_dataSources = [
             "已拥有机动车：民用：巴士和汽车": true,
             "已拥有机动车：民用：卡车": true,
             "已拥有机动车：民用：其他专用车辆": true,
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "Total",
             "Buses and cars",
@@ -1915,7 +2159,7 @@ ccc_dataSources = [
     {
         "name": "crime",
         "title": "Crimes",
-        "y-axis": "Number of Crimes (units)",
+        "y-axis": "Number of crimes per 100,000 people",
         "generative_func": "crimeGraph",
         "selected": true,
         "filepath":"data/governance/crime.csv",
@@ -1936,7 +2180,10 @@ ccc_dataSources = [
             "US_violent": true,
             "CN_property": true,
             "US_property": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "China homicides",
             "US homicides",
@@ -1967,7 +2214,10 @@ ccc_dataSources = [
             "CN_Doctor": true,
             "US_Bachelor": true,
             "US_Doctor": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "China Bachelors",
             "China Doctors",
@@ -1992,7 +2242,10 @@ ccc_dataSources = [
         "columns": {
             "US_highspeed_rail": true,
             "CN_highspeed_rail": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "USA railways",
             "China railways"
@@ -2005,7 +2258,7 @@ ccc_dataSources = [
        "generative_func": "citationsGraph",
        "selected": true,
        "filepath":"data/education/science.csv",
-       "min_year": 1800,
+       "min_year": 1949,
        "max_year": 2020,
        "groups": {
             "All Data": true,
@@ -2015,11 +2268,15 @@ ccc_dataSources = [
         "columns": {
             "cn_paper_citation": true,
             "us_paper_citation": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "China citations",
             "USA citations"
-        ]
+        ],
+        "notes": ["Data before 1949 is not shown."]
     },
     {
        "name": "papers",
@@ -2028,7 +2285,7 @@ ccc_dataSources = [
        "generative_func": "generateGraph('papers')",
        "selected":false,
        "filepath":"data/education/science.csv",
-       "min_year": 1800,
+       "min_year": 1949,
        "max_year": 2020,
        "groups": {
             "All Data": true,
@@ -2038,16 +2295,20 @@ ccc_dataSources = [
         "columns": {
             "us_paper_count": true, 
             "cn_paper_count": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "USA papers",
             "China papers"
-        ]
+        ],
+        "notes": ["Data before 1949 is not shown."]
     },
     {
        "name": "roads",
        "title": "Length of Roads and Expressways",
-       "y-axis": "Length (units)",
+       "y-axis": "Kilometers (ten thousands)",
        "generative_func": "roadGraph",
        "category": "transportation",
        "selected":false,
@@ -2077,7 +2338,7 @@ ccc_dataSources = [
     {
         "name": "internet",
         "title": "Internet Usage",
-        "y-axis": "Internet usage (units)",
+        "y-axis": "Units",
         "generative_func": "internetUseGraph",
         "selected":false,
         "filepath":"data/tech/internet.csv",
@@ -2098,7 +2359,10 @@ ccc_dataSources = [
             "cn_internet_access": true,
             "cn_broadband_subscriptions": true,
             "cn_mobile_internet_users": true
-       },
+       }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "US internet access",
             "US broadband",
@@ -2125,7 +2389,10 @@ ccc_dataSources = [
         "columns": {
             "US_patents": true,
             "CN_patents": true
-        },
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
         "line_names": [
             "USA patents",
             "China patents"

@@ -26,8 +26,11 @@ function setDataSource(filename) {
     })
     // setColumnOptions()
     setYearOptions()
-    
 
+    footer = document.getElementById("dataSource")
+    
+    footer.innerHTML = 'Data is from <a href="'+ Object.values(current.source)+ '">' + Object.keys(current.source)+'</a>.'
+    
     if (current != output) 
         // setGroupSelectorGroups();
         setColumnOptions() 
@@ -134,7 +137,7 @@ function resetDataGroups() {
     // max_year = source["max_year"]
     start_year = source["min_year"]
     end_year = source["max_year"]
-    
+
 
     // generateGraph(source.name)
 }
