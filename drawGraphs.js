@@ -281,14 +281,6 @@ function findMaxColumn(source, data) {
                 }
             }
         }
-        // for (let column of trueSourceColumnsLeft) {
-        //     columnMinsLeft[column] = d3.min(data, d => d[column])
-        //     columnMaxsLeft[column] = d3.max(data, d => d[column])
-        // }
-        // for (let column of trueSourceColumnsRight) {
-        //     columnMinsRight[column] = d3.min(data, d => d[column])
-        //     columnMaxsRight[column] = d3.max(data, d => d[column])
-        // }
         minMaxColumnLeft = [(Object.keys(columnMinsLeft).reduce(function(a, b){ return columnMinsLeft[a] < columnMinsLeft[b] ? a : b })), 
                     (Object.keys(columnMaxsLeft).reduce(function(a, b){ return columnMaxsLeft[a] > columnMaxsLeft[b] ? a : b })),
                     d3.max(Object.values(columnMaxsLeft))]
@@ -352,7 +344,7 @@ const buildLineGraph = function (data) {
         .attr("y", 7)
         .text(source.title)
 
-    if (source.hasOwnProperty("doubleYAxis")) {
+    if (source.doubleYAxis) {
         for (let side in source.columns){
             for (let column in source.columns[side]) {
                 if (source.columns[side][column]) {
@@ -397,7 +389,7 @@ const buildLineGraph = function (data) {
     minMaxColumn = findMaxColumn(source, data)
     x.domain(d3.extent(data, function(d) { return d.year; }));
 
-    if (source.hasOwnProperty("doubleYAxis")) {
+    if (source.doubleYAxis) {
         y0.domain([d3.min(data, d => d[minMaxColumnLeft[0]]), d3.max(data, d => d[minMaxColumnLeft[1]])]);
         y1.domain([d3.min(data, d => d[minMaxColumnRight[0]]), d3.max(data, d => d[minMaxColumnRight[1]])]);
     }
@@ -414,7 +406,7 @@ const buildLineGraph = function (data) {
     else if (minMaxColumn[2] < 100000000) {divisor = 10000}
     else {divisor = 100000}
 
-    if (source.hasOwnProperty("doubleYAxis")) {
+    if (source.doubleYAxis) {
         let yAxis1 = graph.append("g")
             .attr("class", "y-axis")
             .attr("transform", `translate(${margin.left},0)`)
