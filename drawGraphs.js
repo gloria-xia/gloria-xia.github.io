@@ -1,12 +1,12 @@
 var USA_primary = "#0282a6";
 var USA_secondary = "#02b6ed";
-var USA_tertiary = "#94aceb";
+var USA_tertiary = "#7994d9";
 var PRC_primary = "#ff0000";
 var PRC_secondary = "#B0000D";
 var PRC_tertiary = "#f09067";
 
 colorOptions = [USA_primary, PRC_primary, USA_secondary, PRC_secondary, USA_tertiary, PRC_tertiary, "#c259c0"];
-colorOptions2 = ["#43cc68", "#c7c11c"]
+colorOptions2 = ["#10bf04", "#3e6e21", "aba115"]
 
 var strokeWidth = 2;
 var animationDuration = 5;
@@ -17,7 +17,7 @@ var source = getSelectedDataSource();
 // default is citations
 var start_year = 1800
 var end_year = 2023
-let container_width = 900;
+let container_width = 800;
 let container_height = 500;
 var svg = d3.select("div#svg-container")
    .append("svg")
@@ -26,7 +26,7 @@ var svg = d3.select("div#svg-container")
    .classed("svg-content", true);
 
 d3.select("svg"),
-   margin = {top: 15, right:45, bottom: 25, left: 40},
+   margin = {top: 15, right:40, bottom: 25, left: 40},
    width =  container_width - margin.left - margin.right,
    height = container_height - margin.top - margin.bottom;
    //  width = +svg.attr("width") - margin.left - margin.right,
@@ -428,7 +428,7 @@ const buildLineGraph = function (data) {
             .text(source["y-axis1"])
         let yAxis2 = graph.append("g")
             .attr("class", "y-axis")
-            .attr("transform", `translate(${container_width - margin.left -45 - margin.right},0)`)
+            .attr("transform", `translate(${container_width - margin.left -40 - margin.right},0)`)
             .call(d3.axisRight(y1).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
             .append("text")
             .attr("fill", "#000")
@@ -552,7 +552,7 @@ const buildLineGraph = function (data) {
 
         function mousemove() {
 
-            var x0 = x.invert(d3.mouse(this)[0]-50);
+            var x0 = x.invert(d3.mouse(this)[0]-45);
 
             var i = bisect(data, x0, 1),
                 d0 = data[i - 1],

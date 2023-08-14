@@ -1566,7 +1566,7 @@ ccc_dataSources = [
     {
         "name": "birthDeathRate",
         "title": "Birth and Death Rates in China",
-        "y-axis": "Unit",
+        "y-axis": "Percent",
         "generative_func": "generateGraph('birthDeathRate')",
         "selected": true,
         "filepath":"data/social/birthDeathRate.csv",

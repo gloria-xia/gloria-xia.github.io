@@ -60,7 +60,7 @@ section {
   align-content: center;
   /* background-color: #f58025; */
   color: black;
-  width: 80%;
+  width: 100%;
   text-decoration: none
 }
 
@@ -235,12 +235,12 @@ form label, select {
     justify-content: space-between;
     /* flex-direction: row; */
 }
-/* #source_selector { */
-   /* justify-content: center; */
-   /* align-items: center; */
-   /* align-content: center; */
-   /* margin-bottom: 2%; */
-/* } */
+#source_selector {
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   margin-bottom: 2%;
+}
 
 /* #subgroup_selector { */
   /* display: flex;
@@ -423,6 +423,13 @@ input:checked + label {
     padding: 15px;
   }
 }
+
+.nav-item.dropdown {
+  width:100%;
+  margin-left: -20px;
+}
+
+
 .dropdown-menu li {
   position: relative;
   }
