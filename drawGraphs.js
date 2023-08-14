@@ -410,7 +410,7 @@ const buildLineGraph = function (data) {
         let yAxis1 = graph.append("g")
             .attr("class", "y-axis")
             .attr("transform", `translate(${margin.left},0)`)
-            .call(d3.axisLeft(y0).tickFormat(function(d){return d}).tickSizeOuter(0))
+            .call(d3.axisLeft(y0).tickFormat(function(d){return d.divisor}).tickSizeOuter(0))
             .append("text")
             .attr("fill", "#000")
             .attr("transform", "rotate(-90)")
@@ -544,7 +544,7 @@ const buildLineGraph = function (data) {
 
         function mousemove() {
 
-            var x0 = x.invert(d3.mouse(this)[0]-45);
+            var x0 = x.invert(d3.mouse(this)[0]-40);
 
             var i = bisect(data, x0, 1),
                 d0 = data[i - 1],
