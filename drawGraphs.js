@@ -410,7 +410,7 @@ const buildLineGraph = function (data) {
         let yAxis1 = graph.append("g")
             .attr("class", "y-axis")
             .attr("transform", `translate(${margin.left},0)`)
-            .call(d3.axisLeft(y0).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
+            .call(d3.axisLeft(y0).tickFormat(function(d){return d}).tickSizeOuter(0))
             .append("text")
             .attr("fill", "#000")
             .attr("transform", "rotate(-90)")

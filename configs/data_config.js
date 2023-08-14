@@ -608,7 +608,7 @@ ccc_dataSources = [
     },
     {
         "name": "householdFlowOfFunds",
-        "title": "Flow of Funds: Household Financial Source",
+        "title": "Flow of Funds: Household",
         "y-axis": "RMB (billions)",
         "generative_func": "generateGraph('householdFlowOfFunds')",
         "selected": true,
@@ -1621,7 +1621,7 @@ ccc_dataSources = [
     {
         "name": "totalWage",
         "title": "Total Wage in China",
-        "y-axis": "Unit",
+        "y-axis": "RMB (billions)",
         "generative_func": "generateGraph('totalWage')",
         "selected": true,
         "filepath":"data/economy/totalWage.csv",
@@ -2126,7 +2126,7 @@ ccc_dataSources = [
         "generative_func": "generateGraph('students')",
         "selected": true,
         "filepath":"data/education/number_of_students.csv",
-        "min_year": 1952,
+        "min_year": 1975,
         "max_year": 2021,
         "groups": {
             "All Data": true
@@ -2143,8 +2143,8 @@ ccc_dataSources = [
         }, 
         "line_names": [
             "Doctorate",
-            "High school",
-            "Middle school",
+            "Colleges and universities",
+            "Secondary (middle and high) school",
             "Secondary specialized school",
             "Elementary school"
         ]
@@ -2171,7 +2171,7 @@ ccc_dataSources = [
         }, 
         "line_names": [
             "Colleges and Universities",
-            "Secondary schools",
+            "Secondary (middle and high) schools",
             "Elementary schools"
         ]
     },
@@ -2356,7 +2356,7 @@ ccc_dataSources = [
             "USA papers",
             "China papers"
         ],
-        "notes": ["Data before 1949 is not shown."]
+        "notes": ["Data before 1949 is not shown.", ""]
     },
     {
        "name": "roads",
