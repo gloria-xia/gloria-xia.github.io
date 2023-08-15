@@ -20,7 +20,7 @@
 
   </head>
 
-  <body onload="generateGraph('stockExchangeDeals')">
+  <body onload="generateGraph('papers'); resetDataGroups()">
 
 <div id="header">
    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -95,7 +95,7 @@
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('revDebt');resetDataGroups();">Revenue and Debt</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('totalWage');resetDataGroups();">Total Wage</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('nationalBalanceSheet');resetDataGroups();">National Balance Sheet Assets</a>
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('pmi');resetDataGroups();">Purchasing Managers' Index</a>
+             <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('pmi');resetDataGroups();">Purchasing Managers' Index</a> -->
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobileOutput');resetDataGroups();">Automobile Output</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('communicationManufacturing');resetDataGroups();">Communication Manufacturing</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('householdFlowOfFunds');resetDataGroups();">Household Flow of Funds</a>
@@ -167,6 +167,7 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthPersonnel');resetDataGroups();">Healthcare Personnel</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthExpenditure');resetDataGroups();">Healthcare Expenditure</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('lifeExpectancy');resetDataGroups();">Life Expectancy</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('infantMortality');resetDataGroups();">Infant Mortality</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('hospitals');resetDataGroups();">Hospitals and Beds</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidCases');resetDataGroups();">COVID-19 Cases</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidAsymptomaticCases');resetDataGroups();">COVID-19 Asymptomatic Cases</a>
@@ -304,18 +305,12 @@
                       <label class="form-check-label" for="flexCheckDefault">All data</label>
                     </div>
 
-
                   </form>
 
                   <br>
-                   
                   <button type="button" class="btn btn-outline-dark" onclick="updateDataGroups()">Update data groups</button>
-
-
                   <br>
 
-                  
-                  
                   <!-- <div id="search-container">
                     <form action=""></form>
                         <input class="input-field" type="text" placeholder="search statistics...">
@@ -336,15 +331,12 @@
                  </div>
                 </div>
 
-                 </form>
-
+                </form>
                 
-
                 <br>
-
                 <div id="footer">
-<!--                 
-                <p>Data is from <a href="https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/views">CEIC Data</a>.</p> -->
+                  <p id="notes"></p>
+                  <br>
                   <p id="dataSource"></p>
                   <br> 
 

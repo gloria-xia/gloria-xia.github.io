@@ -7,6 +7,7 @@ var PRC_tertiary = "#f09067";
 
 colorOptions = [USA_primary, PRC_primary, USA_secondary, PRC_secondary, USA_tertiary, PRC_tertiary, "#c259c0"];
 colorOptions2 = ["#10bf04", "#3e6e21", "aba115"]
+colorOptionsUS = [USA_primary, USA_primary, PRC_primary, PRC_primary, USA_secondary, USA_secondary, PRC_secondary, PRC_secondary];
 
 var strokeWidth = 2;
 var animationDuration = 5;
@@ -105,23 +106,30 @@ function drawLines(data, lines, colors, lineNames, animateLines = true, legYPos 
    let textOffsetX = 10;
    var paths = Array(lines.length);
 
-//    let allYears = new Set(data.map(d => d.year));
-   
 //    console.log(data)
 
    for (let i = 0; i < lines.length; i++) {
-      count++;
+        count++;
+        let USData = false
+        
+        //check if line is US or China data
+        if (source.doubleYAxis) {
+            let allNames = source.line_names.right.concat(source.line_names.left)
+            USData = allNames[i].includes("United States")
+        }
+        else {
+            USData = source.line_names[i].includes("United States")
+        }
 
-      // solid line
-    //   if (count == 1 || lines.length <= 2)   {
          paths.push(graph.append("path")
             .datum(data)
             .attr("fill-opacity", fillOpacity)
-            .attr("fill", colors[i])
+            .attr("fill", source.containsUSData ? colorOptionsUS[i] : colors[i])
             .attr("clip-path", "url(#clip)")
             .attr("class", "path" + count)
-            .attr("stroke", colors[i])
+            .attr("stroke", source.containsUSData ? colorOptionsUS[i] : colors[i])
             .attr("stroke-width", strokeWidth)
+            .attr("stroke-dasharray", USData ? "4 4": "none")
             .attr("d", lines[i]));
          animateLines ? animateSolidLine(paths[paths.length-1]) : 0;
          // update legend
@@ -131,7 +139,8 @@ function drawLines(data, lines, colors, lineNames, animateLines = true, legYPos 
             .attr("y1",legYPos+ 30*(i+1)-20)
             .attr("y2",legYPos+ 30*(i+1)-20)
             .attr("stroke-width", strokeWidth)
-            .style("stroke", colors[i])
+            .attr("stroke-dasharray", USData ? "4 4": "none")
+            .style("stroke", source.containsUSData ? colorOptionsUS[i] : colors[i])
          graph.append("text")
             .attr("class", "legend")
             .attr("x", legXPos + textOffsetX)
@@ -216,35 +225,35 @@ function setXAxisToYears() {
    return xAxis;
 }
 
-function setTwoCountryLegend() {
-   // Handmade legend
-   let legXPos = 50;
-   let legYPos = 10;
-   let legRadius = 10;
-   let textOffsetX = 20;
-   graph.append("circle")
-   .attr("cx",legXPos)
-   .attr("cy",legYPos)
-   .attr("r", legRadius)
-   .style("fill", USA_primary)
-   graph.append("text")
-   .attr("class", "legend")
-   .attr("x", legXPos + textOffsetX)
-   .attr("y", legYPos)
-   .text("USA")
-   .attr("alignment-baseline","middle")
-   graph.append("circle")
-   .attr("cx",legXPos)
-   .attr("cy",legYPos+30)
-   .attr("r", legRadius)
-   .style("fill", PRC_primary)
-   graph.append("text")
-   .attr("class", "legend")
-   .attr("x", legXPos + textOffsetX)
-   .attr("y", legYPos+30)
-   .text("PRC")
-   .attr("alignment-baseline","middle")
-}
+// function setTwoCountryLegend() {
+//    // Handmade legend
+//    let legXPos = 50;
+//    let legYPos = 10;
+//    let legRadius = 10;
+//    let textOffsetX = 20;
+//    graph.append("circle")
+//    .attr("cx",legXPos)
+//    .attr("cy",legYPos)
+//    .attr("r", legRadius)
+//    .style("fill", USA_primary)
+//    graph.append("text")
+//    .attr("class", "legend")
+//    .attr("x", legXPos + textOffsetX)
+//    .attr("y", legYPos)
+//    .text("USA")
+//    .attr("alignment-baseline","middle")
+//    graph.append("circle")
+//    .attr("cx",legXPos)
+//    .attr("cy",legYPos+30)
+//    .attr("r", legRadius)
+//    .style("fill", PRC_primary)
+//    graph.append("text")
+//    .attr("class", "legend")
+//    .attr("x", legXPos + textOffsetX)
+//    .attr("y", legYPos+30)
+//    .text("PRC")
+//    .attr("alignment-baseline","middle")
+// }
 
 function findMaxColumn(source, data) {
 
@@ -253,7 +262,6 @@ function findMaxColumn(source, data) {
 
     //array of selected columns
     
-
     if (source.doubleYAxis) {
         for (let side in source.columns) {
             for (let column in source.columns[side]) {
@@ -310,7 +318,7 @@ function findMaxColumn(source, data) {
         minMaxColumn = [(Object.keys(columnMins).reduce(function(a, b){ return columnMins[a] < columnMins[b] ? a : b })), 
                         (Object.keys(columnMaxs).reduce(function(a, b){ return columnMaxs[a] > columnMaxs[b] ? a : b })),
                         d3.max(Object.values(columnMaxs))]
-        console.log(minMaxColumn)
+        // console.log(minMaxColumn)
         
         return minMaxColumn}
 }
@@ -319,7 +327,7 @@ function findMaxColumn(source, data) {
 
 const buildLineGraph = function (data) {
     // console.log(data)
-    sourceGroups = getSelectedDataSource().groups;
+    // sourceGroups = getSelectedDataSource().groups;
     source = getSelectedDataSource()
     // setDataSource(source.name)
     
@@ -410,7 +418,7 @@ const buildLineGraph = function (data) {
         let yAxis1 = graph.append("g")
             .attr("class", "y-axis")
             .attr("transform", `translate(${margin.left},0)`)
-            .call(d3.axisLeft(y0).tickFormat(function(d){return d.divisor}).tickSizeOuter(0))
+            .call(d3.axisLeft(y0).tickFormat(function(d){return d/divisor}).tickSizeOuter(0))
             .append("text")
             .attr("fill", "#000")
             .attr("transform", "rotate(-90)")
@@ -558,7 +566,6 @@ const buildLineGraph = function (data) {
             // if (source.doubleYAxis) {
 
             // }
-
             for (let i = 0; i < trueSourceColumns.length; i++) {
                 let column = trueSourceColumns[i]
                     tempStrCircle = "." + circleClasses[i];
@@ -572,12 +579,30 @@ const buildLineGraph = function (data) {
                     else {
                         focus.selectAll(tempStrText)
                             .text(d[column].toLocaleString());
-                        focus.selectAll(tempStrCircle)
-                            .attr("r", "4")
-                            .attr("stroke", "black")
-                            .style('opacity', 100)
-                            .attr("transform",
-                                "translate(" + x(d.year) + "," + y(d[column]) + ")");
+                        if (source.doubleYAxis) {
+                            if (source.columns.left[column]) {
+                                focus.selectAll(tempStrCircle)
+                                    .attr("r", "4")
+                                    .attr("stroke", "black")
+                                    .style('opacity', 100)
+                                    .attr("transform",
+                                        "translate(" + x(d.year) + "," + y0(d[column]) + ")"); }
+                            else {
+                                focus.selectAll(tempStrCircle)
+                                    .attr("r", "4")
+                                    .attr("stroke", "black")
+                                    .style('opacity', 100)
+                                    .attr("transform",
+                                        "translate(" + x(d.year) + "," + y1(d[column]) + ")");
+                            }
+                        }
+                        else {
+                            focus.selectAll(tempStrCircle)
+                                .attr("r", "4")
+                                .attr("stroke", "black")
+                                .style('opacity', 100)
+                                .attr("transform",
+                                    "translate(" + x(d.year) + "," + y(d[column]) + ")");}
                         }
             }
  

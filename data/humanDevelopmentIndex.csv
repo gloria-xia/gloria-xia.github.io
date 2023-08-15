@@ -1,59 +1,59 @@
-year,Human Development Index: China
-Region,China
-Subnational,
-Frequency,"Annual, ending ""Dec"" of each year"
-Unit,NA
-Source,United Nations Development Programme
-Status,Active
-Series ID,498688257
-SR Code,SR193854717
-Trade Code,
-Mnemonic,
-Function Description,
-First Obs. Date,1990
-Last Obs. Date,2021
-Last Update Time,20/10/2022
-Series remarks,
-Suggestions,
-Mean,0.6384062500000001
-Variance,0.008263926411290323
-Standard Deviation,0.09090614066877067
-Skewness,-0.15115644038996828
-Kurtosis,-1.3199350462385515
-Coefficient Variation,0.14239544282151165
-Min,0.484
-Max,0.768
-Median,0.644
-No. of Obs,32
-1990,0.484
-1991,0.492
-1992,0.504
-1993,0.515
-1994,0.525
-1995,0.535
-1996,0.545
-1997,0.554
-1998,0.564
-1999,0.573
-2000,0.584
-2001,0.593
-2002,0.604
-2003,0.615
-2004,0.626
-2005,0.638
-2006,0.65
-2007,0.663
-2008,0.672
-2009,0.682
-2010,0.691
-2011,0.7
-2012,0.709
-2013,0.717
-2014,0.725
-2015,0.733
-2016,0.74
-2017,0.747
-2018,0.755
-2019,0.762
-2020,0.764
-2021,0.768
+year,Human Development Index: China,Human Development Index: United States
+Region,China,United States
+Subnational,,
+Frequency,"Annual, ending ""Dec"" of each year","Annual, ending ""Dec"" of each year"
+Unit,NA,NA
+Source,United Nations Development Programme,United Nations Development Programme
+Status,Active,Active
+Series ID,498688257,498689757
+SR Code,SR193854717,SR193856227
+Trade Code,,
+Mnemonic,,
+Function Description,,
+First Obs. Date,1990,1990
+Last Obs. Date,2021,2021
+Last Update Time,20/10/2022,20/10/2022
+Series remarks,,
+Suggestions,,
+Mean,0.6384062500000001,0.9020000000000001
+Variance,0.008263926411290323,0.00028032258064516184
+Standard Deviation,0.09090614066877067,0.016742836696484912
+Skewness,-0.15115644038996828,-0.07271165165262279
+Kurtosis,-1.3199350462385515,-1.1475210839031385
+Coefficient Variation,0.14239544282151165,0.01856190321118061
+Min,0.484,0.872
+Max,0.768,0.93
+Median,0.644,0.902
+No. of Obs,32,32
+1990,0.484,0.872
+1991,0.492,0.873
+1992,0.504,0.878
+1993,0.515,0.88
+1994,0.525,0.884
+1995,0.535,0.885
+1996,0.545,0.887
+1997,0.554,0.89
+1998,0.564,0.893
+1999,0.573,0.889
+2000,0.584,0.891
+2001,0.593,0.892
+2002,0.604,0.893
+2003,0.615,0.895
+2004,0.626,0.898
+2005,0.638,0.9
+2006,0.65,0.904
+2007,0.663,0.906
+2008,0.672,0.906
+2009,0.682,0.908
+2010,0.691,0.911
+2011,0.7,0.913
+2012,0.709,0.916
+2013,0.717,0.917
+2014,0.725,0.919
+2015,0.733,0.92
+2016,0.74,0.922
+2017,0.747,0.924
+2018,0.755,0.927
+2019,0.762,0.93
+2020,0.764,0.92
+2021,0.768,0.921

@@ -30,8 +30,14 @@ function setDataSource(filename) {
     setYearOptions()
 
     footer = document.getElementById("dataSource")
-    
     footer.innerHTML = 'Data is from <a href="'+ Object.values(source['source'])+ '">' + Object.keys(source['source'])+'</a>.'
+    notes = document.getElementById("notes")
+    if (source.notes) {
+        notes.innerHTML = "*Note: " + source.notes
+    }
+    else {
+        notes.innerHTML = ""
+    }
     
     if (current != output) 
         // setGroupSelectorGroups();
@@ -138,9 +144,10 @@ function updateDataGroups() {
         }
         console.log(source.columns)
     }
-    else {
+    else {     
         for (let i = 0; i < currentOptions.length; i++) {
             let column = Object.keys(source.columns)[i];
+            console.log(source.columns[column])
             let checkbox = currentOptions[i].querySelector('.form-check-input')
             if (checkbox.checked == false) {
                 source.columns[column] = false
@@ -148,9 +155,10 @@ function updateDataGroups() {
             else {
                 source.columns[column] = true
             }
+            
     }}
 
-    // console.log(source.columns)
+    console.log(source.columns)
 
     generateGraph(source.name)
 

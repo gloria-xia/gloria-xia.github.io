@@ -6,6 +6,32 @@ animateGraph = false; // determines whether lines will animate
 
 ccc_dataSources = [
     {
+        "name": "infantMortality",
+        "title": "Infant Mortality Rate",
+        "y-axis": "Mortality per 1000 live births",
+        "containsUSData": true,
+        "generative_func": "generateGraph('infantMortality')",
+        "selected": true,
+        "filepath":"data/health/infantMortality.csv",
+        "min_year": 1960,
+        "max_year": 2021,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "Mortality Rate: Infant: per 1000 Live Births (China)": true,
+            "Mortality Rate: Infant: per 1000 Live Births (US)": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "China",
+            "United States"
+        ],
+        "notes": ["Infant mortality rate is the number of infants dying before reaching one year of age, per 1,000 live births in a given year. Estimates developed by the UN Inter-agency Group for Child Mortality Estimation (UNICEF, WHO, World Bank, UN DESA Population Division) at www.childmortality.org; Weighted average; Given that data on the incidence and prevalence of diseases are frequently unavailable, mortality rates are often used to identify vulnerable populations. Moreover, they are among the indicators most frequently used to compare socioeconomic development across countries. Under-five mortality rates are higher for boys than for girls in countries in which parental gender preferences are insignificant. Under-five mortality captures the effect of gender discrimination better than infant mortality does, as malnutrition and medical interventions have more significant impacts to this age group. Where female under-five mortality is higher, girls are likely to have less access to resources than boys. Aggregate data for LIC, UMC, LMC, HIC are computed based on the groupings for the World Bank fiscal year in which the data was released by the UN Inter-agency Group for Child Mortality Estimation."]
+    },
+    {
         "name": "interestRate",
         "title": "Interest Rate",
         "y-axis": "Annual Interest Rate (%)",
@@ -271,7 +297,9 @@ ccc_dataSources = [
     {
         "name": "unemployment",
         "title": "Employment and Unemployment",
-        "y-axis": "",
+        "y-axis2": "Percent",
+        "y-axis1": "Number of people (millions)",
+        "doubleYAxis": true,
         "generative_func": "generateGraph('unemployment')",
         "dates": "month",
         "selected": true,
@@ -282,18 +310,28 @@ ccc_dataSources = [
             "All Data": true
         },
         "columns": {
-            "就业": true,
-            "已登记失业率：城镇: annual": true,
-            "已登记失业率：城镇": true
+            "right": {
+                "已登记失业率：城镇: annual": true,
+                "已登记失业率：城镇": true
+            },
+            "left": {
+                "就业": true
+            }
+            
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
-        "line_names": [
-            "Employed (number of people, millions)",
-            "Annual registered unemployment rate: urban (%)",
-            "Quarterly registered unemployment rate: urban (%)"
-        ]
+        "line_names": {
+            "right": [
+                "Annual registered unemployment rate: urban",
+                "Quarterly registered unemployment rate: urban"
+            ],
+            "left": [
+                "Number of employed people"
+            ]
+            
+        }
     },
     {
         "name": "electricityProduction",
@@ -756,9 +794,10 @@ ccc_dataSources = [
     },
     {
         "name": "humanDevelopmentIndex",
-        "title": "United Nations Human Development Index: China",
+        "title": "United Nations Human Development Index: China and the United States",
         "y-axis": "N/A",
         "generative_func": "generateGraph('humanDevelopmentIndex')",
+        "containsUSData": true,
         "selected": true,
         "filepath":"data/humanDevelopmentIndex.csv",
         "min_year": 1990,
@@ -767,13 +806,15 @@ ccc_dataSources = [
             "All Data": true
         },
         "columns": {
-            "Human Development Index: China": true
+            "Human Development Index: China": true,
+            "Human Development Index: United States": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Human Development Index: China"
+            "China",
+            "United States"
         ]
     },
     {
@@ -1181,20 +1222,6 @@ ccc_dataSources = [
         "groups": {
             "All Data": true
         },
-        "leftAxisColumns": {
-            "CN: Ensured Reserves of Mineral: Petroleum": true,
-            "CN: Ensured Reserves of Mineral: Coal": true
-        },
-        "rightAxisColumns": {
-            "CN: Ensured Reserves of Mineral: Natural Gas": true
-        },
-        "leftLineNames": [
-            "Petroleum",
-            "Coal"
-        ],
-        "rightLineNames": [
-            "Natural gas"
-        ],
         "columns": {
             "right": {
                 "CN: Ensured Reserves of Mineral: Petroleum": true,
@@ -1209,7 +1236,7 @@ ccc_dataSources = [
         }, 
         "line_names": {
             "right": [
-                "Petroleum",
+                "Petroleum United States",
                 "Coal"
             ],
             "left": [
@@ -1318,7 +1345,7 @@ ccc_dataSources = [
     {
         "name": "insuredPeople",
         "title": "Social Security Fund: Insured People in China",
-        "y-axis": "Number of people",
+        "y-axis": "Number of insured people",
         "dates": "month",
         "generative_func": "generateGraph('insuredPeople')",
         "selected": true,
@@ -2214,6 +2241,7 @@ ccc_dataSources = [
         "title": "Crimes",
         "y-axis": "Number of crimes per 100,000 people",
         "generative_func": "crimeGraph",
+        "containsUSData": true,
         "selected": true,
         "filepath":"data/governance/crime.csv",
         "min_year": 1985,
@@ -2239,11 +2267,11 @@ ccc_dataSources = [
         }, 
         "line_names": [
             "China homicides",
-            "US homicides",
+            "United States homicides",
             "China violent crimes",
-            "US violent crimes",
+            "United States violent crimes",
             "China property crimes",
-            "US property crimes"
+            "United States property crimes"
         ]
     },
     {
@@ -2251,6 +2279,7 @@ ccc_dataSources = [
         "title": "Degrees Earned",
         "y-axis": "Degrees earned (units)",
         "generative_func": "degreeGraph",
+        "containsUSData": true,
         "selected": true,
         "filepath":"data/education/degree.csv",
         "min_year": 1969,
@@ -2272,10 +2301,10 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "China Bachelors",
-            "China Doctors",
-            "USA Bachelors",
-            "USA Doctors"
+            "China bachelors",
+            "United States bachelors",
+            "China doctors",
+            "United States doctors"
         ]
     },
     {
@@ -2300,7 +2329,7 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "USA railways",
+            "United States railways",
             "China railways"
         ]
     },
@@ -2309,6 +2338,7 @@ ccc_dataSources = [
        "title": "Paper Citations",
        "y-axis": "Number of citations (units)",
        "generative_func": "citationsGraph",
+       "containsUSData": true,
        "selected": true,
        "filepath":"data/education/science.csv",
        "min_year": 1949,
@@ -2327,7 +2357,7 @@ ccc_dataSources = [
         }, 
         "line_names": [
             "China citations",
-            "USA citations"
+            "United States citations"
         ],
         "notes": ["Data before 1949 is not shown."]
     },
@@ -2336,7 +2366,8 @@ ccc_dataSources = [
        "title": "Papers",
        "y-axis": "Number of papers (units)",
        "generative_func": "generateGraph('papers')",
-       "selected":false,
+       "selected": false,
+       "containsUSData": true,
        "filepath":"data/education/science.csv",
        "min_year": 1949,
        "max_year": 2020,
@@ -2353,16 +2384,17 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "USA papers",
+            "United States papers",
             "China papers"
         ],
-        "notes": ["Data before 1949 is not shown.", ""]
+        "notes": ["Data before 1949 is not shown."]
     },
     {
        "name": "roads",
        "title": "Length of Roads and Expressways",
        "y-axis": "Kilometers (ten thousands)",
        "generative_func": "roadGraph",
+       "containsUSData": true,
        "category": "transportation",
        "selected":false,
        "filepath":"data/transportation/roads.csv",
@@ -2385,10 +2417,10 @@ ccc_dataSources = [
         "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
     },
        "line_names": [
-           "US road length",
+           "United States road length",
            "China highway length",
            "China expressways length",
-           "US expressways length"
+           "United States expressways length"
        ]
     },
     {
@@ -2396,6 +2428,7 @@ ccc_dataSources = [
         "title": "Internet Usage",
         "y-axis": "Units",
         "generative_func": "internetUseGraph",
+        "containsUSData": true,
         "selected":false,
         "filepath":"data/tech/internet.csv",
         "min_year": 1997,
@@ -2409,22 +2442,22 @@ ccc_dataSources = [
           "Mobile": false,
        },
        "columns": {
-            "us_internet_access": true,
-            "us_broadband_subscriptions": true,
-            "us_mobile_internet_users": true,
+            "us_internet_access": true, 
             "cn_internet_access": true,
+            "us_broadband_subscriptions": true,
             "cn_broadband_subscriptions": true,
+            "us_mobile_internet_users": true,
             "cn_mobile_internet_users": true
        }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "US internet access",
-            "US broadband",
-            "US mobile internet users",
+            "United States internet access",
             "China internet access",
+            "United States broadband",
             "China broadband",
+            "United States mobile internet users",
             "China mobile internet users"
     ]
     },
@@ -2433,6 +2466,7 @@ ccc_dataSources = [
         "title": "Number of Patents",
         "y-axis": "Number of patents (units)",
         "generative_func": "patentGraph",
+        "containsUSData": true,
         "selected": false,
         "filepath":"data/tech/patent.csv",
         "min_year": 1970,
@@ -2450,7 +2484,7 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "USA patents",
+            "United States patents",
             "China patents"
         ]
     }
