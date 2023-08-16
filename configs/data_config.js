@@ -1236,7 +1236,7 @@ ccc_dataSources = [
         }, 
         "line_names": {
             "right": [
-                "Petroleum United States",
+                "Petroleum",
                 "Coal"
             ],
             "left": [
