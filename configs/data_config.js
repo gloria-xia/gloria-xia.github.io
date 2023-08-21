@@ -163,7 +163,7 @@ ccc_dataSources = [
             ],
             "left": [
                 "% of total energy consumption: agriculture",
-                "% of total energy consumption: industry",
+                "% of total energy consumption: manufacturing",
                 "% of total energy consumption: services",
                 "% of total energy consumption: transportation",
                 "% of total energy consumption: other"
@@ -237,8 +237,8 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Number of Arrivals",
-            "Number of Departures"
+            "Number of international entries",
+            "Number of international departures"
         ]
     },
     {
@@ -360,6 +360,7 @@ ccc_dataSources = [
         "title": "Government Tax Revenue",
         "y-axis": "RMB (billions)",
         "generative_func": "generateGraph('taxRevenue')",
+        "displayAnnualData": true,
         "dates": "month",
         "selected": true,
         "filepath":"data/economy/CEIC-government-tax-政府-政府收入税收.csv",
@@ -1153,6 +1154,7 @@ ccc_dataSources = [
             "Retail sales",
             "Group sales"
         ]
+        // "notes": []
     },
     {
         "name": "softwareIndustry",
@@ -1210,7 +1212,7 @@ ccc_dataSources = [
     },
     {
         "name": "fossilFuelSupply",
-        "title": "Ensured Reserves of Minerals: Petroleum, Natural Cas, and Coal",
+        "title": "Ensured Reserves of Minerals: Petroleum, Natural Gas, and Coal",
         "y-axis1": "Tons (millions)",
         "y-axis2": "Cubic meters (billions)",
         "doubleYAxis": true,
@@ -1308,7 +1310,7 @@ ccc_dataSources = [
         },
         "columns": {
             "CN: Water Resource": true,
-            "CN: Water Supply": true,
+            // "CN: Water Supply": true,
             "CN: Water Consumption": true
         }, 
         "source": {
@@ -1316,7 +1318,7 @@ ccc_dataSources = [
         }, 
         "line_names": [
             "Water resource",
-            "Water supply",
+            // "Water supply",
             "Water consumption"
         ]
     },
@@ -2310,8 +2312,9 @@ ccc_dataSources = [
     {
         "name": "railway",
         "title": "Railways",
-        "y-axis": "Number of highspeed rails (units)",
+        "y-axis": "Kilometers (thousands)",
         "selected": true,
+        "containsUSData": true,
         "filepath":"data/transportation/railway.csv",
         "category": "transportation",
         "min_year": 2000,
@@ -2363,7 +2366,7 @@ ccc_dataSources = [
     },
     {
        "name": "papers",
-       "title": "Papers",
+       "title": "Academic Papers",
        "y-axis": "Number of papers (units)",
        "generative_func": "generateGraph('papers')",
        "selected": false,
@@ -2390,6 +2393,45 @@ ccc_dataSources = [
         "notes": ["Data before 1949 is not shown."]
     },
     {
+        "name": "bridges",
+        "title": "Highway Bridges",
+        "doubleYAxis": true,
+        "y-axis1": "Length of bridges (by 10,000 kilometers)",
+        "y-axis2": "Number of highway bridges (by 10,000 counts)",
+        "containsUSData": true,
+        "generative_func": "generateGraph('bridges')",
+        "selected": true,
+        "filepath":"data/transportation/roads.csv",
+        "min_year": 1990,
+        "max_year": 2018,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "right": {
+                "China: Number of Highway Bridges (by 10,000 counts)": true,
+           "US: Number of Highway Bridges (by 10,000 counts)": true
+            },
+            "left": {
+                "China: Length of Highway Bridges (by 10,000 kilometers)": true,
+            "US: Length of Bridges (by 10,000 kilometers)": true
+            }
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": {
+            "right": [
+                "China: number of highway bridges",
+                "United States: number of highway bridges"
+            ],
+            "left": [
+                "China: length of highway bridges",
+                "United States: length of bridges"
+            ]
+        }
+    },
+    {
        "name": "roads",
        "title": "Length of Roads and Expressways",
        "y-axis": "Kilometers (ten thousands)",
@@ -2410,17 +2452,17 @@ ccc_dataSources = [
        "columns": {
            "US: Public  Road  and  Street  Length in US (by 10,000 kilometers)": true,
            "China: Highway Length (by 10,000 kilometers)": true,
-           "China: Length of Expressways (by 10,000 kilometers)": true,
-           "US: Length of Interstate and Other Freeways and Expressways (by 10,000 kilometers)": true
+           "US: Length of Interstate and Other Freeways and Expressways (by 10,000 kilometers)": true,
+           "China: Length of Expressways (by 10,000 kilometers)": true
        },
        "source": {
         "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
     },
        "line_names": [
-           "United States road length",
+           "United States public road and streed length",
            "China highway length",
-           "China expressways length",
-           "United States expressways length"
+           "United States interstate, other freeways, and expressways length",
+           "China expressways length"
        ]
     },
     {
@@ -2455,8 +2497,8 @@ ccc_dataSources = [
         "line_names": [
             "United States internet access",
             "China internet access",
-            "United States broadband",
-            "China broadband",
+            "United States broadband subscriptions",
+            "China broadband subscriptions",
             "United States mobile internet users",
             "China mobile internet users"
     ]
