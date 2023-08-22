@@ -364,6 +364,7 @@ ccc_dataSources = [
         "dates": "month",
         "selected": true,
         "filepath":"data/economy/CEIC-government-tax-政府-政府收入税收.csv",
+        "annualFilepath": "data/economy/CEIC-government-tax-政府-政府收入税收-annual.csv",
         "min_year": 1995,
         "max_year": 2022,
         "groups": {
@@ -1708,10 +1709,12 @@ ccc_dataSources = [
         "y-axis": "Millions of tons",
         "generative_func": "generateGraph('tradeVolume')",
         "selected": true,
+        "displayAnnualData": true,
         "dates": "month",
-        "filepath":"data/economy/tradeVolume.csv",
+        "filepath": "data/economy/tradeVolume.csv",
+        "annualFilepath": "data/economy/tradeVolumeAnnual.csv",
         "min_year": 2011,
-        "max_year": 2023,
+        "max_year": 2022,
         "groups": {
             "All Data": true
         },
@@ -1843,20 +1846,21 @@ ccc_dataSources = [
         "name": "balanceOfPayments",
         "title": "China Balance of Payments: Current Accounts",
         "y-axis": "USD (millions)",
-        "dates": "month",
+        // "displayAnnualData": true,
+        // "dates": "month",
         "generative_func": "generateGraph('balanceOfPayments')",
         "selected": true,
-        "filepath":"data/economy/balanceOfPayments.csv",
-        "min_year": 1998,
-        "max_year": 2023,
+        "filepath":"data/economy/balanceOfPaymentsAnnual.csv",
+        "min_year": 1982,
+        "max_year": 2022,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "CN: BoP: Current Account(CA)": true,
-            "CN: BoP: CA: Credit": true,
-            "CN: BoP: CA: Debit": true,
-            "CN: BoP: CA: Goods": true
+            "BoP: Current Account (CA)": true,
+            "BoP: CA: Credit": true,
+            "BoP: CA: Debit": true,
+            "BoP: CA: Goods": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
@@ -2100,28 +2104,28 @@ ccc_dataSources = [
     {
         "name": "importExport",
         "title": "Imports, Exports, and Trade Balance in China",
-        "y-axis": "y-axis label (10,000)",
+        "y-axis": "USD (millions)",
         "generative_func": "generateGraph('importExport')",
         "selected": true,
-        "filepath":"data/economy/ImportExport.csv",
-        "min_year": 1992,
+        "filepath":"data/economy/trade.csv",
+        "min_year": 1950,
         "max_year": 2022,
-        "dates": "month",
+        // "dates": "month",
         "groups": {
             "All Data": true
         },
         "columns": {
-            "CN: Export FOB": true,
-            "CN: Import CIF": true,
-            "CN: Trade Balance": true,
+            "Exports: Annual": true,
+            "Imports: Annual": true,
+            "Trade Balance: Annual": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Export FOB",
-            "Import CIF",
-            "Trade balance"
+            "Exports: Annual",
+            "Imports: Annual",
+            "Trade Balance: Annual"
         ]
     },
     {

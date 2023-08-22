@@ -5,6 +5,7 @@ var PRC_primary = "#ff0000";
 var PRC_secondary = "#B0000D";
 var PRC_tertiary = "#f09067";
 
+
 colorOptions = [USA_primary, PRC_primary, USA_secondary, PRC_secondary, USA_tertiary, PRC_tertiary, "#c259c0"];
 colorOptions2 = ["#10bf04", "#3e6e21", "aba115"]
 colorOptionsUS = [USA_primary, USA_primary, PRC_primary, PRC_primary, USA_secondary, USA_secondary, PRC_secondary, PRC_secondary];
@@ -106,20 +107,18 @@ function drawLines(data, lines, colors, lineNames, animateLines = true, legYPos 
    let textOffsetX = 10;
    var paths = Array(lines.length);
 
-//    console.log(data)
-
    for (let i = 0; i < lines.length; i++) {
         count++;
         let USData = false
         
         //check if line is US or China data
-        if (source.doubleYAxis) {
-            let allNames = source.line_names.right.concat(source.line_names.left)
-            USData = allNames[i].includes("United States")
-        }
-        else {
-            USData = source.line_names[i].includes("United States")
-        }
+        // if (source.doubleYAxis) {
+        //     // let allNames = lineNames.concat(source.lineNames.left)
+        //     USData = allNames[i].includes("United States")
+        // }
+        // else {
+            USData = lineNames[i].includes("United States")
+        // }
 
          paths.push(graph.append("path")
             .datum(data)
@@ -388,7 +387,7 @@ const buildLineGraph = function (data) {
             lines.push(d3.line()
                 // .defined(function(d) {return d.close !== 0;})
                 .defined(d => d[column] !== null )
-                .x(function(d) { return x(d.year); })
+                .x(function(d) {return x(d.year); })
                 .y(function(d) { return y(d[Object.keys(source.columns)[i]]); }))
         colors.push(colorOptions[i])
         lineNames.push(source.line_names[i])}
@@ -492,20 +491,21 @@ const buildLineGraph = function (data) {
         //     circleClasses.push(circle)
         //     textClasses.push(line)
         // }
-        if (source.dates === "month") {
+        if (source.dates === "month" && source.displayAnnualData !== true) {
             var bisect = d3.bisector(d => d.year).left,
                 format = d3.format("+.0%"),
                 dateFormat = d3.timeFormat("%b" + " " + "%Y")
+                // dateFormat = d3.timeFormat("%Y")
         }
-        else if (source.dates === "day") {
+        else if (source.dates === "day" && source.displayAnnualData !== true) {
             var bisect = d3.bisector(d => d.year).left,
                 format = d3.format("+.0%"),
                 dateFormat = d3.timeFormat("%b" + " " + "%e" + " " + "%Y")
         }
         else {
             var bisect = d3.bisector(d => d.year).left,
-            format = d3.format("+.0%"),
-            dateFormat = d3.timeFormat("%Y")
+                format = d3.format("+.0%"),
+                dateFormat = d3.timeFormat("%Y")
         }
 
         var focus = svg.append("g")
@@ -617,8 +617,6 @@ const buildLineGraph = function (data) {
 
 function filterYears(data) {
     output = []
-    // console.log(start_year)
-    // console.log(end_year)
 
     data.forEach(d => {
         if (d.year >= parseTime(start_year) && d.year <= parseTime(end_year)) {
@@ -627,10 +625,12 @@ function filterYears(data) {
     })
 
     return output
-    
 }
+
+
 // handle d3.csv file retrevial 
 async function gatherData(source, conversion) {
+    dataSource = getSelectedDataSource()
    const data = await d3.csv(source, conversion);
    return filterYears(data);
 }
@@ -641,10 +641,9 @@ var parseTimeDay = d3.timeParse("%m/%d/%Y")
 var parseTime = d3.timeParse("%Y");
 
 // convert the data from strings to integers
-
  const fileConversion = function (d) {
 
-    if (source.dates === "month") {
+    if (source.dates === "month" && source.displayAnnualData !== true) {
         if (d['year'].includes("-")) {
             parseTimeMonth = d3.timeParse("%m-%Y")
             d['year'] = parseTimeMonth(d['year'])
@@ -654,19 +653,17 @@ var parseTime = d3.timeParse("%Y");
             d['year'] = parseTimeMonth(d['year'])
         }
     }
-    else if (source.dates === "day") {
+    else if (source.dates === "day" && source.displayAnnualData !== true) {
         d['year'] = parseTimeDay(d['year'])
     }
     else {
-        d['year'] = parseTime(d['year']);}
-
-    // console.log(d.year)
+        d['year'] = parseTime(d['year']);
+    }
 
     if (source.doubleYAxis) {
         for (let side in source.columns) {
             for (let column in (source.columns)[side]) {
-                // console.log(d[column]) 
-                if (d[column] !== "" && d.year !== null) {
+                if (d[column] !== "" && d['year'] !== null) {
                     d[column] = +d[column].replace(/,/g, "");
                 }
                 else {
@@ -677,15 +674,17 @@ var parseTime = d3.timeParse("%Y");
     }
     else {
         for (let column of Object.keys(source.columns)) {
-        // console.log(d[column]) 
-        if (d[column] !== "" && d.year !== null) {
-            d[column] = +d[column].replace(/,/g, "");
+            if (d[column] !== "" && d.year !== null) {
+                d[column] = +d[column].replace(/,/g, "");
+            }
+            else {
+                d[column] = null;
+            }
         }
-        else {
-            d[column] = null;
-        }
-    }}
+    } 
+    // console.log(d)
     return d;
+   
  };
 
 
@@ -706,36 +705,26 @@ var parseTime = d3.timeParse("%Y");
 function generateGraph(type) {
     // clear graph
     d3.selectAll("svg>*").remove();
-    // console.log("console is broken")
-
     setDataSource(type);
     // resetYears()
 
-    gatherData(source.filepath, fileConversion).then((result) => {
+    if (source.displayAnnualData) {
+        gatherData(source.annualFilepath, fileConversion).then((result) => {
+            buildLineGraph(result)
+        });
+    }
+    else {
+        gatherData(source.filepath, fileConversion).then((result) => {
         buildLineGraph(result)
     });
+    }
 
 }
 
-// function regenerateGraph(type) {
 
-//     d3.selectAll("svg>*").remove();
-//     newSetDataSource(type)
-//     // start_year = source["min_year"]
-//     // end_year = source['max_year']
-//     // setYearOptions()
-
-//     gatherData(source.filepath, fileConversion).then((result) => {
-//         buildLineGraph(result)
-//     });
+// function setYearRange() {
+//     start_year = document.getElementById("start_year");
+//     end_year = document.getElementById("end_year").options[0].innerText;
+//     setYearOptions();
+//     // updateDataFromGroup()
 // }
-
-
-function setYearRange() {
-    start_year = document.getElementById("start_year");
-    end_year = document.getElementById("end_year").options[0].innerText;
-    console.log(start_year)
-    console.log(end_year)
-    setYearOptions();
-    // updateDataFromGroup()
-}

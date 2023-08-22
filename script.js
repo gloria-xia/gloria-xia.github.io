@@ -28,6 +28,7 @@ function setDataSource(filename) {
     })
     // setColumnOptions()
     setYearOptions()
+    setIntervalOptions()
 
     footer = document.getElementById("dataSource")
     footer.innerHTML = 'Data is from <a href="'+ Object.values(source['source'])+ '">' + Object.keys(source['source'])+'</a>.'
@@ -44,40 +45,6 @@ function setDataSource(filename) {
         setColumnOptions() 
     // console.log(output)
     return output
-}
-
-function buildNavBar() {
-    console.log("hello")
-
-    let categories = {
-        "transportation": []
-    }
-
-    for (let i = 0; i < ccc_dataSources.length; i++) {
-        source =  ccc_dataSources[i]
-        console.log(categories[source.category])
-        categories[source.category]
-        
-        // categories[source.category] += source
-    }
-
-    console.log(categories)
-    
-    let navBar = document.getElementById("navbarsExample10")
-
-    let nav = document.getElementsByClassName("navbar-nav")
-
-    for (let category in categories) {
-        // console.log(categories[category])
-        navBar.innerHTML += '<ul class="navbar-nav"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+category+'</a><div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdown10"></div></li></ul>'
-        for (item in categories[category]) {
-            // console.log(categories[category][item])
-            let navBox = document.getElementById("dropdown-menu")
-            // console.log(navBox)
-            navBox.innerHTML += '<a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('+ "'" + categories[category][item]+ "'"+');resetDataGroups();">'+categories[category][item]+'</a>'
-        }
-    }
-
 }
 
 // set Group to true for the selected source
@@ -122,9 +89,19 @@ function setColumnOptions() {
     
 }
 
+function setIntervalOptions() {
+    let selectAnnual = document.getElementById("checkAnnualData")
+    if (source.displayAnnualData) {
+        selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0">Annual</option><option value="1">Detailed</option></select>'
+    }
+    // else if ()
+    else if (source.hasOwnProperty("dates") === false){
+        selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0" selected>Annual</option></select>'
+    }
+}
+
 function updateDataGroups() {
     source = getSelectedDataSource()
-
     let currentOptions = document.getElementsByClassName("form-check")
 
     if (source.doubleYAxis) {
@@ -157,11 +134,9 @@ function updateDataGroups() {
             }
             
     }}
-
     console.log(source.columns)
 
     generateGraph(source.name)
-
 }
 
 function resetDataGroups() {
@@ -180,13 +155,35 @@ function resetDataGroups() {
         }
     }
 
+    setColumnOptions()
+
+    if (source.hasOwnProperty("displayAnnualData")) {
+        source.displayAnnualData = true
+        console.log(source.displayAnnualData)
+    }
+    // setIntervalOptions()
+
     start_year = source["min_year"]
     end_year = source["max_year"]
 
-
-    // generateGraph(source.name)
+    generateGraph(source.name)
 }
 
+function updateDataInterval() {
+    let selectElement = document.getElementById("selectInterval");
+  
+    // Get the index of the selected option
+    let selectedIndex = selectElement.selectedIndex;
+    
+    if (selectedIndex === 1) {
+        source.displayAnnualData = false
+    }
+    else {
+        source.displayAnnualData = true
+    }
+
+    generateGraph(source.name)
+}
 
 // set year range in selection box, based on current data source
 function setYearOptions() {
@@ -269,35 +266,6 @@ function setGroupSelectorGroups() {
     })
     setYearOptions()
     
-    // for (let i = 0; i < currentSource.groups.length; i++) {
-    //     group_selector.options[group_selector.options.length] = new Option(groups[i], groups[i]);
-    //  }
-   // check that the values haven't already been updated
-//    if (ccc_dataSources.internet.selected) {
-//       let text = [full_data_string, "China (domestic)", "United States (domestic)", "Broadband", "Access", "Mobile"]
-//       let values = ["full", "chinaOnly", "usOnly", "broadband", "access", "mobile"];
-//       group_selector.length = 0;
-//       for (let i = 0; i < values.length; i++) {
-//          group_selector.options[group_selector.options.length] = new Option(text[i], values[i]);
-//       } 
-//    }
-//    else if (ccc_dataSources.roads.selected) {
-//       let text = [full_data_string, "China (domestic)", "United States (domestic)", "Highways", "Expressways"]
-//       let values = ["full", "chinaOnly", "usOnly", "highways", "expressways"];
-//       group_selector.length = 0;
-//       for (let i = 0; i < values.length; i++) {
-//          group_selector.options[group_selector.options.length] = new Option(text[i], values[i]);
-//       } 
-//    }
-   // these ccc_dataSources have no groups
-//    else if ( (ccc_dataSources.citations.selected || ccc_dataSources.papers.selected || ccc_dataSources.patent.selected) && (group_selector.options.length < 1 || group_selector.options[group_selector.options.length-1].text != full_data_string) ) {
-//       let text = [full_data_string]
-//       let values = ["full"];
-//       for (let i = 0; i < values.length; i++) {
-//          group_selector.length = 0;
-//          group_selector.options[0] = new Option(text[i], values[i]);
-//       } 
-//    }
 //    updateDataFromGroup();
 }
 

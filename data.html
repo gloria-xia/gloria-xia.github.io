@@ -21,7 +21,7 @@
 
   </head>
 
-  <body onload="generateGraph('taxRevenue'); resetDataGroups();">
+  <body onload="generateGraph('tradeVolume'); resetDataGroups();">
 
 <div id="header">
    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -233,32 +233,9 @@
       </div>
     </nav>
 
-
-
-      <!-- <div id="header">
-         <img style = "height: 50px; width: 200px" src="assets/ccc_logo.png">
-         <img style = "height: 50px; width: 200px;" src="assets/PU-standard.svg">
-      </div> -->
-      <!-- <p id="title">China Impact Project</p> -->
       <br>
       <div id="main-container">
           <div id="source-container">
-             <!-- Title -->
-             <!-- <div id="title-container"> -->
-                <!-- <h1 style="margin: 0;">Understanding</h1>
-                <h3>China with numbers </h3> -->
-                <!-- <div id="title-row"> -->
-                    <!-- <h4>with</h4>
-                    <h3>numbers</h3> -->
-                <!-- </div> -->
-                <!-- <p>Understanding China with Numbers</p> -->
-                <!-- <span>Understanding</span>
-                <span>China with Numbers</span> -->
-             <!-- </div> -->
-             <!-- Search Bar -->
-             <!-- <img style = "height: 5em; width: 23em" src="assets/ccc_logo.png">  -->
-             
-             
              <!-- Filters -->
              <div id="filters">
                 
@@ -273,14 +250,6 @@
                         <!-- </select>
                     </div> -->
 
-                    
-                    <!-- <div id="Group_selector">
-                        <label for="Group" style="background-color: white;">Group:&nbsp&nbsp&nbsp
-                        </label>
-                          <select name="Group" class="filter_select" id="Group" onchange="updateDataFromGroup()">
-                             <option value="">All Data</option>
-                          </select>
-                    </div> -->
                     <br>
                     <div id="year_range_selector">
                         <label for="start_year" style="background-color: white;" >Year:</label>
@@ -294,17 +263,21 @@
                             <!-- <option value="">2010</option> -->
                          </select>
                     </div>
-                    <!-- <div class="wrapper">
-                        <input type="range" min="0" max="200">
-                    </div> -->
+
                     <br>
-                    <label for="Group" style="background-color: white;">Data Groups:&nbsp&nbsp&nbsp
-                    </label>
+                    
+                    <label for="Group" style="background-color: white;">Select data interval:&nbsp&nbsp&nbsp</label>
+                    <div id="checkAnnualData" onchange="updateDataInterval()">
+                      
+                    </div>
+
+                    <br>
+                    <label for="Group" style="background-color: white;">Data Groups:&nbsp&nbsp&nbsp</label>
                     <!-- :&nbsp&nbsp&nbsp -->
                     <div class="form-check" >
                       
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="setColumnOptions()">
-                      <label class="form-check-label" for="flexCheckDefault">All data</label>
+                      <!-- <label class="form-check-label" for="flexCheckDefault">All data</label> -->
                     </div>
 
                   </form>
