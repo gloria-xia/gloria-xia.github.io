@@ -21,7 +21,7 @@
 
   </head>
 
-  <body onload="generateGraph('tradeVolume'); resetDataGroups();">
+  <body onload="generateGraph('ecommerceTurnover'); resetDataGroups();">
 
 <div id="header">
    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -132,18 +132,28 @@
        <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Finance</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown10">
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeDeals');resetDataGroups();">Stock Exchange Deals</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeCompositeIndex');resetDataGroups();">Stock Exchange Composite Index</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shanghaiStockExchange');resetDataGroups();">Shanghai Stock Exchange Turnover Value</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shenzhenStockExchange');resetDataGroups();">Shenzhen Stock Exchange Turnover Value</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privateEquity');resetDataGroups();">Private Equity Investment Cases</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privEquityValue');resetDataGroups();">Private Equity Value</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('financeValue');resetDataGroups();">Finance Value</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown10">
+            <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Stock Exchange &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeDeals');resetDataGroups();">Stock Exchange Deals</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('stockExchangeCompositeIndex');resetDataGroups();">Stock Exchange Composite Index</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shanghaiStockExchange');resetDataGroups();">Shanghai Stock Exchange Turnover Value</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('shenzhenStockExchange');resetDataGroups();">Shenzhen Stock Exchange Turnover Value</a>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Private Equity &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privateEquity');resetDataGroups();">Private Equity Investment Cases</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('privEquityValue');resetDataGroups();">Private Equity Value</a>
+              </ul>
+            </li>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('financeValue');resetDataGroups();">Market Value</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('interestRate');resetDataGroups();">Interest Rate</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('foreignDirectInvestment');resetDataGroups();">Foreign Direct Investment</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('fixedAssetsInvestment');resetDataGroups();">Fixed Assets Investment</a>
-          </div>
+          </ul>
         </li>
       </ul>
        <ul class="navbar-nav">
@@ -157,24 +167,43 @@
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('birthDeathRate');resetDataGroups();">Birth and Death Rates</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('engelsCoefficient');resetDataGroups();">Engel's Coefficient</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('dependencyRatio');resetDataGroups();">Dependency Ratios</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('incomePerCapita');resetDataGroups();">Income and Expenditure Per Capita</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('incomePerCapita');resetDataGroups();">Rural Households Income and Expenditure</a>
            </div>
          </li>
        </ul>
        <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown10">
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthPersonnel');resetDataGroups();">Healthcare Personnel</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthExpenditure');resetDataGroups();">Healthcare Expenditure</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('lifeExpectancy');resetDataGroups();">Life Expectancy</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown10">
+            <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Healthcare Expenditure &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthExpenditureUSCN');resetDataGroups();">United States and China</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthExpenditure');resetDataGroups();">China</a>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Life Expectancy &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('lifeExpectancyUSCN');resetDataGroups();">United States and China</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('lifeExpectancy');resetDataGroups();">China</a>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Healthcare Resources &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('hospitals');resetDataGroups();">Hospitals and Beds</a>
+              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('hospitalBedsUSCN');resetDataGroups();">Hospital Beds: United States and China</a>
+              </ul>
+            </li>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('infantMortality');resetDataGroups();">Infant Mortality</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('hospitals');resetDataGroups();">Hospitals and Beds</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('surgicalCareExpenditure');resetDataGroups();">Surgical Care Expenditure</a>
+            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('healthPersonnel');resetDataGroups();">Healthcare Personnel</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidCases');resetDataGroups();">COVID-19 Cases</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('covidAsymptomaticCases');resetDataGroups();">COVID-19 Asymptomatic Cases</a>
             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('airQuality');resetDataGroups();">Air Quality</a>
             <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('population');resetDataGroups();"('covidDeaths')">COVID-19 Deaths (2023)</a> -->
-          </div>
+          </ul>
         </li>
       </ul>
        <ul class="navbar-nav">
@@ -192,14 +221,19 @@
        <ul class="navbar-nav">
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Innovation & Technology</a>
-           <div class="dropdown-menu" aria-labelledby="dropdown10">
+           <ul class="dropdown-menu" aria-labelledby="dropdown10">
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('patent');resetDataGroups();">Patents</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('softwareIndustry');resetDataGroups();">Software Industry</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('internet');resetDataGroups();">Internet Use</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('ecommerceTurnover');resetDataGroups();">E-commerce Turnover</a>
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('techR&D');resetDataGroups();">Research and Development</a>
-             <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('computerIndustry');resetDataGroups();">Computer Industry</a> -->
-           </div>
+             <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Research & Development &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('generalR&D');resetDataGroups();">General R&D</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('techR&D');resetDataGroups();">Technology R&D</a>
+              </ul>
+            </li>
+           </ul>
          </li>
        </ul>
        <ul class="navbar-nav">

@@ -6,6 +6,118 @@ animateGraph = false; // determines whether lines will animate
 
 ccc_dataSources = [
     {
+        "name": "hospitalBedsUSCN",
+        "title": "Hospital Beds: United States and China",
+        "y-axis": "Number of hospital beds per 1000 people",
+        "containsUSData": true,
+        "generative_func": "generateGraph('hospitalBedsUSCN')",
+        "selected": true,
+        "filepath":"data/health/hospitalBedsUSCN.csv",
+        "min_year": 1960,
+        "max_year": 2017,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN: Hospital Beds: per 1000 People": true,
+            "US: Hospital Beds: per 1000 People": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "China",
+            "United States"
+        ],
+        "notes": ['Hospital beds include inpatient beds available in public, private, general, and specialized hospitals and rehabilitation centers. In most cases beds for both acute and chronic care are included. <br><br> Data are from the World Health Organization, supplemented by country data.']
+    },
+    {
+        "name": "surgicalCareExpenditure",
+        "title": "Surgical Care Expenditure Risk: United States and China",
+        "y-axis": "Percent of people at risk",
+        "containsUSData": true,
+        "generative_func": "generateGraph('surgicalCareExpenditure')",
+        "selected": true,
+        "filepath":"data/health/surgicalCareExpenditure.csv",
+        "min_year": 2003,
+        "max_year": 2020,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN: Risk of Impoverishing Expenditure for Surgical Care: % of People at Risk": true,
+            "US: Risk of Impoverishing Expenditure for Surgical Care: % of People at Risk": true,
+            "CN: Risk of Catastrophic Expenditure for Surgical Care: % of People at Risk": true,
+            "US: Risk of Catastrophic Expenditure for Surgical Care: % of People at Risk": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "China: risk of impoverishing expenditure for surgical care",
+            "United States: risk of impoverishing expenditure for surgical care",
+            "China: risk of catastrophic expenditure for surgical care",
+            "United States: risk of catastrophic expenditure for surgical care"
+        ],
+        "notes": ['The proportion of population at risk of impoverishing or catastrophic expenditure when surgical care is required. <br><br> Impoverishing expenditure is defined as direct out of pocket payments for surgical and anaesthesia care which drive people below a poverty threshold (using a threshold of $1.90 PPP/day).<br> Catastrophic expenditure is defined as direct out of pocket payments for surgical and anaesthesia care exceeding 10% of total income.']
+    },
+    {
+        "name": "lifeExpectancyUSCN",
+        "title": "Life Expectancy: United States and China",
+        "y-axis": "Years",
+        "containsUSData": true,
+        "generative_func": "generateGraph('lifeExpectancyUSCN')",
+        "selected": true,
+        "filepath":"data/health/lifeExpectancyUSCN.csv",
+        "min_year": 1960,
+        "max_year": 2021,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN: Life Expectancy at Birth: Total": true,
+            "US: Life Expectancy at Birth: Total": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "China",
+            "United States"
+        ],
+        "notes": ['Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life.']
+    },
+    {
+        "name": "healthExpenditureUSCN",
+        "title": "Healthcare Expenditure: United States and China",
+        "y-axis": "Percent",
+        "containsUSData": true,
+        "generative_func": "generateGraph('healthExpenditureUSCN')",
+        "selected": true,
+        "filepath":"data/health/healthExpenditureUSCN.csv",
+        "min_year": 2000,
+        "max_year": 2020,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            "CN: Current Health Expenditure: % of GDP": true,
+            "US: Current Health Expenditure: % of GDP": true,
+            "CN: Out-of-Pocket Health Expenditure: % of Current Health Expenditure": true,
+            "US: Out-of-Pocket Health Expenditure: % of Current Health Expenditure": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "China: healthcare expenditure: % of GDP",
+            "United States: healthcare expenditure: % of GDP",
+            "China: out-of-pocket expenditure: % of health expenditure",
+            "United States: out-of-pocket expenditure: % of health expenditure"
+        ],
+        "notes": ['Estimates of current health expenditures include healthcare goods and services consumed during each year. This indicator does not include capital health expenditures such as buildings, machinery, IT and stocks of vaccines for emergency or outbreaks. World Health Organization Global Health Expenditure database (http://apps.who.int/nha/database). <br><br> Out-of-pocket payments are spending on health directly out-of-pocket by households. <br> World Health Organization Global Health Expenditure database (http://apps.who.int/nha/database).']
+    },
+    {
         "name": "infantMortality",
         "title": "Infant Mortality Rate",
         "y-axis": "Mortality per 1000 live births",
@@ -29,7 +141,7 @@ ccc_dataSources = [
             "China",
             "United States"
         ],
-        "notes": ["Infant mortality rate is the number of infants dying before reaching one year of age, per 1,000 live births in a given year. Estimates developed by the UN Inter-agency Group for Child Mortality Estimation (UNICEF, WHO, World Bank, UN DESA Population Division) at www.childmortality.org; Weighted average; Given that data on the incidence and prevalence of diseases are frequently unavailable, mortality rates are often used to identify vulnerable populations. Moreover, they are among the indicators most frequently used to compare socioeconomic development across countries. Under-five mortality rates are higher for boys than for girls in countries in which parental gender preferences are insignificant. Under-five mortality captures the effect of gender discrimination better than infant mortality does, as malnutrition and medical interventions have more significant impacts to this age group. Where female under-five mortality is higher, girls are likely to have less access to resources than boys. Aggregate data for LIC, UMC, LMC, HIC are computed based on the groupings for the World Bank fiscal year in which the data was released by the UN Inter-agency Group for Child Mortality Estimation."]
+        "notes": ["Infant mortality rate is the number of infants dying before reaching one year of age, per 1,000 live births in a given year. Estimates developed by the UN Inter-agency Group for Child Mortality Estimation (UNICEF, WHO, World Bank, UN DESA Population Division) at www.childmortality.org. <br> Given that data on the incidence and prevalence of diseases are frequently unavailable, mortality rates are often used to identify vulnerable populations. Moreover, they are among the indicators most frequently used to compare socioeconomic development across countries. Under-five mortality rates are higher for boys than for girls in countries in which parental gender preferences are insignificant. Under-five mortality captures the effect of gender discrimination better than infant mortality does, as malnutrition and medical interventions have more significant impacts to this age group. Where female under-five mortality is higher, girls are likely to have less access to resources than boys. Aggregate data for LIC, UMC, LMC, HIC are computed based on the groupings for the World Bank fiscal year in which the data was released by the UN Inter-agency Group for Child Mortality Estimation."]
     },
     {
         "name": "interestRate",
@@ -55,12 +167,14 @@ ccc_dataSources = [
     },
     {
         "name": "incomePerCapita",
-        "title": "Income and Expenditure Per Capita: YTD",
+        "title": "Rural Households Income and Expenditure Per Capita: YTD",
         "y-axis": "RMB",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('incomePerCapita')",
         "selected": true,
         "filepath":"data/social/CEIC-population-income-人口-城市农村人均收支.csv",
+        "annualFilepath":"data/social/CEIC-population-income-人口-城市农村人均收支-annual.csv",
         "min_year": 1995,
         "max_year": 2014,
         "groups": {
@@ -175,9 +289,11 @@ ccc_dataSources = [
         "title": "Shenzhen Stock Exchange Turnover Value",
         "y-axis": "RMB (millions)",
         "generative_func": "generateGraph('shenzhenStockExchange')",
+        "displayAnnualData": true,
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/CEIC-finance-shenzhen-金融-深圳证券交易所.csv",
+        "annualFilepath":"data/finance/CEIC-finance-shenzhen-金融-深圳证券交易所-annual.csv",
         "min_year": 1991,
         "max_year": 2022,
         "groups": {
@@ -277,8 +393,10 @@ ccc_dataSources = [
         "y-axis": "Tons (millions)",
         "generative_func": "generateGraph('portsTraffic')",
         "dates": "month",
+        "displayAnnualData": true,
         "selected": true,
         "filepath":"data/transportation/CEIC-transportation-port-交通-货运吞吐量主要海港和河港.csv",
+        "annualFilepath":"data/transportation/CEIC-transportation-port-交通-货运吞吐量主要海港和河港-annual.csv",
         "min_year": 2001,
         "max_year": 2022,
         "groups": {
@@ -419,9 +537,11 @@ ccc_dataSources = [
         "title": "Fixed Assets Investment YTD",
         "y-axis": "RMB (millions)",
         "generative_func": "generateGraph('fixedAssetsInvestment')",
+        "displayAnnualData": true,
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/CEIC-finance-assets-金融-固定资产投资年初至今.csv",
+        "annualFilepath":"data/finance/CEIC-finance-assets-金融-固定资产投资年初至今-annual.csv",
         "min_year": 1994,
         "max_year": 2022,
         "groups": {
@@ -443,8 +563,10 @@ ccc_dataSources = [
         "y-axis": "USD (millions)",
         "generative_func": "generateGraph('foreignDirectInvestment')",
         "dates": "month",
+        "displayAnnualData": true,
         "selected": true,
         "filepath":"data/finance/CEIC-finance-invest-金融-外商投资.csv",
+        "annualFilepath":"data/finance/CEIC-finance-invest-金融-外商投资-annual.csv",
         "min_year": 1997,
         "max_year": 2022,
         "groups": {
@@ -488,29 +610,41 @@ ccc_dataSources = [
     {
         "name": "realEstateArea",
         "title": "Real Estate Area: Commodity Buildings",
-        "y-axis": "",
+        "y-axis1": "RMB (millions)",
+        "y-axis2": "Square meters (thousands)",
         "generative_func": "generateGraph('realEstateArea')",
         "dates": "month",
+        "displayAnnualData": true,
         "selected": true,
+        "doubleYAxis": true,
         "filepath":"data/economy/CEIC-econ-property-经济-房地产面积.csv",
+        "annualFilepath":"data/economy/CEIC-econ-property-经济-房地产面积-annual.csv",
         "min_year": 1949,
         "max_year": 2021,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "已出售商品建筑：年初至今：共计": true,
-            "在建建筑面积：年初至今：商品建筑（CB）": true,
-            "已出售建筑面积：商品建筑：年初至今": true
+            "left": {
+                "已出售商品建筑：年初至今：共计": true,
+            },
+            "right": {
+                "在建建筑面积：年初至今：商品建筑（CB）": true,
+                "已出售建筑面积：商品建筑：年初至今": true
+            }
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
-        "line_names": [
-            "Total sold: ytd (RMB, millions)",
-            "Area under construction: ytd (square meters, thousands)",
-            "Floor space sold: ytd (square meters, thousands)"
-        ]
+        "line_names": { 
+            "left": [
+                "Total sold: ytd"
+            ],
+            "right": [
+                "Area under construction: ytd",
+                "Floor space sold: ytd"
+            ]
+        }
     },
     {
         "name": "steelProduction",
@@ -583,9 +717,11 @@ ccc_dataSources = [
         "title": "Purchased Land Area: YTD",
         "y-axis": "Square meters (thousands)",
         "generative_func": "generateGraph('purchasedLandArea')",
+        "displayAnnualData": true,
         "dates": "month",
         "selected": true,
         "filepath":"data/economy/CEIC-econ-land-purchase-经济-土地购买面积年初至今.csv",
+        "annualFilepath":"data/economy/CEIC-econ-land-purchase-经济-土地购买面积年初至今-annual.csv",
         "min_year": 1998,
         "max_year": 2022,
         "groups": {
@@ -605,10 +741,12 @@ ccc_dataSources = [
         "name": "developedLandArea",
         "title": "Developed Land Area: YTD",
         "y-axis": "Square meters (thousands)",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('developedLandArea')",
         "dates": "month",
         "selected": true,
         "filepath":"data/economy/CEIC-econ-land-development-经济-已开发土地面积年初至今.csv",
+        "annualFilepath":"data/economy/CEIC-econ-land-development-经济-已开发土地面积年初至今-annual.csv",
         "min_year": 1997,
         "max_year": 2010,
         "groups": {
@@ -708,9 +846,11 @@ ccc_dataSources = [
         "title": "Industrial Output: Automobiles",
         "y-axis": "Number of vehicles (thousands)",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('automobileOutput')",
         "selected": true,
         "filepath":"data/economy/CEIC-econ-auto-经济-工业生产汽车.csv",
+        "annualFilepath":"data/economy/CEIC-econ-auto-经济-工业生产汽车-annual.csv",
         "min_year": 1986,
         "max_year": 2022,
         "groups": {
@@ -772,7 +912,7 @@ ccc_dataSources = [
     },
     {
         "name": "financeValue",
-        "title": "金融-市值",
+        "title": "Market Value",
         "y-axis": "USD (millions)",
         "generative_func": "generateGraph('financeValue')",
         "selected": true,
@@ -823,10 +963,12 @@ ccc_dataSources = [
         "name": "industrialInventory",
         "title": "China Industrial Inventory",
         "y-axis": "RMB (billions)",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('industrialInventory')",
         "dates": "month",
         "selected": true,
         "filepath":"data/industrialInventory.csv",
+        "annualFilepath":"data/industrialInventoryAnnual.csv",
         "min_year": 2010,
         "max_year": 2023,
         "groups": {
@@ -856,12 +998,14 @@ ccc_dataSources = [
         "name": "industrialSalesValue",
         "title": "China Industrial Sales Value",
         "y-axis": "RMB (billions)",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('industrialSalesValue')",
         "dates": "month",
         "selected": true,
         "filepath":"data/industrialSalesValue.csv",
+        "annualFilepath":"data/industrialSalesValueAnnual.csv",
         "min_year": 1992,
-        "max_year": 2013,
+        "max_year": 2012,
         "groups": {
             "All Data": true
         },
@@ -882,29 +1026,43 @@ ccc_dataSources = [
     {
         "name": "industrialProduction",
         "title": "China Industrial Production: Crude Coal, Crude Oil, and Iron Ore",
-        "y-axis": "Tons (thousands)",
+        "y-axis1": "Tons (thousands)",
+        "y-axis2": "Cubic meters (millions)",
+        "displayAnnualData": true,
+        "doubleYAxis": true,
         "generative_func": "generateGraph('industrialProduction')",
         "dates": "month",
         "selected": true,
         "filepath":"data/industrialProduction.csv",
+        "annualFilepath":"data/industrialProductionAnnual.csv",
         "min_year": 1986,
         "max_year": 2023,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "CN: Industrial Production: Crude Coal": true,
-            "CN: Industrial Production: Crude Oil": true,
-            "CN: Industrial Production: Iron Ore": true
+            "left": {
+                "CN: Industrial Production: Crude Coal": true,
+                "CN: Industrial Production: Crude Oil": true,
+                "CN: Industrial Production: Iron Ore": true
+            },
+            "right": {
+                "CN: Industrial Production: Natural Gas": true
+            }
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
-        "line_names": [
-            "Crude coal",
-            "Crude oil",
-            "Iron ore"
-        ]
+        "line_names": {
+            "left": [
+                "Crude coal",
+                "Crude oil",
+                "Iron ore"
+            ],
+            "right": [
+                "Natural Gas"
+            ]
+        }
     },
     {
         "name": "covidAsymptomaticCases",
@@ -1105,11 +1263,13 @@ ccc_dataSources = [
     {
         "name": "stockExchangeCompositeIndex",
         "title": "China Shanghai and Shenzhen Stock Exchange Composite Index",
-        "y-axis": "1990/1991 = 100",
+        "y-axis": "1990/1991 = 100*",
         "dates": "day",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('stockExchangeCompositeIndex')",
         "selected": true,
         "filepath":"data/finance/stockExchangeCompositeIndex.csv",
+        "annualFilepath":"data/finance/stockExchangeCompositeIndexAnnual.csv",
         "min_year": 1994,
         "max_year": 2023,
         "groups": {
@@ -1125,16 +1285,19 @@ ccc_dataSources = [
         "line_names": [
             "Shanghai Stock Exchange",
             "Shenzhen Stock Exchange"
-        ]
+        ],
+        "notes": ["<br> Shanghai Stock Exchange unit: 19 Dec 1990 = 100. <br> Shenzhen Stock Exchange unit: 03 Apr 1991 = 100. <br><br> Annual data is the average per year."]
     },
     {
         "name": "ecommerceTurnover",
         "title": "China E-commerce Business Turnover: YTD",
         "y-axis": "RMB (billions)",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('ecommerceTurnover')",
         "selected": true,
         "filepath":"data/tech/ecommerceTurnover.csv",
+        "annualFilepath":"data/tech/ecommerceTurnoverAnnual.csv",
         "min_year": 2007,
         "max_year": 2020,
         "groups": {
@@ -1162,9 +1325,11 @@ ccc_dataSources = [
         "title": "China Software Industry",
         "y-axis": "RMB (millions)",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('softwareIndustry')",
         "selected": true,
         "filepath":"data/tech/softwareIndustry.csv",
+        "annualFilepath":"data/tech/softwareIndustryAnnual.csv",
         "min_year": 2007,
         "max_year": 2023,
         "groups": {
@@ -1251,12 +1416,14 @@ ccc_dataSources = [
         "name": "privEquityValue",
         "title": "China Private Equity: Value of Investment",
         "y-axis": "USD (millions)",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('privEquityValue')",
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/privEquityValue.csv",
+        "annualFilepath":"data/finance/privEquityValueAnnual.csv",
         "min_year": 2006,
-        "max_year": 2020,
+        "max_year": 2019,
         "groups": {
             "All Data": true
         },
@@ -1268,8 +1435,8 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Private equity: value of investment",
-            "Venture capital: value of investment"
+            "Private equity",
+            "Venture capital"
         ]
     },
     {
@@ -1277,11 +1444,13 @@ ccc_dataSources = [
         "title": "China Private Equity: Number of Investment Cases",
         "y-axis": "Number of investment cases",
         "generative_func": "generateGraph('privateEquity')",
+        "displayAnnualData": true,
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/privateEquity.csv",
+        "annualFilepath":"data/finance/privateEquityAnnual.csv",
         "min_year": 2006,
-        "max_year": 2020,
+        "max_year": 2019,
         "groups": {
             "All Data": true
         },
@@ -1509,10 +1678,12 @@ ccc_dataSources = [
         "name": "shanghaiStockExchange",
         "title": "Shanghai Stock Exchange Turnover Value",
         "y-axis": "RMB (millions)",
+        "displayAnnualData": true,
         "dates": "month",
         "generative_func": "generateGraph('shanghaiStockExchange')",
         "selected": true,
         "filepath":"data/finance/CEIC-finance-shanghai-金融-上海证券交易所.csv",
+        "annualFilepath":"data/finance/CEIC-finance-shanghai-金融-上海证券交易所-annual.csv",
         "min_year": 1995,
         "max_year": 2022,
         "groups": {
@@ -1623,7 +1794,7 @@ ccc_dataSources = [
     {
         "name": "engelsCoefficient",
         "title": "Engel's Coefficient: YTD",
-        "y-axis": "Unit",
+        "y-axis": "Unit*",
         "dates": "month",
         "generative_func": "generateGraph('engelsCoefficient')",
         "selected": true,
@@ -1646,7 +1817,8 @@ ccc_dataSources = [
             "Engel's coefficient",
             "Engel's coefficient: urban",
             "Engel's coefficient: rural"
-        ]
+        ],
+        "notes": ['The Engel Coefficient is the ratio of food consumption to total expenditures.']
     },
     {
         "name": "totalWage",
@@ -1682,9 +1854,11 @@ ccc_dataSources = [
         "title": "Turnover: Number of Stock Exchange Deals",
         "y-axis": "Number of stock exchange deals",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('stockExchangeDeals')",
         "selected": true,
         "filepath":"data/finance/stockExchangeDeals.csv",
+        "annualFilepath":"data/finance/stockExchangeDealsAnnual.csv",
         "min_year": 1996,
         "max_year": 2023,
         "groups": {
@@ -1815,12 +1989,12 @@ ccc_dataSources = [
         ]
     },
     {
-        "name": "techR&D",
+        "name": "generalR&D",
         "title": "China Research and Development Expenditure in Technology",
         "y-axis": "RMB (millions)",
-        "generative_func": "generateGraph('techR&D')",
+        "generative_func": "generateGraph('generalR&D')",
         "selected": true,
-        "filepath":"data/tech/techR&D.csv",
+        "filepath":"data/tech/generalR&D.csv",
         "min_year": 1991,
         "max_year": 2022,
         "groups": {
@@ -1828,6 +2002,38 @@ ccc_dataSources = [
         },
         "columns": {
             "CN: Research & Development: Expenditure": true,
+            "CN: R & D: Expenditure: R & D Institution": true,
+            "CN: R & D: Expenditure: Higher Education Institution": true,
+            "CN: R & D: Expenditure: Basic Research": true,
+            "CN: R & D: Expenditure: Applied Research": true,
+            "CN: R & D: Expenditure: Experimental Development": true
+        }, 
+        "source": {
+            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+        }, 
+        "line_names": [
+            "R & D expenditure: general",
+            "R & D expenditure: R & D institution",
+            "R & D expenditure: higher education institution",
+            "R & D expenditure: basic research",
+            "R & D expenditure: applied research",
+            "R & D expenditure: experimental development"
+        ]
+    },
+    {
+        "name": "techR&D",
+        "title": "China Research and Development Expenditure in Technology",
+        "y-axis": "RMB (millions)",
+        "generative_func": "generateGraph('techR&D')",
+        "selected": true,
+        "filepath":"data/tech/techR&D.csv",
+        "min_year": 2000,
+        "max_year": 2021,
+        "groups": {
+            "All Data": true
+        },
+        "columns": {
+            // "CN: Research & Development: Expenditure": true,
             "CN: R & D: Expenditure: High Technology Industry": true,
             "CN: R & D: Expenditure: HT: Electronic & Telecommunication Equip": true,
             "CN: R & D: Expenditure: HT: Medical & Pharmaceutical Product": true
@@ -1836,7 +2042,7 @@ ccc_dataSources = [
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "General R & D expenditure",
+            // "General R & D expenditure",
             "High technology industry",
             "Electronic & telecommunication equipment",
             "Medical & pharmaceautical products"

@@ -422,8 +422,8 @@ const buildLineGraph = function (data) {
             .attr("fill", "#000")
             .attr("transform", "rotate(-90)")
             .attr("y", "-4em")
-            .attr("x", "-8em")
-            .attr("text-anchor", "center")
+            .attr("x", "-14em")
+            .attr("text-anchor", "middle")
             .text(source["y-axis1"])
         let yAxis2 = graph.append("g")
             .attr("class", "y-axis")
@@ -434,7 +434,7 @@ const buildLineGraph = function (data) {
             .attr("transform", "rotate(-90)")
             .attr("y", "3.5em")
             .attr("x", "-15em")
-            .attr("text-anchor", "center")
+            .attr("text-anchor", "middle")
             .text(source["y-axis2"])
     }
     else {
@@ -446,8 +446,8 @@ const buildLineGraph = function (data) {
         .attr("fill", "#000")
         .attr("transform", "rotate(-90)")
         .attr("y", "-4em")
-        .attr("x", "-8em")
-        .attr("text-anchor", "center")
+        .attr("x", "-15em")
+        .attr("text-anchor", "middle")
         .text(source["y-axis"])
     }
 
@@ -619,10 +619,21 @@ function filterYears(data) {
     output = []
 
     data.forEach(d => {
-        if (d.year >= parseTime(start_year) && d.year <= parseTime(end_year)) {
+        let year = d.year
+        if (source.hasOwnProperty("dates")) {
+            year = new Date(d.year)
+            year = year.getFullYear()
+            year = parseTime(year)
+        }
+        else {
+            year = d.year
+        }
+        if (year >= parseTime(start_year) && year <= parseTime(end_year)) {
             output.push(d)
         }
     })
+
+    //Sun Mar 01 2020 00:00:00 GMT-0500 (Eastern Standard Time)
 
     return output
 }

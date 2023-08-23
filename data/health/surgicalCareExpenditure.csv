@@ -1,0 +1,45 @@
+year,US: Risk of Impoverishing Expenditure for Surgical Care: % of People at Risk,US: Risk of Catastrophic Expenditure for Surgical Care: % of People at Risk,CN: Risk of Impoverishing Expenditure for Surgical Care: % of People at Risk,CN: Risk of Catastrophic Expenditure for Surgical Care: % of People at Risk
+Region,United States,United States,China,China
+Subnational,,,,
+Frequency,"Annual, ending ""Dec"" of each year","Annual, ending ""Dec"" of each year","Annual, ending ""Dec"" of each year","Annual, ending ""Dec"" of each year"
+Unit,%,%,%,%
+Source,World Bank,World Bank,World Bank,World Bank
+Status,Active,Active,Active,Active
+Series ID,376089297,376086827,376087357,376084887
+SR Code,SR5328782,SR5328886,SR5333451,SR5331139
+Trade Code,,,,
+Mnemonic,,,,
+Function Description,,,,
+First Obs. Date,2003,2003,2003,2003
+Last Obs. Date,2020,2020,2020,2020
+Last Update Time,28/04/2022,28/04/2022,28/04/2022,28/04/2022
+Series remarks,,,,
+Suggestions,,,,
+Mean,0.20000000000000007,0.7777777777777779,24.25,32.11666666666667
+Variance,3.262751905785435e-33,0.023006535947712424,226.70617647058822,480.8014705882353
+Standard Deviation,5.712050337475533e-17,0.1516790557318723,15.05676513965029,21.927185651337822
+Skewness,-1.0933034802834933,0.42235560928889754,0.34650928197381464,0.5204273289602661
+Kurtosis,-2.2666666666666675,-1.3294147081611585,-1.3520587533229511,-1.239826824470593
+Coefficient Variation,2.8560251687377656e-16,0.1950159287981215,0.6208975315319707,0.6827354120810947
+Min,0.2,0.6,6.1,7.8
+Max,0.2,1,50.3,69.7
+Median,0.2,0.7,22.25,26.5
+No. of Obs,18,18,18,18
+2003,0.2,1,50.3,69.7
+2004,0.2,1,47,67.7
+2005,0.2,0.9,43.4,62.5
+2006,0.2,0.9,40.3,57.3
+2007,0.2,1,36.6,52.1
+2008,0.2,1,35.1,44.9
+2009,0.2,0.8,30.8,38.4
+2010,0.2,0.7,28.1,34.3
+2011,0.2,0.7,23.9,27.4
+2012,0.2,0.7,20.6,25.6
+2013,0.2,0.8,15.1,18.9
+2014,0.2,0.7,14.2,17.2
+2015,0.2,0.7,11.4,13.3
+2016,0.2,0.7,10.2,12.3
+2017,0.2,0.6,9.3,11.2
+2018,0.2,0.6,7.4,9.5
+2019,0.2,0.6,6.7,8
+2020,0.2,0.6,6.1,7.8

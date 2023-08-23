@@ -92,7 +92,12 @@ function setColumnOptions() {
 function setIntervalOptions() {
     let selectAnnual = document.getElementById("checkAnnualData")
     if (source.displayAnnualData) {
-        selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0">Annual</option><option value="1">Detailed</option></select>'
+        if (source.dates === "month") {
+            selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0">Annual</option><option value="1">Monthly</option></select>'
+        }
+        else if (source.dates === "day") {
+            selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0">Annual</option><option value="1">Daily</option></select>'
+        }
     }
     // else if ()
     else if (source.hasOwnProperty("dates") === false){
