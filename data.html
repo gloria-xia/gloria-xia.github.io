@@ -21,7 +21,7 @@
 
   </head>
 
-  <body onload="generateGraph('ecommerceTurnover'); resetDataGroups();">
+  <body onload="generateGraph('engelsCoefficient'); resetDataGroups();">
 
 <div id="header">
    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -90,27 +90,34 @@
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('unemployment');resetDataGroups();">Unemployment</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('investments');resetDataGroups();">Investments</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('taxRevenue');resetDataGroups();">Tax Revenue</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('inflation');resetDataGroups();">Inflation</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('importExport');resetDataGroups();">Trade</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('tradeVolume');resetDataGroups();">Trade Volume</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('balanceOfPayments');resetDataGroups();">Balance of Payments</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('revDebt');resetDataGroups();">Revenue and Debt</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('totalWage');resetDataGroups();">Total Wage</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('nationalBalanceSheet');resetDataGroups();">National Balance Sheet Assets</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('consumerConfidence');resetDataGroups();">Consumer Confidence</a>
              <!-- <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('pmi');resetDataGroups();">Purchasing Managers' Index</a> -->
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobileOutput');resetDataGroups();">Automobile Output</a>
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('communicationManufacturing');resetDataGroups();">Communication Manufacturing</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('householdFlowOfFunds');resetDataGroups();">Household Flow of Funds</a>
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('steelProduction');resetDataGroups();">Steel Production</a>
-             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('electricityProduction');resetDataGroups();">Electricity Production</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('realEstateArea');resetDataGroups();">Real Estate Area</a>
              <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('propertyPrices');resetDataGroups();">Property Prices</a>
+             <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('oilPrices');resetDataGroups();">Oil Prices</a>
+             <li>
+              <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Production &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('automobileOutput');resetDataGroups();">Automobile Output</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('steelProduction');resetDataGroups();">Steel Production</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('electricityProduction');resetDataGroups();">Electricity Production</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('communicationManufacturing');resetDataGroups();">Communication Manufacturing</a>
+              </ul>
+            </li>
              <li>
               <a class="dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Industry &raquo;</a>
               <ul class="dropdown-menu dropdown-submenu">
-
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialProduction');resetDataGroups();">Industrial Production</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialInventory');resetDataGroups();">Industrial Inventory</a>
-            <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialSalesValue');resetDataGroups();">Industrial Sales Value</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialProduction');resetDataGroups();">Industrial Production</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialInventory');resetDataGroups();">Industrial Inventory</a>
+                <a class="dropdown-item" href="javascript:void(0)" onclick="generateGraph('industrialSalesValue');resetDataGroups();">Industrial Sales Value</a>
               </ul>
             </li>
              <li>

@@ -103,6 +103,9 @@ function setIntervalOptions() {
     else if (source.hasOwnProperty("dates") === false){
         selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0" selected>Annual</option></select>'
     }
+    else if (source.hasOwnProperty("covidData")) {
+        selectAnnual.innerHTML = '<select class="form-select form-select-sm" id="selectInterval" aria-label="Small select example"><option value="0" selected>Daily</option></select>'
+    }
 }
 
 function updateDataGroups() {

@@ -420,8 +420,10 @@ ccc_dataSources = [
         "doubleYAxis": true,
         "generative_func": "generateGraph('unemployment')",
         "dates": "month",
+        "displayAnnualData": true,
         "selected": true,
         "filepath":"data/social/CEIC-population-employment-人口-就业失业.csv",
+        "annualFilepath":"data/social/CEIC-population-employment-人口-就业失业-annual.csv",
         "min_year": 1949,
         "max_year": 2021,
         "groups": {
@@ -584,29 +586,29 @@ ccc_dataSources = [
             "FDI: total utilized: ytd"
         ]
     },
-    {
-        "name": "pmi",
-        "title": "Purchasing Managers' Index",
-        "y-axis": "Percent",
-        "generative_func": "generateGraph('pmi')",
-        "dates": "month",
-        "selected": true,
-        "filepath":"data/economy/CEIC-econ-pmi-经济-采购经理指数复合输出.csv",
-        "min_year": 2017,
-        "max_year": 2022,
-        "groups": {
-            "All Data": true
-        },
-        "columns": {
-            "采购经理指数：复合输出": true
-        }, 
-        "source": {
-            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
-        }, 
-        "line_names": [
-            "PMI: composite output"
-        ]
-    },
+    // {
+    //     "name": "pmi",
+    //     "title": "Purchasing Managers' Index",
+    //     "y-axis": "Percent",
+    //     "generative_func": "generateGraph('pmi')",
+    //     "dates": "month",
+    //     "selected": true,
+    //     "filepath":"data/economy/CEIC-econ-pmi-经济-采购经理指数复合输出.csv",
+    //     "min_year": 2017,
+    //     "max_year": 2022,
+    //     "groups": {
+    //         "All Data": true
+    //     },
+    //     "columns": {
+    //         "采购经理指数：复合输出": true
+    //     }, 
+    //     "source": {
+    //         "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+    //     }, 
+    //     "line_names": [
+    //         "PMI: composite output"
+    //     ]
+    // },
     {
         "name": "realEstateArea",
         "title": "Real Estate Area: Commodity Buildings",
@@ -809,36 +811,36 @@ ccc_dataSources = [
     {
         "name": "communicationManufacturing",
         "title": "Communication Equipment Manufacturing",
-        "y-axis": "RMB (billions)",
+        "y-axis": "RMB (millions)",
         "generative_func": "generateGraph('communicationManufacturing')",
-        "dates": "month",
+        // "dates": "month",
         "selected": true,
-        "filepath":"data/economy/CEIC-econ-electronic-经济-电子制造-通信.csv",
+        "filepath":"data/economy/CEIC-econ-electronic-经济-电子制造-通信-annual.csv",
         "min_year": 2010,
         "max_year": 2023,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "通信设备制造：雇员人数": true,
+            // "通信设备制造：雇员人数": true,
             "通信设备制造：总资产": true,
             "通信设备制造：制成品：年初至今": true,
             "通信设备制造：总负债": true,
             "通信设备制造：销售收入：年初至今": true,
             "通信设备制造：总利润：年初至今": true,
-            "通信设备制造：企业数量": true
+            // "通信设备制造：企业数量": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Number of employees",
+            // "Number of employees",
             "Total assets",
             "Finished goods: ytd",
             "Total liabilities",
             "Sales revenue: ytd",
             "Gross profit: ytd",
-            "Number of enterprises"
+            // "Number of enterprises"
         ]
     },
     {
@@ -968,7 +970,7 @@ ccc_dataSources = [
         "dates": "month",
         "selected": true,
         "filepath":"data/industrialInventory.csv",
-        "annualFilepath":"data/industrialInventoryAnnual.csv",
+        "annualFilepath":"data/industrialInventory-annual.csv",
         "min_year": 2010,
         "max_year": 2023,
         "groups": {
@@ -1070,6 +1072,7 @@ ccc_dataSources = [
         "y-axis": "Number of people",
         "generative_func": "generateGraph('covidAsymptomaticCases')",
         "dates": "day",
+        "covidData": true,
         "selected": true,
         "filepath":"data/health/covidAsymptomaticCases.csv",
         "min_year": 2020,
@@ -1097,6 +1100,7 @@ ccc_dataSources = [
         "y-axis": "Number of people",
         "generative_func": "generateGraph('covidDeaths')",
         "dates": "day",
+        "covidData": true,
         "selected": true,
         "filepath":"data/health/covidDeaths.csv",
         "min_year": 2023,
@@ -1124,6 +1128,7 @@ ccc_dataSources = [
         "y-axis": "Number of people",
         "generative_func": "generateGraph('covidCases')",
         "dates": "day",
+        "covidData": true,
         "selected": true,
         "filepath":"data/health/covidCases.csv",
         "min_year": 2020,
@@ -1227,39 +1232,39 @@ ccc_dataSources = [
             "Non-financial assets"
         ]
     },
-    {
-        "name": "computerIndustry",
-        "title": "Computer Industry in China",
-        "y-axis": "RMB (millions)",
-        "dates": "month",
-        "generative_func": "generateGraph('computerIndustry')",
-        "selected": true,
-        "filepath":"data/tech/CEIC-econ-computer-经济-电子制造-计算机.csv",
-        "min_year": 2003,
-        "max_year": 2018,
-        "groups": {
-            "All Data": true
-        },
-        "columns": {
-            "计算机行业：总资产": true,
-            "计算机行业：制成品：年初至今": true,
-            "计算机行业：总负债": true,
-            "计算机行业：销售收入：年初至今": true,
-            // "计算机行业：雇员人数": true,
-            "计算机行业：总利润：年初至今": true
-        }, 
-        "source": {
-            "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
-        }, 
-        "line_names": [
-            "Total assets",
-            "Manufactured goods: ytd",
-            "Total liabilities",
-            "Sales revenue: ytd",
-            // "Number of employees",
-            "Gross profit: ytd"
-        ]
-    },
+    // {
+    //     "name": "computerIndustry",
+    //     "title": "Computer Industry in China",
+    //     "y-axis": "RMB (millions)",
+    //     "dates": "month",
+    //     "generative_func": "generateGraph('computerIndustry')",
+    //     "selected": true,
+    //     "filepath":"data/tech/CEIC-econ-computer-经济-电子制造-计算机.csv",
+    //     "min_year": 2003,
+    //     "max_year": 2018,
+    //     "groups": {
+    //         "All Data": true
+    //     },
+    //     "columns": {
+    //         "计算机行业：总资产": true,
+    //         "计算机行业：制成品：年初至今": true,
+    //         "计算机行业：总负债": true,
+    //         "计算机行业：销售收入：年初至今": true,
+    //         // "计算机行业：雇员人数": true,
+    //         "计算机行业：总利润：年初至今": true
+    //     }, 
+    //     "source": {
+    //         "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
+    //     }, 
+    //     "line_names": [
+    //         "Total assets",
+    //         "Manufactured goods: ytd",
+    //         "Total liabilities",
+    //         "Sales revenue: ytd",
+    //         // "Number of employees",
+    //         "Gross profit: ytd"
+    //     ]
+    // },
     {
         "name": "stockExchangeCompositeIndex",
         "title": "China Shanghai and Shenzhen Stock Exchange Composite Index",
@@ -1352,9 +1357,11 @@ ccc_dataSources = [
         "title": "Oil Supply Prices in China",
         "y-axis": "RMB/ton",
         "dates": "day",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('oilPrices')",
         "selected": true,
         "filepath":"data/economy/oilPrices.csv",
+        "annualFilepath":"data/economy/oilPrices-annual.csv",
         "min_year": 2005,
         "max_year": 2023,
         "groups": {
@@ -1421,7 +1428,7 @@ ccc_dataSources = [
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/privEquityValue.csv",
-        "annualFilepath":"data/finance/privEquityValueAnnual.csv",
+        "annualFilepath":"data/finance/privEquityValue-annual.csv",
         "min_year": 2006,
         "max_year": 2019,
         "groups": {
@@ -1448,7 +1455,7 @@ ccc_dataSources = [
         "dates": "month",
         "selected": true,
         "filepath":"data/finance/privateEquity.csv",
-        "annualFilepath":"data/finance/privateEquityAnnual.csv",
+        "annualFilepath":"data/finance/privateEquity-annual.csv",
         "min_year": 2006,
         "max_year": 2019,
         "groups": {
@@ -1492,36 +1499,16 @@ ccc_dataSources = [
             "Water consumption"
         ]
     },
-    // {
-    //     "name": "gdpNowcast",
-    //     "title": "GDP Nowcast",
-    //     "y-axis": "",
-    //     "dates": "day",
-    //     "generative_func": "generateGraph('gdpNowcast')",
-    //     "selected": true,
-    //     "filepath":"data/economy/gdpNowcast.csv",
-    //     "min_year": 2023,
-    //     "max_year": 2023,
-    //     "groups": {
-    //         "All Data": true
-    //     },
-    //     "columns": {
-    //         "CN: GDP Nowcast: China: Current Quarter": true,
-    //         "CN: GDP Nowcast: China: Next Quarter": true
-    //     },
-    //     "line_names": [
-    //         "Current quarter",
-    //         "Next Quarter"
-    //     ]
-    // },
     {
         "name": "insuredPeople",
         "title": "Social Security Fund: Insured People in China",
         "y-axis": "Number of insured people",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('insuredPeople')",
         "selected": true,
         "filepath":"data/governance/insuredPeople.csv",
+        "annualFilepath":"data/governance/insuredPeopleAnnual.csv",
         "min_year": 2010,
         "max_year": 2023,
         "groups": {
@@ -1539,7 +1526,8 @@ ccc_dataSources = [
             "Pension",
             "Medical",
             "Unemployment"
-        ]
+        ],
+        "notes": ['Annual data is the average per year.']
     },
     {
         "name": "studentsAbroad",
@@ -1596,11 +1584,13 @@ ccc_dataSources = [
     {
         "name": "inflation",
         "title": "Inflation in China: Producer Price Index, Retail Price Index, Consumer Price Index",
-        "y-axis": "",
+        "y-axis": "Previous year = 100",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('inflation')",
         "selected": true,
         "filepath":"data/economy/inflation.csv",
+        "annualFilepath":"data/economy/inflation-annual.csv",
         "min_year": 1985,
         "max_year": 2023,
         "groups": {
@@ -1794,11 +1784,13 @@ ccc_dataSources = [
     {
         "name": "engelsCoefficient",
         "title": "Engel's Coefficient: YTD",
-        "y-axis": "Unit*",
+        "y-axis": "Percent",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('engelsCoefficient')",
         "selected": true,
         "filepath":"data/economy/engelsCoefficient.csv",
+        "annualFilepath":"data/economy/engelsCoefficient-annual.csv",
         "min_year": 1978,
         "max_year": 2023,
         "groups": {
@@ -2159,18 +2151,20 @@ ccc_dataSources = [
         "title": "Consumer Confidence in China",
         "y-axis": "Points",
         "dates": "month",
+        "displayAnnualData": true,
         "generative_func": "generateGraph('consumerConfidence')",
         "selected": true,
-        "filepath":"data/economy/ConsumerConfidence.csv",
+        "filepath":"data/economy/consumerConfidence.csv",
+        "annualFilepath":"data/economy/consumerConfidence-annual.csv",
         "min_year": 1990,
         "max_year": 2023,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "CN: Consumer Confidence Index": true,
-            "CN: Consumer Confidence Index: Satisfactory": true,
-            "CN: Consumer Confidence Index: Expectation": true
+            "Consumer Confidence Index": true,
+            "Consumer Satisfactory Index": true,
+            "Consumer Expectation Index": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
@@ -2185,22 +2179,25 @@ ccc_dataSources = [
         "name": "militaryExpenditure",
         "title": "Military Expenditure in China",
         "y-axis": "RMB (millions)",
+        "containsUSData": true,
         "generative_func": "generateGraph('militaryExpenditure')",
         "selected": true,
-        "filepath":"data/governance/militaryExpenditure.csv",
+        "filepath":"data/governance/militaryExpenditureCNUS.csv",
         "min_year": 1989,
         "max_year": 2021,
         "groups": {
             "All Data": true
         },
         "columns": {
-            "Military Expenditure": true
+            "CN: Military Expenditure": true,
+            "US: Military Expenditure": true
         }, 
         "source": {
             "CEIC Data": "https://insights-ceicdata-com.ezproxy.princeton.edu/Name-your-insight/myseries"
         }, 
         "line_names": [
-            "Military expenditure"
+            "China",
+            "United States"
         ]
     },
     {
